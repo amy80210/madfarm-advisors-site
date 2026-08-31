@@ -2,6 +2,7 @@
   "name": "madfarm-advisors-site",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "description": "Madfarm Advisors website",
   "dependencies": {
     "mailersend": "^2.3.0"
