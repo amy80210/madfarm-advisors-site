@@ -1,0 +1,19 @@
+# Mac system files
+.DS_Store
+
+# Claude Code local settings
+.claude/
+
+# Dependencies
+node_modules/
+
+# Editor / IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Environment files
+.env
+.env.local
