@@ -11,10 +11,10 @@
 - [x] `case-study.html` set to `noindex` while it's a stub
 
 ## Before launch — confirm / replace
-- [ ] **Contact:** confirm `spencer@madfarm-advisors.com` and phone `469-387-3020`
-- [ ] **Founding year:** set to 2021 (logo/schema) — confirm vs. any legal "late 2020"
-- [ ] **Tombstone sector tags** ("Industrials & Services") — confirm accuracy for Innovae/WMI/Priums
-- [ ] **Spencer photo** → `images/team/spencer-williams.jpg` (portrait, ~4:5)
+- [x] **Contact:** public contact is `info@madfarm-advisors.com` + Google Calendar booking link; phone is intentionally NOT public
+- [ ] **Founding year:** site says 2021 (logo/schema), Spencer's bio says founded late 2020 — reconcile
+- [x] **Tombstones:** 6 closed deals with logos (homepage scroll + hero ticker), per MF Logos list
+- [x] **Headshots:** Spencer, Will, Tim updated
 - [ ] **About page images** (when provided)
 - [ ] **Case study** → replace `case-study.html` stub with real content or a Gamma link
 - [ ] Real deal figures/dates for tombstones, if disclosable
