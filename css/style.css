@@ -852,9 +852,9 @@ strong { color: var(--ink); font-weight: 600; }
 }
 
 /* Homepage hero: slow background drift (zoom + pan), quiet and continuous */
-.hero__bg--drift { transform-origin: 60% 40%; animation: hero-drift 38s ease-in-out infinite alternate; will-change: transform; }
+.hero__bg--drift { transform-origin: 60% 40%; animation: hero-drift 16s ease-in-out infinite alternate; will-change: transform; }
 @keyframes hero-drift {
-  from { transform: scale(1.02) translate3d(0, 0, 0); }
-  to   { transform: scale(1.14) translate3d(-2.5%, -1.5%, 0); }
+  from { transform: scale(1.04) translate3d(1.5%, 1%, 0); }
+  to   { transform: scale(1.2) translate3d(-4%, -2.5%, 0); }
 }
 @media (prefers-reduced-motion: reduce) { .hero__bg--drift { animation: none; } }
