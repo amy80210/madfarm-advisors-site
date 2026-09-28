@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>The Madfarm Process</title>
+<!-- Print source for downloads/Madfarm-The-Process.pdf. Render with headless Chrome (see print/README.md). -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=block" rel="stylesheet">
+<style>
+  :root {
+    --steel:#1C2024; --steel-2:#0E1420; --steel-soft:#2A2F35;
+    --copper:#A8451A; --copper-2:#C85A22; --copper-on-dark:#D9733A;
+    --chalk:#F7F4ED; --chalk-2:#EFEAE0; --sand:#D5D0C4; --sand-2:#E8E2D5;
+    --ink:#1C2024; --ink-soft:#4A4F55; --ink-mute:#75787C;
+    --paper-on-dark:#F2EFE8; --mute-on-dark:#A8ADB2;
+    --serif:'Libre Baskerville', Georgia, serif;
+    --sans:'Inter', system-ui, sans-serif;
+  }
+  @page { size: Letter; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  p { text-wrap: pretty; }
+  body { font-family: var(--sans); color: var(--ink); font-size: 9.6pt; line-height: 1.5; background: #777; }
+
+  .page {
+    width: 8.5in; height: 11in; overflow: hidden; position: relative;
+    background: var(--chalk); page-break-after: always; break-after: page;
+    padding: .46in .7in .4in; display: flex; flex-direction: column;
+  }
+  .page:last-child { page-break-after: auto; break-after: auto; }
+  .page__body { flex: 1; display: flex; flex-direction: column; justify-content: space-between; gap: .22in; min-height: 0; }
+
+  /* running header / footer */
+  .run-head { display: flex; justify-content: space-between; align-items: center; padding-bottom: .12in; margin-bottom: .24in; border-bottom: 1px solid var(--sand); }
+  .run-head img { height: .3in; }
+  .run-head span { font-size: 7pt; letter-spacing: .18em; text-transform: uppercase; color: var(--ink-mute); font-weight: 600; }
+  .run-foot { display: flex; justify-content: space-between; align-items: center; margin-top: .22in; padding-top: .12in; border-top: 1px solid var(--sand); font-size: 7.5pt; color: var(--ink-mute); }
+  .run-foot b { color: var(--copper); font-weight: 600; }
+
+  /* type */
+  .eyebrow { display: flex; align-items: center; gap: .12in; font-size: 7.2pt; letter-spacing: .2em; text-transform: uppercase; font-weight: 600; color: var(--copper); }
+  .eyebrow::before { content: ""; width: .28in; height: 1.2px; background: currentColor; }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 700; color: var(--steel); letter-spacing: -.01em; }
+  h2 { font-size: 18pt; line-height: 1.15; margin-top: .08in; }
+  h3 { font-size: 11.5pt; line-height: 1.25; }
+  .dek b { color: var(--steel); font-weight: 600; }
+  .dek { font-size: 10pt; color: var(--ink-soft); margin-top: .08in; max-width: 6.3in; line-height: 1.5; text-wrap: pretty; }
+  .num { font-family: var(--serif); color: var(--copper); font-weight: 700; }
+
+  ul.ticks { list-style: none; display: grid; gap: .06in; }
+  ul.ticks li { position: relative; padding-left: .2in; color: var(--ink-soft); }
+  ul.ticks li::before { content: ""; position: absolute; left: 0; top: .075in; width: .09in; height: 1.5px; background: var(--copper); }
+
+  .card { background: #fff; border: 1px solid var(--sand); border-radius: 3px; padding: .18in .2in; }
+  .callout { background: var(--steel); color: var(--paper-on-dark); border-radius: 3px; padding: .18in .26in; display: flex; gap: .22in; align-items: center; }
+  .callout::before { content: ""; flex: none; width: 3px; align-self: stretch; background: var(--copper-2); }
+  .callout p { font-family: var(--serif); font-size: 10.8pt; line-height: 1.5; }
+  .callout b { color: #fff; }
+
+  /* ---------- Cover ---------- */
+  .cover { background: var(--steel); color: var(--paper-on-dark); padding: 0; }
+  .cover__img { position: relative; height: 5.2in; overflow: hidden; }
+  .cover__img img { width: 100%; height: 100%; object-fit: cover; opacity: .62; }
+  .cover__img::after { content: ""; position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(28,32,36,.55) 0%, rgba(28,32,36,.1) 40%, rgba(28,32,36,1) 100%),
+                radial-gradient(90% 80% at 90% 0%, rgba(168,69,26,.3), transparent 60%); }
+  .cover__logo { position: absolute; top: .6in; left: .7in; z-index: 2; height: .52in; }
+  .cover__body { padding: 0 .7in; margin-top: -1.1in; position: relative; z-index: 2; flex: 1; display: flex; flex-direction: column; }
+  .cover .eyebrow { color: var(--copper-on-dark); }
+  .cover h1 { color: #fff; font-size: 44pt; line-height: 1.04; margin-top: .2in; letter-spacing: -.02em; }
+  .cover h1 em { font-style: italic; font-weight: 400; color: var(--copper-on-dark); }
+  .cover__lead { font-size: 12pt; line-height: 1.55; margin-top: .22in; max-width: 5.3in; color: var(--paper-on-dark); opacity: .92; }
+  .cover__stats { margin-top: auto; display: grid; grid-template-columns: repeat(3, auto); justify-content: start; gap: .5in; padding-bottom: .34in; }
+  .cover__stats div { display: flex; align-items: center; gap: .14in; }
+  .cover__stats b { font-family: var(--serif); font-size: 34pt; line-height: 1; color: #fff; font-weight: 700; }
+  .cover__stats span { font-size: 8.6pt; line-height: 1.4; color: var(--mute-on-dark); padding-left: .14in; border-left: 1.5px solid var(--copper-on-dark); }
+  .cover__toc { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid rgba(255,255,255,.16); }
+  .cover__toc div { padding: .2in .16in .05in 0; }
+  .cover__toc b { display: block; font-family: var(--serif); color: var(--copper-on-dark); font-size: 10pt; }
+  .cover__toc span { display: block; font-size: 8.4pt; color: var(--mute-on-dark); margin-top: .04in; line-height: 1.4; }
+  .cover__foot { display: flex; justify-content: space-between; padding: .3in 0 .45in; font-size: 7.8pt; color: var(--mute-on-dark); letter-spacing: .02em; }
+  .cover__foot b { color: var(--paper-on-dark); font-weight: 600; }
+
+  /* ---------- Two halves ---------- */
+  .halves { display: grid; grid-template-columns: 1fr 1fr; gap: .16in; margin-top: .2in; }
+  .halves .card { padding: .22in; }
+  .halves .card--dark { background: var(--steel); border-color: var(--steel); }
+  .halves .card--dark h3 { color: #fff; }
+  .halves .card--dark .eyebrow { color: var(--copper-on-dark); }
+  .halves .card--dark ul.ticks li { color: var(--paper-on-dark); }
+  .halves .card--dark ul.ticks li::before { background: var(--copper-on-dark); }
+  .halves h3 { font-size: 13.5pt; margin: .1in 0 .13in; }
+
+  /* ---------- Arc ---------- */
+  .arc { display: grid; grid-template-columns: repeat(5, 1fr); margin-top: .24in; position: relative; }
+  .arc::before { content: ""; position: absolute; top: .27in; left: 10%; right: 10%; height: 1.5px; background: var(--sand); }
+  .arc__step { text-align: center; position: relative; padding: 0 .06in; }
+  .arc__dot { width: .54in; height: .54in; border-radius: 50%; margin: 0 auto; background: var(--steel); color: #fff; display: grid; place-items: center; font-family: var(--serif); font-weight: 700; font-size: 13pt; border: 3px solid var(--chalk); box-sizing: content-box; }
+  .arc__step:first-child .arc__dot { background: #fff; color: var(--steel); border-color: var(--chalk); outline: 1.5px solid var(--sand); outline-offset: -3px; }
+  .arc__step:last-child .arc__dot { background: var(--copper); }
+  .arc__step h3 { font-size: 11pt; margin-top: .14in; }
+  .arc__step span { display: block; font-size: 7.2pt; letter-spacing: .14em; text-transform: uppercase; color: var(--copper); font-weight: 600; margin-top: .05in; }
+  .arc__step p { font-size: 8.4pt; color: var(--ink-soft); margin-top: .08in; line-height: 1.45; }
+
+  /* ---------- Gates ---------- */
+  .gates { display: grid; grid-template-columns: repeat(3, 1fr); gap: .18in; margin-top: .24in; }
+  .gate { display: flex; flex-direction: column; border-top: 3px solid var(--copper); gap: 0; }
+  .gate ul { margin-bottom: .18in; }
+  .gate .num { font-size: 19pt; line-height: 1; }
+  .gate h3 { font-size: 13pt; margin-top: .1in; }
+  .gate .when { font-size: 8.4pt; color: var(--ink-mute); margin: .03in 0 .14in; font-style: italic; font-family: var(--serif); }
+  .gate ul { align-content: start; }
+  .gate .who { margin-top: auto;  padding-top: .12in; border-top: 1px solid var(--sand-2); font-size: 7.2pt; letter-spacing: .16em; text-transform: uppercase; font-weight: 700; color: var(--steel); }
+
+  /* ---------- Rows (phase by phase) ---------- */
+  .rows { margin-top: .22in; border-top: 1px solid var(--sand); }
+  .row { display: grid; grid-template-columns: .45in 1.65in 1fr; gap: .14in; padding: .11in 0; border-bottom: 1px solid var(--sand); align-items: baseline; }
+  .row .num { font-size: 12pt; }
+  .row h3 { font-size: 11pt; }
+  .row h3 small { display: block; font-family: var(--sans); font-weight: 500; font-size: 7.6pt; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-mute); margin-top: .04in; }
+  .row p { color: var(--ink-soft); font-size: 9.2pt; }
+
+  /* ---------- Deliverables ---------- */
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: .14in; margin-top: .2in; }
+  .deliv .num { font-size: 10pt; letter-spacing: .06em; }
+  .deliv h3 { margin: .08in 0 .08in; }
+  .deliv p { color: var(--ink-soft); font-size: 9.3pt; }
+  .grid3 .deliv { padding: .24in .22in .26in; }
+
+  /* ---------- Confidentiality ---------- */
+  .conf { display: grid; grid-template-columns: 1.2fr 1fr; gap: .3in; align-items: stretch; margin-top: .06in; }
+  .conf__text h2 { font-size: 19pt; }
+  .conf__text p { color: var(--ink-soft); font-size: 10pt; line-height: 1.6; margin-top: .12in; }
+  .conf__panel { background: var(--steel); color: var(--paper-on-dark); border-radius: 3px; padding: .24in .26in; }
+  .conf__panel .eyebrow { color: var(--copper-on-dark); }
+  .conf__panel h3 { color: #fff; margin: .1in 0 .14in; font-size: 13pt; }
+  .conf__panel dl { display: grid; grid-template-columns: auto 1fr; }
+  .conf__panel dt, .conf__panel dd { padding: .09in 0; border-top: 1px solid rgba(255,255,255,.14); }
+  .conf__panel dt { font-size: 7.2pt; letter-spacing: .16em; text-transform: uppercase; color: var(--mute-on-dark); font-weight: 600; padding-right: .2in; }
+  .conf__panel dd { font-family: var(--serif); font-size: 10pt; color: #fff; }
+
+  /* ---------- Your part ---------- */
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: .14in; margin-top: .2in; }
+  .part { display: grid; grid-template-columns: .42in 1fr; gap: .06in; }
+  .part .num { font-size: 12pt; }
+  .part h3 { margin-bottom: .05in; }
+  .part p { color: var(--ink-soft); font-size: 9pt; }
+
+  .cadence h3 { margin-bottom: .06in; }
+  .cadence p { color: var(--ink-soft); font-size: 9pt; }
+
+  /* ---------- CTA ---------- */
+  .cta { background: var(--steel); color: var(--paper-on-dark); border-radius: 3px; overflow: hidden; display: grid; grid-template-columns: 1fr 2.5in; }
+  .cta__main { padding: .28in .32in; }
+  .cta .eyebrow { color: var(--copper-on-dark); }
+  .cta h2 { color: #fff; font-size: 15.5pt; margin-top: .1in; }
+  .cta p { color: var(--mute-on-dark); margin-top: .1in; font-size: 9.6pt; }
+  .cta__side { background: var(--steel-soft); padding: .26in .26in; display: flex; flex-direction: column; justify-content: center; gap: .14in; border-left: 3px solid var(--copper-2); }
+  .cta__side div span { display: block; font-size: 7pt; letter-spacing: .16em; text-transform: uppercase; color: var(--mute-on-dark); font-weight: 600; }
+  .cta__side a { text-decoration: none; }
+  .cta__side div b { display: block; font-family: var(--serif); color: #fff; font-weight: 400; font-size: 9.8pt; white-space: nowrap; margin-top: .03in; }
+</style>
+</head>
+<body>
+
+<!-- ============ 1 · COVER ============ -->
+<section class="page cover">
+  <div class="cover__img"><img src="../images/treated/hero.jpg" alt=""></div>
+  <img class="cover__logo" src="../images/logos/madfarm-stack-white.png" alt="Madfarm Advisors">
+  <div class="cover__body">
+    <span class="eyebrow">Sell-Side M&amp;A &middot; Owner&rsquo;s Guide</span>
+    <h1>The Madfarm<br><em>Process</em></h1>
+    <p class="cover__lead">Structurally rigorous. Strategically flexible. Five phases and three decision gates, run as one continuous process &mdash; preparation is the same discipline on every engagement, and the market strategy is built for your business alone.</p>
+    <div class="cover__stats">
+      <div><b>5</b><span>Phases, one<br>continuous arc</span></div>
+      <div><b>3</b><span>Decision gates,<br>each one yours</span></div>
+      <div><b>6</b><span>Deliverables,<br>yours to keep</span></div>
+    </div>
+    <div class="cover__toc">
+      <div><b>01</b><span>How we work &amp; the three decision gates</span></div>
+      <div><b>02</b><span>The five phases, in detail</span></div>
+      <div><b>03</b><span>Deliverables &amp; confidentiality</span></div>
+      <div><b>04</b><span>Your part, cadence &amp; next step</span></div>
+    </div>
+    <div class="cover__foot"><span><b>Madfarm Advisors</b> &nbsp;&middot;&nbsp; Lower middle market sell-side M&amp;A</span><span>madfarm-advisors.com</span></div>
+  </div>
+</section>
+
+<!-- ============ 2 · HOW WE WORK + GATES ============ -->
+<section class="page">
+  <div class="run-head"><img src="../images/logos/madfarm-stack-dark.png" alt="Madfarm Advisors"><span>The Madfarm Process</span></div>
+  <div class="page__body">
+    <div>
+      <span class="eyebrow">01 &middot; How We Work</span>
+      <h2>Structurally rigorous. Strategically flexible.</h2>
+      <p class="dek">Two halves of one process &mdash; and they don&rsquo;t work in isolation.</p>
+      <div class="halves">
+        <div class="card card--dark">
+          <span class="eyebrow">Structurally Rigorous</span>
+          <h3>Preparation is fixed</h3>
+          <ul class="ticks">
+            <li>The same discipline, in the same order, on every engagement</li>
+            <li>Every obstacle surfaced and mitigated before going to market</li>
+            <li>A file a buyer can underwrite the day they receive it</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="eyebrow">Strategically Flexible</span>
+          <h3>Market strategy is built</h3>
+          <ul class="ticks">
+            <li>Buyer mix, sequencing and process type set to your goals</li>
+            <li>Drawn from what preparation reveals &mdash; not a playbook</li>
+            <li>Designed once, then executed with discipline</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <span class="eyebrow">Decision Points</span>
+      <h2>Three gates control the process.</h2>
+      <p class="dek">Nothing crosses a gate until the work behind it is done and you have signed off. Between gates we move without asking &mdash; <b>at each gate we stop, and the decision is yours.</b></p>
+      <div class="gates">
+        <div class="card gate">
+          <span class="num">01</span><h3>Launch approval</h3><span class="when">Before we go to market</span>
+          <ul class="ticks">
+            <li>Financial workbook and deal-ready data room</li>
+            <li>Approved CIM, teaser and buyer list</li>
+            <li>Agreed go-to-market strategy</li>
+          </ul>
+          <span class="who">You decide</span>
+        </div>
+        <div class="card gate">
+          <span class="num">02</span><h3>LOI selection</h3><span class="when">When offers are in</span>
+          <ul class="ticks">
+            <li>Competing offers weighed on price, structure, certainty and fit</li>
+            <li>Counterparty diligence complete</li>
+            <li>Exclusivity terms negotiated</li>
+          </ul>
+          <span class="who">You decide, on our recommendation</span>
+        </div>
+        <div class="card gate">
+          <span class="num">03</span><h3>Close</h3><span class="when">At the finish</span>
+          <ul class="ticks">
+            <li>Confirmatory diligence complete</li>
+            <li>Definitive agreements executed</li>
+            <li>Working capital settled and funds flow confirmed</li>
+          </ul>
+          <span class="who">Joint &mdash; with your counsel</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="run-foot"><span><b>Madfarm Advisors</b> &nbsp;&middot;&nbsp; madfarm-advisors.com</span><span>2</span></div>
+</section>
+
+<!-- ============ 3 · ARC + PHASES ============ -->
+<section class="page">
+  <div class="run-head"><img src="../images/logos/madfarm-stack-dark.png" alt="Madfarm Advisors"><span>The Madfarm Process</span></div>
+  <div class="page__body">
+    <div>
+      <span class="eyebrow">02 &middot; The Arc</span>
+      <h2>Five phases, one continuous arc.</h2>
+      <p class="dek">The sequence holds on every deal. The pace does not &mdash; some businesses move quickly, others need room &mdash; so we scope the timeline to yours rather than a calendar.</p>
+      <div class="arc">
+        <div class="arc__step"><div class="arc__dot">1</div><h3>Evaluation</h3><span>Before engagement</span></div>
+        <div class="arc__step"><div class="arc__dot">2</div><h3>Foundation</h3><span>Kickoff</span></div>
+        <div class="arc__step"><div class="arc__dot">3</div><h3>Preparation</h3><span>The core</span></div>
+        <div class="arc__step"><div class="arc__dot">4</div><h3>Market</h3><span>In market</span></div>
+        <div class="arc__step"><div class="arc__dot">5</div><h3>Close</h3><span>The finish</span></div>
+      </div>
+    </div>
+
+
+
+    <div>
+      <span class="eyebrow">In Detail</span>
+      <h2>What actually happens, phase by phase.</h2>
+      <div class="rows">
+        <div class="row"><span class="num">01</span><h3>Evaluation<small>Complimentary &middot; pre-engagement</small></h3><p>A discovery session and a preliminary read on value &mdash; what the business could command, what a process would look like, and what to address first. No cost, no obligation.</p></div>
+        <div class="row"><span class="num">02</span><h3>Foundation<small>Kickoff</small></h3><p>Goals, data room build, and financial and operational discovery. Short and dense &mdash; it sets everything downstream in motion.</p></div>
+        <div class="row"><span class="num">03</span><h3>Preparation<small>The core</small></h3><p>Financial preparation, quality of earnings, market analysis and go-to-market design. The heaviest lifting of the engagement, and what a clean process is built on.</p></div>
+        <div class="row"><span class="num">04</span><h3>Market<small>In market</small></h3><p>Tiered buyer outreach, NDAs and CIM, management meetings, then indications of interest and LOI selection. We name your buyer list from evidence &mdash; not on day one.</p></div>
+        <div class="row"><span class="num">05</span><h3>Close<small>The finish</small></h3><p>Confirmatory diligence, definitive agreement, working-capital true-up and funds flow. Thorough preparation is why diligence confirms what&rsquo;s known instead of uncovering surprises.</p></div>
+      </div>
+    </div>
+
+    <div class="callout"><p>We set the pace, and buyers react to it. In a sell-side process, <b>tempo is leverage</b> &mdash; and we don&rsquo;t hand it to the other side of the table.</p></div>
+  </div>
+  <div class="run-foot"><span><b>Madfarm Advisors</b> &nbsp;&middot;&nbsp; madfarm-advisors.com</span><span>3</span></div>
+</section>
+
+<!-- ============ 4 · DELIVERABLES + CONFIDENTIALITY ============ -->
+<section class="page">
+  <div class="run-head"><img src="../images/logos/madfarm-stack-dark.png" alt="Madfarm Advisors"><span>The Madfarm Process</span></div>
+  <div class="page__body">
+    <div>
+      <span class="eyebrow">03 &middot; What You Receive</span>
+      <h2>Six deliverables, all yours.</h2>
+      <p class="dek">Produced during preparation, used through close, and yours to keep afterward.</p>
+      <div class="grid3">
+        <div class="card deliv"><span class="num">01</span><h3>Financial workbook</h3><p>Normalized P&amp;L, adjusted EBITDA, cash flow, customer analysis and net working capital &mdash; the underwriting file.</p></div>
+        <div class="card deliv"><span class="num">02</span><h3>Deal-ready data room</h3><p>Structured, populated, access-controlled and organized the way a buyer&rsquo;s diligence team works.</p></div>
+        <div class="card deliv"><span class="num">03</span><h3>Confidential information memorandum</h3><p>The full narrative and financial case for the business, released only under NDA.</p></div>
+        <div class="card deliv"><span class="num">04</span><h3>Blind teaser</h3><p>An anonymized one-page profile used for every first approach.</p></div>
+        <div class="card deliv"><span class="num">05</span><h3>Buyer list</h3><p>Named, tiered and researched &mdash; built from market evidence, not a database pull.</p></div>
+        <div class="card deliv"><span class="num">06</span><h3>Go-to-market strategy</h3><p>Buyer mix, sequencing, pacing, process type and the outreach plan.</p></div>
+      </div>
+    </div>
+
+    <div class="conf">
+      <div class="conf__text">
+        <span class="eyebrow">Confidentiality</span>
+        <h2>Your business never appears on a marketplace.</h2>
+        <p>Confidentiality is a design decision, not a disclaimer. Every approach is deliberate &mdash; made by us, to a named buyer &mdash; and nothing that identifies your business goes out until it has to.</p>
+        <p>Who gets read in, and when, stays your call.</p>
+      </div>
+      <div class="conf__panel">
+        <span class="eyebrow">How It Stays Quiet</span>
+        <h3>Controlled from first contact</h3>
+        <dl>
+          <dt>Approach</dt><dd>Named decision-maker</dd>
+          <dt>Identity</dt><dd>Blinded until NDA</dd>
+          <dt>Listings</dt><dd>Never posted publicly</dd>
+          <dt>Documents</dt><dd>All through the data room</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+  <div class="run-foot"><span><b>Madfarm Advisors</b> &nbsp;&middot;&nbsp; madfarm-advisors.com</span><span>4</span></div>
+</section>
+
+<!-- ============ 5 · YOUR PART + CADENCE + CTA ============ -->
+<section class="page">
+  <div class="run-head"><img src="../images/logos/madfarm-stack-dark.png" alt="Madfarm Advisors"><span>The Madfarm Process</span></div>
+  <div class="page__body">
+    <div>
+      <span class="eyebrow">04 &middot; Your Part</span>
+      <h2>What we need from you.</h2>
+      <p class="dek">The timeline holds when these are met &mdash; it is the one part of the process we don&rsquo;t control.</p>
+      <div class="grid2">
+        <div class="card part"><span class="num">01</span><div><h3>Responsive information</h3><p>Document requests and diligence answered as they arrive, so preparation never stalls.</p></div></div>
+        <div class="card part"><span class="num">02</span><div><h3>A few working sessions</h3><p>Discovery and review sessions through preparation &mdash; the substance we build the file on.</p></div></div>
+        <div class="card part"><span class="num">03</span><div><h3>Availability in market</h3><p>Management meetings, and timely decisions on the offers that come in.</p></div></div>
+        <div class="card part"><span class="num">04</span><div><h3>Counsel ready</h3><p>M&amp;A counsel engaged for the definitive agreement and close.</p></div></div>
+      </div>
+    </div>
+
+    <div class="callout"><p>We tell you what&rsquo;s needed and when. <b>You&rsquo;ll never learn about a deliverable on the day it&rsquo;s due.</b></p></div>
+
+    <div>
+      <span class="eyebrow">How We Run It</span>
+      <h2>Cadence and communication.</h2>
+      <div class="grid3">
+        <div class="card cadence"><h3>Weekly standing call</h3><p>A short status call: where we are, what&rsquo;s next, and what we need from you.</p></div>
+        <div class="card cadence"><h3>Written update</h3><p>Delivered before each call &mdash; workstream status, blockers, and your upcoming items.</p></div>
+        <div class="card cadence"><h3>Direct escalation</h3><p>Anything urgent goes straight to the principal. No account team to route through.</p></div>
+      </div>
+    </div>
+
+    <div class="cta">
+      <div class="cta__main">
+        <span class="eyebrow">Start With Evaluation</span>
+        <h2>Start with a read on value &mdash; not a commitment.</h2>
+        <p>The complimentary pre-engagement &mdash; a discovery session and a preliminary valuation &mdash; comes before any paid work. No cost, no obligation.</p>
+      </div>
+      <div class="cta__side">
+        <div><span>Schedule a Call</span><a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0SPZqSb-E2HhHyk3IjZ08Nt1dkyxakiIWX0lumyj8OQpdlR3kehUxgAIQfdVb7jfjI8W2z7oEw"><b>Book a time on our calendar &rarr;</b></a></div>
+        <div><span>Email</span><a href="mailto:info@madfarm-advisors.com"><b>info@madfarm-advisors.com</b></a></div>
+      </div>
+    </div>
+  </div>
+  <div class="run-foot"><span><b>Madfarm Advisors</b> &nbsp;&middot;&nbsp; Member, Alliance of Mergers &amp; Acquisitions Advisors</span><span>5</span></div>
+</section>
+
+</body>
+</html>
