@@ -18,7 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20260927h">
+  <link rel="stylesheet" href="css/style.css?v=20260927o">
 </head>
 <body>
 
@@ -59,6 +59,7 @@
         </div>
         <div class="halves reveal">
           <div class="half half--fixed">
+            <span class="ico ico--dark"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 5 4 11l12 6 12-6-12-6Z"/><path d="m4 16 12 6 12-6"/><path d="m4 21 12 6 12-6"/></svg></span>
             <span class="eyebrow">Structurally Rigorous</span>
             <h3>Preparation is fixed</h3>
             <ul>
@@ -68,6 +69,7 @@
             </ul>
           </div>
           <div class="half half--built">
+            <span class="ico"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="16" r="11"/><path d="m20.5 11.5-2.8 6.2-6.2 2.8 2.8-6.2z"/></svg></span>
             <span class="eyebrow">Strategically Flexible</span>
             <h3>Market strategy is built</h3>
             <ul>
@@ -80,37 +82,75 @@
       </div>
     </section>
 
-    <!-- THE ARC -->
-    <section class="section bg-steel">
+    <!-- THE ARC: five phases, each with what happens, and where the gates fall -->
+    <section class="section bg-steel" id="arc">
       <div class="wrap">
         <div class="section-head reveal">
           <span class="eyebrow">The Arc</span>
           <h2>Five phases, one continuous arc.</h2>
           <p>The sequence holds on every deal. The pace does not &mdash; some businesses move quickly, others need room &mdash; so we scope the timeline to yours rather than a calendar.</p>
         </div>
-        <div class="arc reveal">
-          <div class="arc__node arc__node--pre"><span class="arc__dot">1</span><span class="arc__name">Evaluation</span><span class="arc__when">Before engagement</span></div>
-          <div class="arc__node"><span class="arc__dot">2</span><span class="arc__name">Foundation</span><span class="arc__when">Kickoff</span></div>
-          <div class="arc__node"><span class="arc__dot">3</span><span class="arc__name">Preparation</span><span class="arc__when">The core</span></div>
-          <div class="arc__node"><span class="arc__dot">4</span><span class="arc__name">Market</span><span class="arc__when">In market</span></div>
-          <div class="arc__node arc__node--end"><span class="arc__dot">5</span><span class="arc__name">Close</span><span class="arc__when">The finish</span></div>
-        </div>
+        <ol class="journey reveal">
+            <li class="jstep jstep--pre">
+              <span class="arc__dot"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="14" cy="14" r="8.5"/><path d="m20.2 20.2 6.3 6.3"/><path d="M10.5 16.5v-2M14 16.5v-5M17.5 16.5v-3.2"/></svg></span>
+              <div class="jstep__body">
+                <span class="jstep__when">Pre-engagement</span>
+                <h3>Evaluation</h3>
+                <p>A discovery session and a preliminary read on value &mdash; what the business could command, what a process would look like, and what to address first. No cost, no obligation.</p>
+              </div>
+            </li>
+            <li class="jstep">
+              <span class="arc__dot"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="21" width="23" height="5.5" rx="1"/><rect x="7.5" y="13" width="7.5" height="8" rx="1"/><rect x="17" y="13" width="7.5" height="8" rx="1"/><path d="M11 13V8.5h10V13"/></svg></span>
+              <div class="jstep__body">
+                <span class="jstep__when">Kickoff</span>
+                <h3>Foundation</h3>
+                <p>Goals, data room build, and financial and operational discovery. Short and dense &mdash; it sets everything downstream in motion.</p>
+              </div>
+            </li>
+            <li class="jstep">
+              <span class="arc__dot"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="6" width="18" height="22" rx="2"/><path d="M12 6V4.5h8V6"/><path d="m11 13.5 1.8 1.8 3.2-3.3M11 21l1.8 1.8 3.2-3.3M19 14h3M19 21.5h3"/></svg></span>
+              <div class="jstep__body">
+                <span class="jstep__when">The core</span>
+                <h3>Preparation</h3>
+                <p>Financial preparation, quality of earnings, market analysis and go-to-market design. The heaviest lifting of the engagement, and what a clean process is built on.</p>
+              <a class="gate-pin" href="#gate-1">Gate 1 &middot; Launch approval</a>
+              </div>
+            </li>
+            <li class="jstep">
+              <span class="arc__dot"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="16" r="3.2"/><circle cx="6.5" cy="7.5" r="2.3"/><circle cx="25.5" cy="7.5" r="2.3"/><circle cx="6.5" cy="24.5" r="2.3"/><circle cx="25.5" cy="24.5" r="2.3"/><path d="m8.3 9.2 5.3 4.6M23.7 9.2l-5.3 4.6M8.3 22.8l5.3-4.6M23.7 22.8l-5.3-4.6"/></svg></span>
+              <div class="jstep__body">
+                <span class="jstep__when">In market</span>
+                <h3>Market</h3>
+                <p>Tiered buyer outreach, NDAs and CIM, management meetings, then indications of interest and LOI selection. We name your buyer list from evidence &mdash; not on day one.</p>
+              <a class="gate-pin" href="#gate-2">Gate 2 &middot; LOI selection</a>
+              </div>
+            </li>
+            <li class="jstep jstep--end">
+              <span class="arc__dot"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4.5h10l6 6V27a1.5 1.5 0 0 1-1.5 1.5h-14A1.5 1.5 0 0 1 8 27V6a1.5 1.5 0 0 1 1-1.5Z"/><path d="M19 4.5v6h6"/><path d="M11.5 21.5c1.4-2 2.4-2 3 0s1.8 1.8 3.2-.6M11.5 25h9.5"/></svg></span>
+              <div class="jstep__body">
+                <span class="jstep__when">The finish</span>
+                <h3>Close</h3>
+                <p>Confirmatory diligence, definitive agreement, working-capital true-up and funds flow. Thorough preparation is why diligence confirms what&rsquo;s known instead of uncovering surprises.</p>
+              <a class="gate-pin" href="#gate-3">Gate 3 &middot; Close</a>
+              </div>
+            </li>
+        </ol>
       </div>
     </section>
 
     <!-- GATES -->
-    <section class="section">
+    <section class="section" id="gates">
       <div class="wrap">
         <div class="section-head reveal">
           <span class="eyebrow">Decision Points</span>
           <h2>Three gates control the process.</h2>
-          <p>Nothing crosses a gate until the work behind it is done and you have signed off.</p>
+          <p>Nothing crosses a gate until the work behind it is done and you have signed off. Between gates we move without asking &mdash; <b>at each gate we stop, and the decision is yours.</b></p>
         </div>
         <div class="gates reveal">
-          <div class="gate">
-            <span class="gate__num">01</span>
+          <div class="gate" id="gate-1">
+            <div class="gate__top"><span class="gate__tag">Gate 1</span><span class="ico"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 28V5"/><path d="M8 6h15l-3.2 5 3.2 5H8"/></svg></span></div>
             <h3>Launch approval</h3>
-            <span class="gate__when">Before we go to market</span>
+            <span class="gate__when">Ends Preparation &mdash; before we go to market</span>
             <ul>
               <li>Financial workbook and deal-ready data room</li>
               <li>Approved CIM, teaser and buyer list</li>
@@ -118,10 +158,10 @@
             </ul>
             <span class="gate__who">You decide</span>
           </div>
-          <div class="gate">
-            <span class="gate__num">02</span>
+          <div class="gate" id="gate-2">
+            <div class="gate__top"><span class="gate__tag">Gate 2</span><span class="ico"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="9" width="14" height="18" rx="1.5"/><path d="M9.5 9V6.5A1.5 1.5 0 0 1 11 5h13.5A1.5 1.5 0 0 1 26 6.5v15.5a1.5 1.5 0 0 1-1.5 1.5H19"/><path d="m8.5 18 2.5 2.5 4.5-4.5"/></svg></span></div>
             <h3>LOI selection</h3>
-            <span class="gate__when">When offers are in</span>
+            <span class="gate__when">Ends Market &mdash; when offers are in</span>
             <ul>
               <li>Competing offers weighed on price, structure, certainty and fit</li>
               <li>Counterparty diligence complete</li>
@@ -129,54 +169,16 @@
             </ul>
             <span class="gate__who">You decide, on our recommendation</span>
           </div>
-          <div class="gate">
-            <span class="gate__num">03</span>
+          <div class="gate" id="gate-3">
+            <div class="gate__top"><span class="gate__tag">Gate 3</span><span class="ico"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10.5" cy="21.5" r="5.5"/><path d="m14.4 17.6 11-11M21.5 10.5l3 3M24.5 7.5l2.5 2.5"/></svg></span></div>
             <h3>Close</h3>
-            <span class="gate__when">At the finish</span>
+            <span class="gate__when">Ends the process &mdash; at the finish</span>
             <ul>
               <li>Confirmatory diligence complete</li>
               <li>Definitive agreements executed</li>
               <li>Working capital settled and funds flow confirmed</li>
             </ul>
             <span class="gate__who">Joint &mdash; with your counsel</span>
-          </div>
-        </div>
-        <div class="note mt-3 reveal">Between gates we move without asking. At each gate we stop, and the decision is yours.</div>
-      </div>
-    </section>
-
-    <!-- PHASES IN DETAIL -->
-    <section class="section bg-chalk-2">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <span class="eyebrow">Phase by Phase</span>
-          <h2>What actually happens.</h2>
-        </div>
-        <div class="rows reveal">
-          <div class="row-item">
-            <span class="row-item__n">01</span>
-            <span class="row-item__k">Evaluation<br><span class="gate__when">Complimentary, pre-engagement</span></span>
-            <span class="row-item__v">A discovery session and a preliminary read on value &mdash; what the business could command, what a process would look like, and what to address first. No cost, no obligation.</span>
-          </div>
-          <div class="row-item">
-            <span class="row-item__n">02</span>
-            <span class="row-item__k">Foundation<br><span class="gate__when">Kickoff</span></span>
-            <span class="row-item__v">Goals, data room build, and financial and operational discovery. Short and dense &mdash; it sets everything downstream in motion.</span>
-          </div>
-          <div class="row-item">
-            <span class="row-item__n">03</span>
-            <span class="row-item__k">Preparation<br><span class="gate__when">The core</span></span>
-            <span class="row-item__v">Financial preparation, quality of earnings, market analysis and go-to-market design. The heaviest lifting of the engagement, and what a clean process is built on.</span>
-          </div>
-          <div class="row-item">
-            <span class="row-item__n">04</span>
-            <span class="row-item__k">Market<br><span class="gate__when">In market</span></span>
-            <span class="row-item__v">Tiered buyer outreach, NDAs and CIM, management meetings, then indications of interest and LOI selection. We name your buyer list from evidence &mdash; not on day one.</span>
-          </div>
-          <div class="row-item">
-            <span class="row-item__n">05</span>
-            <span class="row-item__k">Close<br><span class="gate__when">The finish</span></span>
-            <span class="row-item__v">Confirmatory diligence, definitive agreement, working-capital true-up and funds flow. Thorough preparation is why diligence confirms what&rsquo;s known instead of uncovering surprises.</span>
           </div>
         </div>
       </div>
@@ -205,12 +207,12 @@
           <p>Produced during preparation, used through close, and yours to keep afterward.</p>
         </div>
         <div class="deliverables reveal">
-          <div class="deliverable"><span class="deliverable__n">01</span><h4>Financial workbook</h4><p>Normalized P&amp;L, adjusted EBITDA, cash flow, customer analysis and net working capital &mdash; the underwriting file.</p></div>
-          <div class="deliverable"><span class="deliverable__n">02</span><h4>Deal-ready data room</h4><p>Structured, populated, access-controlled and organized the way a buyer&rsquo;s diligence team works.</p></div>
-          <div class="deliverable"><span class="deliverable__n">03</span><h4>Confidential information memorandum</h4><p>The full narrative and financial case for the business, released only under NDA.</p></div>
-          <div class="deliverable"><span class="deliverable__n">04</span><h4>Blind teaser</h4><p>An anonymized one-page profile used for every first approach.</p></div>
-          <div class="deliverable"><span class="deliverable__n">05</span><h4>Buyer list</h4><p>Named, tiered and researched &mdash; built from market evidence, not a database pull.</p></div>
-          <div class="deliverable"><span class="deliverable__n">06</span><h4>Go-to-market strategy</h4><p>Buyer mix, sequencing, pacing, process type and the outreach plan.</p></div>
+          <div class="deliverable"><div class="deliverable__top"><span class="ico"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="6" width="22" height="20" rx="2"/><path d="M5 12h22M5 19h22M13 6v20"/></svg></span></div><h4>Financial workbook</h4><p>Normalized P&amp;L, adjusted EBITDA, cash flow, customer analysis and net working capital &mdash; the underwriting file.</p></div>
+          <div class="deliverable"><div class="deliverable__top"><span class="ico"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 9.5A1.5 1.5 0 0 1 6 8h6l2.5 3H26a1.5 1.5 0 0 1 1.5 1.5V24a1.5 1.5 0 0 1-1.5 1.5H6A1.5 1.5 0 0 1 4.5 24Z"/><rect x="12.5" y="16.5" width="7" height="5.5" rx="1"/><path d="M14 16.5V15a2 2 0 0 1 4 0v1.5"/></svg></span></div><h4>Deal-ready data room</h4><p>Structured, populated, access-controlled and organized the way a buyer&rsquo;s diligence team works.</p></div>
+          <div class="deliverable"><div class="deliverable__top"><span class="ico"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6.5A1.5 1.5 0 0 1 7.5 5H16v22H7.5A1.5 1.5 0 0 1 6 25.5Z"/><path d="M16 5h8.5A1.5 1.5 0 0 1 26 6.5v19a1.5 1.5 0 0 1-1.5 1.5H16"/><path d="M9.5 10h3M9.5 14h3M19.5 10h3M19.5 14h3M19.5 18h3"/></svg></span></div><h4>Confidential information memorandum</h4><p>The full narrative and financial case for the business, released only under NDA.</p></div>
+          <div class="deliverable"><div class="deliverable__top"><span class="ico"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 16s4.5-8 12-8 12 8 12 8-4.5 8-12 8S4 16 4 16Z"/><circle cx="16" cy="16" r="3.5"/><path d="M6 26 26 6"/></svg></span></div><h4>Blind teaser</h4><p>An anonymized one-page profile used for every first approach.</p></div>
+          <div class="deliverable"><div class="deliverable__top"><span class="ico"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 9h14M12 16h14M12 23h14"/><circle cx="6.5" cy="9" r="1.6"/><circle cx="6.5" cy="16" r="1.6"/><circle cx="6.5" cy="23" r="1.6"/></svg></span></div><h4>Buyer list</h4><p>Named, tiered and researched &mdash; built from market evidence, not a database pull.</p></div>
+          <div class="deliverable"><div class="deliverable__top"><span class="ico"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7" cy="24" r="2.5"/><circle cx="25" cy="8" r="2.5"/><path d="M9.5 24H20a4 4 0 0 0 0-8h-8a4 4 0 0 1 0-8h10.5"/></svg></span></div><h4>Go-to-market strategy</h4><p>Buyer mix, sequencing, pacing, process type and the outreach plan.</p></div>
         </div>
       </div>
     </section>
@@ -277,9 +279,9 @@
           <h2 style="font-size:clamp(1.6rem,2.8vw,2.2rem);">Cadence and communication.</h2>
         </div>
         <div class="deliverables reveal">
-          <div class="deliverable"><h4>Weekly standing call</h4><p>A short status call: where we are, what&rsquo;s next, and what we need from you.</p></div>
-          <div class="deliverable"><h4>Written update</h4><p>Delivered before each call &mdash; workstream status, blockers, and your upcoming items.</p></div>
-          <div class="deliverable"><h4>Direct escalation</h4><p>Anything urgent goes straight to the principal. No account team to route through.</p></div>
+          <div class="deliverable deliverable--cadence"><span class="ico"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 5h-3A1.5 1.5 0 0 0 5 6.6C5.7 18 14 26.3 25.4 27a1.5 1.5 0 0 0 1.6-1.5v-3a1.5 1.5 0 0 0-1.1-1.4l-4.2-1.2a1.5 1.5 0 0 0-1.5.4l-1.7 1.7a15 15 0 0 1-7.5-7.5l1.7-1.7a1.5 1.5 0 0 0 .4-1.5L11 6.1A1.5 1.5 0 0 0 9.5 5Z"/></svg></span><h4>Weekly standing call</h4><p>A short status call: where we are, what&rsquo;s next, and what we need from you.</p></div>
+          <div class="deliverable deliverable--cadence"><span class="ico"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4.5h11l5 5v17a1.5 1.5 0 0 1-1.5 1.5h-14A1.5 1.5 0 0 1 7 26.5V6A1.5 1.5 0 0 1 8 4.5Z"/><path d="M11.5 14h9M11.5 18.5h9M11.5 23h5.5"/></svg></span><h4>Written update</h4><p>Delivered before each call &mdash; workstream status, blockers, and your upcoming items.</p></div>
+          <div class="deliverable deliverable--cadence"><span class="ico"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.5 4 7 18h8l-1.5 10L25 14h-8z"/></svg></span><h4>Direct escalation</h4><p>Anything urgent goes straight to the principal. No account team to route through.</p></div>
         </div>
       </div>
     </section>

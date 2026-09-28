@@ -872,3 +872,139 @@ strong { color: var(--ink); font-weight: 600; }
 .founder__attrib b { color: var(--white); }
 .founder__attrib span { color: var(--mute-on-dark); }
 .founder__photo { background: var(--steel-soft); }
+
+/* ============================================================
+   Line-icon system (Process page) — thin copper strokes in a quiet tile
+   ============================================================ */
+.ico { display: inline-grid; place-items: center; flex: none; width: 46px; height: 46px; border-radius: var(--radius);
+  background: var(--white); border: 1px solid var(--sand); color: var(--copper); }
+.ico svg { width: 24px; height: 24px; display: block; }
+.ico--dark { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.16); color: var(--copper-on-dark); }
+
+/* halves */
+.half .ico { margin-bottom: 1.1rem; }
+.half--built .ico { background: var(--white); }
+
+/* arc: icons in the dots, small number above the name */
+.arc__dot svg { width: 30px; height: 30px; }
+.bg-steel .arc__dot { color: var(--copper-on-dark); }
+.bg-steel .arc__node--pre .arc__dot, .bg-steel .arc__node--end .arc__dot { color: var(--white); }
+.arc__num { display: block; font-size: .7rem; letter-spacing: .18em; font-weight: 600; color: var(--copper); margin-bottom: .2rem; }
+.bg-steel .arc__num { color: var(--copper-on-dark); }
+
+/* gates: number + icon on one line, a progress rule underneath */
+.gate__top { display: flex; align-items: center; justify-content: space-between; padding-bottom: 1rem; border-bottom: 1px solid var(--sand); }
+.gate h3 { margin-top: 1rem; }
+
+/* phase rows: icon tile + number */
+.row-item { grid-template-columns: 64px minmax(160px, 220px) 1fr; align-items: center; }
+.row-item__n { display: flex; }
+
+/* deliverables & cadence */
+.deliverable__top { display: flex; align-items: center; justify-content: space-between; }
+.deliverable__top .deliverable__n { font-family: var(--serif); font-size: 1.1rem; letter-spacing: 0; color: var(--sand); font-weight: 700; }
+.deliverable { transition: border-color .25s var(--ease), transform .25s var(--ease); }
+.deliverable:hover { border-color: var(--copper); transform: translateY(-2px); }
+.deliverable--cadence .ico { margin-bottom: .2rem; }
+.deliverable .ico { background: var(--white); }
+@media (max-width: 980px) {
+  .row-item { grid-template-columns: 56px 1fr; align-items: start; }
+  .row-item__v { grid-column: 2; }
+}
+
+/* ============================================================
+   About: team chip in hero + compact thesis with "at a glance"
+   ============================================================ */
+.team-chip { display: inline-flex; align-items: center; gap: .9rem; margin-top: 1.9rem; padding: .5rem 1.1rem .5rem .5rem;
+  border: 1px solid rgba(255,255,255,.2); border-radius: 999px; background: rgba(255,255,255,.06); color: var(--white);
+  transition: background .25s var(--ease), border-color .25s var(--ease); }
+.team-chip:hover { background: rgba(255,255,255,.12); border-color: var(--copper-on-dark); }
+.team-chip__faces { display: flex; }
+.team-chip__faces img { width: 42px; height: 42px; border-radius: 50%; object-fit: cover; object-position: 50% 18%; border: 2px solid var(--steel); }
+.team-chip__faces img + img { margin-left: -12px; }
+.team-chip__text { display: flex; flex-direction: column; line-height: 1.25; }
+.team-chip__text b { font-size: .92rem; font-weight: 600; }
+.team-chip__text span { font-size: .8rem; color: var(--mute-on-dark); }
+.page-hero .team-chip__text span { opacity: 1; margin: 0; }
+.team-chip .arw { color: var(--copper-on-dark); font-weight: 600; }
+
+.thesis { background: var(--chalk); }
+.thesis__grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+.thesis__main h2 { margin-top: .9rem; }
+.thesis__main .lead { margin-top: 1rem; }
+.principles { display: grid; gap: 1.25rem; margin-top: 2rem; }
+.principle { display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: start; }
+.principle h3 { font-size: 1.08rem; margin-bottom: .25rem; }
+.principle p { font-size: .95rem; color: var(--ink-soft); }
+.thesis .ico { width: 46px; height: 46px; display: inline-grid; place-items: center; border-radius: var(--radius);
+  background: var(--white); border: 1px solid var(--sand); color: var(--copper); }
+.thesis .ico svg { width: 24px; height: 24px; }
+
+.glance { background: var(--steel); color: var(--paper-on-dark); border-radius: var(--radius); padding: clamp(1.5rem, 3vw, 2.1rem);
+  border-top: 3px solid var(--copper); box-shadow: 0 18px 40px -24px rgba(14,20,32,.55); }
+.glance .eyebrow { color: var(--copper-on-dark); }
+.glance .eyebrow::before { background: var(--copper-on-dark); }
+.glance dl { margin-top: 1.1rem; }
+.glance dl div { padding: .8rem 0; border-top: 1px solid rgba(255,255,255,.12); }
+.glance dt { font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 600; color: var(--mute-on-dark); }
+.glance dd { font-family: var(--serif); color: var(--white); font-size: 1.02rem; line-height: 1.4; margin-top: .25rem; }
+.glance__foot { margin-top: .6rem; padding-top: .9rem; border-top: 1px solid rgba(255,255,255,.12); font-size: .8rem; color: var(--mute-on-dark); }
+@media (max-width: 900px) { .thesis__grid { grid-template-columns: 1fr; } }
+@media (min-width: 561px) and (max-width: 900px) {
+  .glance dl { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 1.5rem; }
+  .glance dl div:nth-child(n+4) { grid-column: 1 / -1; }
+}
+/* About: bring the people up sooner */
+#leadership { padding-top: clamp(3rem, 6vw, 4.5rem); }
+#leadership > .wrap > .section-head { max-width: 900px; margin-bottom: clamp(1.75rem, 3vw, 2.5rem); }
+/* icon polish */
+.ico svg, .thesis .ico svg { width: 26px; height: 26px; }
+.arc__dot svg { width: 34px; height: 34px; }
+.half .ico { display: grid; width: 46px; }
+.deliverable h4 { margin-top: 1rem; }
+.need-card__icon { display: grid; place-items: center; width: 46px; height: 46px; border-radius: var(--radius);
+  background: var(--white); border: 1px solid var(--sand); }
+.need-card__icon svg { width: 26px; height: 26px; }
+
+/* ============================================================
+   Process: "journey" — the arc with each phase's detail beneath it,
+   and pins marking where each decision gate falls
+   ============================================================ */
+.journey { list-style: none; display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.75rem; margin-top: .5rem; }
+.jstep { position: relative; }
+.jstep::after { content: ""; position: absolute; top: 32px; left: 80px; right: calc(-1.75rem + 8px); height: 1px; background: rgba(255,255,255,.2); }
+.jstep:last-child::after { display: none; }
+.jstep .arc__dot { width: 64px; height: 64px; margin: 0 0 1.25rem; background: var(--steel-soft); box-shadow: inset 0 0 0 1px rgba(255,255,255,.26); color: var(--copper-on-dark); }
+.jstep .arc__dot svg { width: 30px; height: 30px; }
+.jstep--pre .arc__dot { background: #5A6672; box-shadow: none; color: var(--white); }
+.jstep--end .arc__dot { background: var(--copper); box-shadow: none; color: var(--white); }
+.jstep__when { display: block; font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 600; color: var(--copper-on-dark); }
+.jstep h3 { color: var(--white); font-size: 1.3rem; margin: .35rem 0 .6rem; }
+.jstep p { font-size: .9rem; line-height: 1.6; color: var(--mute-on-dark); }
+.gate-pin { display: inline-flex; align-items: center; gap: .5rem; margin-top: 1rem; padding: .35rem .75rem;
+  border: 1px solid rgba(232,133,63,.45); border-radius: 999px; font-size: .72rem; font-weight: 600; letter-spacing: .04em;
+  color: var(--paper-on-dark); transition: background .25s var(--ease), border-color .25s var(--ease); }
+.gate-pin::before { content: ""; width: 7px; height: 7px; background: var(--copper-on-dark); transform: rotate(45deg); flex: none; }
+.gate-pin:hover { background: rgba(232,133,63,.14); border-color: var(--copper-on-dark); }
+
+/* gates: "Gate 1" tag with the same diamond instead of a big number */
+.gate__tag { display: inline-flex; align-items: center; gap: .55rem; font-size: .74rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 700; color: var(--copper); }
+.gate__tag::before { content: ""; width: 8px; height: 8px; background: var(--copper); transform: rotate(45deg); }
+.gate { scroll-margin-top: 110px; transition: border-color .25s var(--ease), box-shadow .25s var(--ease); }
+.gate:target { border-color: var(--copper); box-shadow: 0 0 0 3px rgba(168,69,26,.15); }
+#gates .section-head p b { color: var(--steel); font-weight: 600; }
+
+@media (max-width: 980px) {
+  .journey { grid-template-columns: 1fr; gap: 0; }
+  .jstep { display: grid; grid-template-columns: 64px 1fr; gap: 1.25rem; padding-bottom: 2rem; }
+  .jstep::after { top: 72px; bottom: 8px; left: 32px; right: auto; width: 1px; height: auto; }
+  .jstep:last-child { padding-bottom: 0; }
+  .jstep .arc__dot { margin: 0; }
+  .jstep__body { padding-top: .5rem; }
+}
+@media (min-width: 981px) {
+  .jstep { display: flex; flex-direction: column; }
+  .jstep__body { flex: 1; display: flex; flex-direction: column; align-items: flex-start; }
+  .jstep .gate-pin { margin-top: auto; }
+  .jstep p { margin-bottom: 1.1rem; }
+}
