@@ -837,3 +837,6 @@ strong { color: var(--ink); font-weight: 600; }
   .deals-marquee { overflow-x: auto; }
   .deals-track { animation: none; }
 }
+
+/* About: "We do / We don't" — labels sit above the heading, not floated in the corner */
+.pillars--labeled .pillar__num { position: static; opacity: 1; font-family: var(--sans); font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 600; }

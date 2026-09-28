@@ -12,7 +12,7 @@
 
 ## Before launch — confirm / replace
 - [x] **Contact:** public contact is `info@madfarm-advisors.com` + Google Calendar booking link; phone is intentionally NOT public
-- [ ] **Founding year:** site says 2021 (logo/schema), Spencer's bio says founded late 2020 — reconcile
+- [x] **Founding year:** late 2020 (schema set to 2020)
 - [x] **Tombstones:** 6 closed deals with logos (homepage scroll + hero ticker), per MF Logos list
 - [x] **Headshots:** Spencer, Will, Tim updated
 - [ ] **About page images** (when provided)
