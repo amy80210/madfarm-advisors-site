@@ -965,3 +965,46 @@ strong { color: var(--ink); font-weight: 600; }
 .need-card__icon { display: grid; place-items: center; width: 46px; height: 46px; border-radius: var(--radius);
   background: var(--white); border: 1px solid var(--sand); }
 .need-card__icon svg { width: 26px; height: 26px; }
+
+/* ============================================================
+   Process: "journey" — the arc with each phase's detail beneath it,
+   and pins marking where each decision gate falls
+   ============================================================ */
+.journey { list-style: none; display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.75rem; margin-top: .5rem; }
+.jstep { position: relative; }
+.jstep::after { content: ""; position: absolute; top: 32px; left: 80px; right: calc(-1.75rem + 8px); height: 1px; background: rgba(255,255,255,.2); }
+.jstep:last-child::after { display: none; }
+.jstep .arc__dot { width: 64px; height: 64px; margin: 0 0 1.25rem; background: var(--steel-soft); box-shadow: inset 0 0 0 1px rgba(255,255,255,.26); color: var(--copper-on-dark); }
+.jstep .arc__dot svg { width: 30px; height: 30px; }
+.jstep--pre .arc__dot { background: #5A6672; box-shadow: none; color: var(--white); }
+.jstep--end .arc__dot { background: var(--copper); box-shadow: none; color: var(--white); }
+.jstep__when { display: block; font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 600; color: var(--copper-on-dark); }
+.jstep h3 { color: var(--white); font-size: 1.3rem; margin: .35rem 0 .6rem; }
+.jstep p { font-size: .9rem; line-height: 1.6; color: var(--mute-on-dark); }
+.gate-pin { display: inline-flex; align-items: center; gap: .5rem; margin-top: 1rem; padding: .35rem .75rem;
+  border: 1px solid rgba(232,133,63,.45); border-radius: 999px; font-size: .72rem; font-weight: 600; letter-spacing: .04em;
+  color: var(--paper-on-dark); transition: background .25s var(--ease), border-color .25s var(--ease); }
+.gate-pin::before { content: ""; width: 7px; height: 7px; background: var(--copper-on-dark); transform: rotate(45deg); flex: none; }
+.gate-pin:hover { background: rgba(232,133,63,.14); border-color: var(--copper-on-dark); }
+
+/* gates: "Gate 1" tag with the same diamond instead of a big number */
+.gate__tag { display: inline-flex; align-items: center; gap: .55rem; font-size: .74rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 700; color: var(--copper); }
+.gate__tag::before { content: ""; width: 8px; height: 8px; background: var(--copper); transform: rotate(45deg); }
+.gate { scroll-margin-top: 110px; transition: border-color .25s var(--ease), box-shadow .25s var(--ease); }
+.gate:target { border-color: var(--copper); box-shadow: 0 0 0 3px rgba(168,69,26,.15); }
+#gates .section-head p b { color: var(--steel); font-weight: 600; }
+
+@media (max-width: 980px) {
+  .journey { grid-template-columns: 1fr; gap: 0; }
+  .jstep { display: grid; grid-template-columns: 64px 1fr; gap: 1.25rem; padding-bottom: 2rem; }
+  .jstep::after { top: 72px; bottom: 8px; left: 32px; right: auto; width: 1px; height: auto; }
+  .jstep:last-child { padding-bottom: 0; }
+  .jstep .arc__dot { margin: 0; }
+  .jstep__body { padding-top: .5rem; }
+}
+@media (min-width: 981px) {
+  .jstep { display: flex; flex-direction: column; }
+  .jstep__body { flex: 1; display: flex; flex-direction: column; align-items: flex-start; }
+  .jstep .gate-pin { margin-top: auto; }
+  .jstep p { margin-bottom: 1.1rem; }
+}
