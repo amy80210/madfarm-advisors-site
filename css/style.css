@@ -307,7 +307,7 @@ strong { color: var(--ink); font-weight: 600; }
 /* ---------- Founder moment (human presence, early) ---------- */
 .founder { background: var(--chalk); }
 .founder__inner {
-  display: grid; grid-template-columns: minmax(200px, 250px) 1fr;
+  display: grid; grid-template-columns: minmax(280px, 340px) 1fr;
   align-items: stretch; max-width: 1080px;
   background: var(--chalk); border: 1px solid var(--sand); border-radius: var(--radius);
   overflow: hidden;
@@ -597,7 +597,11 @@ strong { color: var(--ink); font-weight: 600; }
   .cs-snapshot { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 900px) {
-  .founder__inner { grid-template-columns: 200px 1fr; }
+  .founder__inner { grid-template-columns: 40% 1fr; }
+  .founder__quote { font-size: 1.05rem; }
+  /* inset portrait at a fixed 4:5 so a tall quote can't stretch it skinny */
+  .founder__photo { min-height: 0; aspect-ratio: 4 / 5; align-self: center; margin: 1.5rem 0 1.5rem 1.5rem; border-radius: var(--radius); overflow: hidden; }
+  .founder__photo::after { display: none; }
   .feature-split { grid-template-columns: 1fr; }
   .team-card { grid-template-columns: 1fr; }
   .team-card__photo { max-width: 300px; }
@@ -842,6 +846,15 @@ strong { color: var(--ink); font-weight: 600; }
 /* Founder: keep photo as a narrow sidebar; only stack on small phones */
 @media (max-width: 560px) {
   .founder__inner { grid-template-columns: 1fr; }
-  .founder__photo { min-height: 0; aspect-ratio: 16 / 10; max-height: 240px; }
+  .founder__photo { aspect-ratio: 16 / 10; max-height: 240px; margin: 0; border-radius: 0; }
+  .founder__photo::after { display: block; }
   .founder__photo::after { top: auto; left: 0; right: 0; bottom: 0; width: auto; height: 3px; }
 }
+
+/* Homepage hero: slow background drift (zoom + pan), quiet and continuous */
+.hero__bg--drift { transform-origin: 60% 40%; animation: hero-drift 38s ease-in-out infinite alternate; will-change: transform; }
+@keyframes hero-drift {
+  from { transform: scale(1.02) translate3d(0, 0, 0); }
+  to   { transform: scale(1.14) translate3d(-2.5%, -1.5%, 0); }
+}
+@media (prefers-reduced-motion: reduce) { .hero__bg--drift { animation: none; } }
