@@ -1078,3 +1078,4 @@ strong { color: var(--ink); font-weight: 600; }
   .before-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 520px) { .before-grid { grid-template-columns: 1fr; } }
+.advisor .adv-li .li-ico { width: 1.35rem; height: 1.35rem; }
