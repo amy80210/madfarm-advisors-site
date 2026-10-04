@@ -1008,3 +1008,73 @@ strong { color: var(--ink); font-weight: 600; }
   .jstep .gate-pin { margin-top: auto; }
   .jstep p { margin-bottom: 1.1rem; }
 }
+
+/* ============================================================
+   2026-10 edits: navy tombstone band, process guide teaser,
+   about stats + LinkedIn icon, simplified contact page
+   ============================================================ */
+/* Tombstones: navy top band so the cards read apart from the copper eyebrow */
+.deal { border-top-color: var(--steel-2); }
+
+/* Process: owner's guide teaser */
+.guide { display: grid; grid-template-columns: 1.25fr .75fr; gap: clamp(2rem, 6vw, 5rem); align-items: center; }
+.guide__body h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); max-width: 20ch; }
+.guide__body p { max-width: 56ch; }
+.guide__gates { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.75rem; }
+.guide__gates li { display: flex; flex-direction: column; gap: .35rem; padding: .9rem 1.1rem; min-width: 150px;
+  background: var(--chalk-2); border: 1px solid var(--sand); border-radius: var(--radius);
+  font-family: var(--serif); font-weight: 700; color: var(--steel); font-size: 1rem; }
+.guide__cover { position: relative; display: block; justify-self: center; width: min(100%, 340px);
+  transform: rotate(2deg); transition: transform .35s var(--ease); }
+.guide__cover img { display: block; width: 100%; height: auto; border-radius: 3px;
+  box-shadow: 0 30px 50px -24px rgba(14,20,32,.6), 0 2px 6px rgba(14,20,32,.18); }
+.guide__cover:hover { transform: rotate(0) translateY(-4px); }
+.guide__meta { position: absolute; left: -14px; bottom: 22px; background: var(--copper); color: var(--white);
+  font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 600; padding: .45rem .8rem; border-radius: 2px; }
+.jstep .gate-pin { cursor: default; }
+.jstep .gate-pin:hover { background: transparent; border-color: rgba(232,133,63,.45); }
+@media (max-width: 860px) {
+  .guide { grid-template-columns: 1fr; }
+  .guide__cover { width: min(70%, 280px); }
+}
+
+/* About: headline stats in the "At a glance" card */
+.glance__stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-top: 1.25rem; padding-bottom: 1.25rem; }
+.glance__stats > div { display: flex; flex-direction: column; gap: .45rem; }
+.glance__n { font-family: var(--serif); font-weight: 700; font-size: clamp(2rem, 3.4vw, 2.6rem); line-height: 1; color: var(--copper-on-dark); letter-spacing: -.01em; }
+.glance__k { font-size: .8rem; line-height: 1.4; color: var(--mute-on-dark); }
+
+/* LinkedIn icon links (leaders + advisors) */
+.li-ico { width: 1.05em; height: 1.05em; flex: none; display: block; }
+.leader__li, .advisor .adv-li { gap: .5rem; color: var(--copper); }
+.leader__li { margin-top: 1.5rem; }
+
+/* Contact: two clean panels, then "Before you call" */
+.page-hero--compact { padding-block: clamp(3rem, 6vw, 4.5rem); }
+.contact-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(1.25rem, 3vw, 2rem); align-items: stretch; }
+.contact-call { background: var(--steel); color: var(--paper-on-dark); border-radius: var(--radius); border-top: 3px solid var(--copper);
+  padding: clamp(1.75rem, 4vw, 2.75rem); display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end; gap: 1.25rem;
+  position: relative; overflow: hidden; min-height: 280px; }
+.contact-call > * { position: relative; z-index: 2; }
+.contact-call > .hero__bg { position: absolute; z-index: 0; opacity: .26; }
+.contact-call > .hero__grid { position: absolute; z-index: 1; }
+.contact-call .ico { margin-bottom: auto; }
+.contact-call h2, .contact-note h2 { font-size: clamp(1.5rem, 2.4vw, 1.9rem); }
+.contact-call h2 { color: var(--white); }
+.contact-note { background: var(--white); border: 1px solid var(--sand); border-radius: var(--radius); padding: clamp(1.75rem, 4vw, 2.75rem); }
+.before-call .eyebrow { margin-bottom: 1.5rem; }
+.before-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+.before-card { position: relative; display: flex; flex-direction: column; gap: .5rem; padding: 1.5rem 1.4rem 1.6rem;
+  background: var(--chalk); border: 1px solid var(--sand); border-radius: var(--radius);
+  transition: border-color .25s var(--ease), transform .25s var(--ease); }
+.before-card:hover { border-color: var(--copper); transform: translateY(-2px); }
+.before-card .ico { margin-bottom: .6rem; }
+.before-card__k { font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 600; color: var(--copper); }
+.before-card__t { font-family: var(--serif); font-weight: 700; color: var(--steel); font-size: 1.02rem; line-height: 1.35; padding-right: 1.2rem; }
+.before-card .arw { position: absolute; right: 1.25rem; bottom: 1.5rem; color: var(--copper); transition: transform .25s var(--ease); }
+.before-card:hover .arw { transform: translateX(3px); }
+@media (max-width: 900px) {
+  .contact-layout { grid-template-columns: 1fr; }
+  .before-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px) { .before-grid { grid-template-columns: 1fr; } }
