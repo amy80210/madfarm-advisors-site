@@ -5,6 +5,16 @@
    Modern boutique serious. Editorial, not corporate.
    ============================================================ */
 
+/* ---------- Fonts (self-hosted, latin subset) ---------- */
+@font-face { font-family: 'Inter'; font-style: normal; font-weight: 100 900; font-display: swap;
+  src: url(../fonts/inter-var-latin.woff2) format('woff2'); }
+@font-face { font-family: 'Libre Baskerville'; font-style: normal; font-weight: 400; font-display: swap;
+  src: url(../fonts/libre-baskerville-400-normal.woff2) format('woff2'); }
+@font-face { font-family: 'Libre Baskerville'; font-style: italic; font-weight: 400; font-display: swap;
+  src: url(../fonts/libre-baskerville-400-italic.woff2) format('woff2'); }
+@font-face { font-family: 'Libre Baskerville'; font-style: normal; font-weight: 700; font-display: swap;
+  src: url(../fonts/libre-baskerville-700-normal.woff2) format('woff2'); }
+
 /* ---------- Tokens ---------- */
 :root {
   /* Palette */
@@ -19,7 +29,7 @@
   --sand-2:       #E8E2D5;
   --ink:          #1C2024;   /* body text on light */
   --ink-soft:     #4A4F55;   /* secondary text on light */
-  --ink-mute:     #75787C;   /* muted / captions */
+  --ink-mute:     #63666A;   /* muted / captions (4.5:1+ on chalk-2) */
   --paper-on-dark:#F2EFE8;   /* text on dark */
   --mute-on-dark: #A8ADB2;   /* secondary text on dark */
   --white:        #FFFFFF;
@@ -1079,3 +1089,73 @@ strong { color: var(--ink); font-weight: 600; }
 }
 @media (max-width: 520px) { .before-grid { grid-template-columns: 1fr; } }
 .advisor .adv-li .li-ico { width: 1.35rem; height: 1.35rem; }
+
+/* ============================================================
+   2026-10 launch cleanup: accessibility (WCAG 2.1 AA)
+   ============================================================ */
+/* Skip link: hidden until focused with the keyboard */
+.skip-link { position: absolute; left: 1rem; top: -100px; z-index: 200; background: var(--steel); color: var(--white);
+  padding: .75rem 1.1rem; border-radius: var(--radius); font-weight: 600; font-size: .9rem; }
+.skip-link:focus { top: 1rem; }
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+/* Visible keyboard focus everywhere; brighter copper on dark surfaces (3:1+ against both) */
+:focus-visible { outline: 2px solid var(--copper); outline-offset: 3px; }
+.hero :focus-visible, .page-hero :focus-visible, .cta-band :focus-visible, .bg-steel :focus-visible,
+.site-footer :focus-visible, .founder__inner :focus-visible, .contact-call :focus-visible, .glance :focus-visible { outline-color: var(--copper-on-dark); }
+.field input:focus-visible, .field select:focus-visible, .field textarea:focus-visible { outline: none; }
+
+/* Hover states that dropped below 4.5:1 */
+.link-underline:hover { color: var(--copper-on-dark); border-color: var(--copper-on-dark); }   /* was 3.86:1 */
+.team-chip:hover { background: rgba(255,255,255,.08); }                                         /* arrow was 4.21:1 */
+.hero .btn-primary:hover, .cta-band .btn-primary:hover { background: var(--copper-on-dark); color: var(--steel); }
+/* Copper button on dark: hovering to steel made it vanish into the section */
+.hero .btn-copper:hover, .page-hero .btn-copper:hover, .cta-band .btn-copper:hover,
+.bg-steel .btn-copper:hover, .contact-call .btn-copper:hover { background: var(--white); color: var(--steel); }
+
+/* Resting contrast */
+.pillar .pillar__num { opacity: 1; }                      /* was 2.2:1 at .5 */
+.half--fixed .eyebrow { color: var(--copper-on-dark); }   /* copper on steel was 2.75:1 */
+.half--fixed .eyebrow::before { background: var(--copper-on-dark); }
+
+/* Headings promoted for a correct outline keep their old look */
+.footer-col h2 { color: var(--white); font-family: var(--sans); font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 1rem; font-weight: 600; line-height: 1.6; }
+.cs-item h3 { font-size: 1.12rem; margin-bottom: .45rem; }
+.bg-steel .cs-item h3 { color: var(--white); }
+.exec-card h3 { font-size: 1.2rem; margin-bottom: .55rem; }
+
+/* Mobile menu: dynamic viewport height (iOS toolbar) */
+@media (max-width: 720px) {
+  .nav-links { max-height: calc(100dvh - 88px); }
+  .nav-links:not(.open) { visibility: hidden; transition: transform .35s var(--ease), visibility 0s .35s; }
+}
+
+/* Resources: guides not yet published are not links */
+.res-card--soon:hover { border-color: var(--sand); transform: none; }
+
+/* Privacy page */
+.legal { max-width: var(--maxw-narrow); }
+.legal h2 { font-size: 1.35rem; margin: 2.25rem 0 .75rem; }
+.legal p + p { margin-top: 1rem; }
+.legal a { color: var(--copper); text-decoration: underline; text-underline-offset: 3px; }
+.legal a:hover { color: var(--steel); }
+.footer-bottom a { color: var(--mute-on-dark); }
+.footer-bottom a:hover { color: var(--white); }
+/* Collapsed FAQ answers are out of the tab order */
+.faq-item:not(.open) .faq-answer { visibility: hidden; transition: max-height .35s var(--ease), visibility 0s .35s; }
+/* Contact form: 16px inputs stop iOS Safari zooming on focus; spam honeypot stays off-screen */
+.field input, .field select, .field textarea { font-size: 1rem; }
+.field__opt { color: var(--ink-mute); font-weight: 400; }
+.field-hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+/* Phone widths: nothing may push the page sideways */
+.contact-layout { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); }
+.contact-layout > * { min-width: 0; }
+@media (max-width: 900px) { .contact-layout { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 720px) { .exec-grid { grid-template-columns: 1fr; gap: 1.75rem; } }
+@media (max-width: 440px) { .stat-tiles { grid-template-columns: 1fr; } }
+.form-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.field { min-width: 0; }
+.field input, .field select, .field textarea { width: 100%; min-width: 0; }
+@media (max-width: 720px) { .form-grid { grid-template-columns: minmax(0, 1fr); } }

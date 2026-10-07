@@ -40,11 +40,19 @@ export default async function handler(req, res) {
   const subjectKey = String(body.subject ?? 'general').trim();
   const message = String(body.message ?? '').trim();
 
+  // Honeypot: real visitors never see this field. Pretend success so bots move on.
+  if (String(body.website ?? '').trim()) {
+    return res.status(200).json({ success: true });
+  }
+
   if (!name || !email || !message) {
     return res.status(400).json({ error: 'Name, email, and message are required.' });
   }
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
     return res.status(400).json({ error: 'Please enter a valid email address.' });
+  }
+  if (name.length > 200 || email.length > 254 || phone.length > 50 || company.length > 200 || message.length > 5000) {
+    return res.status(400).json({ error: 'One of the fields is too long.' });
   }
 
   const route = SUBJECT_ROUTES[subjectKey] ?? SUBJECT_ROUTES.general;

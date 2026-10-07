@@ -2,7 +2,7 @@
 
 ## Done (in the build)
 - [x] Unique `<title>` + meta description on every page
-- [x] Open Graph + Twitter card tags + `images/og-image.jpg` (1200×630)
+- [x] Open Graph + Twitter card tags + per-page share images in `images/og/` (regenerate with `og/render.sh`)
 - [x] Canonical URLs on every page
 - [x] Favicon set (32, 192, apple-touch)
 - [x] `robots.txt` + `sitemap.xml`

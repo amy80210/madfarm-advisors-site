@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!-- Social share card template (1200x630). Rendered per page by og/render.sh; not deployed. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @font-face { font-family: 'Inter'; font-weight: 100 900; src: url(../fonts/inter-var-latin.woff2) format('woff2'); }
+  @font-face { font-family: 'Libre Baskerville'; font-weight: 700; src: url(../fonts/libre-baskerville-700-normal.woff2) format('woff2'); }
+  @font-face { font-family: 'Libre Baskerville'; font-style: italic; font-weight: 400; src: url(../fonts/libre-baskerville-400-italic.woff2) format('woff2'); }
+  * { margin: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body { position: relative; background: #1C2024; font-family: 'Inter', sans-serif; color: #F2EFE8; }
+  .photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .55; }
+  .wash { position: absolute; inset: 0;
+    background: linear-gradient(90deg, rgba(20,24,28,.95) 0%, rgba(20,24,28,.82) 50%, rgba(20,24,28,.4) 100%),
+                radial-gradient(120% 90% at 92% 0%, rgba(168,80,31,.3), transparent 55%); }
+  .grid { position: absolute; inset: 0; opacity: .35;
+    background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+    background-size: 64px 64px; }
+  .bar { position: absolute; left: 0; right: 0; bottom: 0; height: 8px; background: #A8451A; }
+  .inner { position: absolute; inset: 80px 96px 88px; display: flex; flex-direction: column; }
+  .logo { height: 56px; width: auto; align-self: flex-start; }
+  .eyebrow { margin-top: auto; display: flex; align-items: center; gap: 14px; font-size: 20px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: #E8853F; }
+  .eyebrow::before { content: ""; width: 36px; height: 2px; background: #E8853F; }
+  h1 { margin-top: 22px; font-family: 'Libre Baskerville', serif; font-weight: 700; font-size: 58px; line-height: 1.12; letter-spacing: -.015em; color: #fff; max-width: 900px; }
+  h1 em { font-style: italic; font-weight: 400; color: #E8853F; }
+</style>
+</head>
+<body>
+  <img class="photo" id="photo" alt="">
+  <div class="wash"></div>
+  <div class="grid"></div>
+  <div class="inner">
+    <img class="logo" src="../images/logos/madfarm-stack-white.png" alt="">
+    <div class="eyebrow" id="eyebrow"></div>
+    <h1 id="headline"></h1>
+  </div>
+  <div class="bar"></div>
+<script>
+  const q = new URLSearchParams(location.search);
+  document.getElementById('eyebrow').textContent = q.get('eyebrow') || '';
+  // *word* renders as the copper italic accent used in the site's hero
+  document.getElementById('headline').innerHTML = (q.get('headline') || '')
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/\*(.+?)\*/g, '<em>$1</em>');
+  const photo = document.getElementById('photo');
+  if (q.get('photo')) photo.src = '../' + q.get('photo'); else photo.remove();
+</script>
+</body>
+</html>

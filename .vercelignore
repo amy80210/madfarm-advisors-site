@@ -1,0 +1,6 @@
+# Working files that should not be publicly downloadable from the live site
+/SEO-CHECKLIST.md
+/print/
+/tasks/
+/og/
+/.env.example
