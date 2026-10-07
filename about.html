@@ -3,42 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About — Madfarm Advisors</title>
-  <meta name="description" content="Madfarm Advisors is a senior-led lower middle market investment bank. Every engagement is led by the principal who pitched it — no handoffs, no learning curves on your deal.">
-  <meta property="og:title" content="About — Madfarm Advisors">
-  <meta property="og:description" content="A senior-led sell-side practice for mission-critical businesses. Meet the Firm.">
-  <meta property="og:type" content="website">
+  <title>About Madfarm Advisors | Senior-Led Sell-Side M&amp;A</title>
+  <meta name="description" content="Madfarm Advisors is a senior-led lower middle market investment bank. The principal who pitches your engagement runs it from first meeting to close.">
   <link rel="canonical" href="https://madfarm-advisors.com/about.html">
+  <meta name="theme-color" content="#1C2024">
+  <meta property="og:site_name" content="Madfarm Advisors">
+  <meta property="og:type" content="website">
   <meta property="og:url" content="https://madfarm-advisors.com/about.html">
-  <meta property="og:image" content="https://madfarm-advisors.com/images/og-image.jpg">
+  <meta property="og:title" content="About Madfarm Advisors | Senior-Led Sell-Side M&amp;A">
+  <meta property="og:description" content="Madfarm Advisors is a senior-led lower middle market investment bank. The principal who pitches your engagement runs it from first meeting to close.">
+  <meta property="og:image" content="https://madfarm-advisors.com/images/og/about.jpg">
+  <meta property="og:image:secure_url" content="https://madfarm-advisors.com/images/og/about.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Madfarm Advisors: About Madfarm Advisors">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About Madfarm Advisors | Senior-Led Sell-Side M&amp;A">
+  <meta name="twitter:description" content="Madfarm Advisors is a senior-led lower middle market investment bank. The principal who pitches your engagement runs it from first meeting to close.">
+  <meta name="twitter:image" content="https://madfarm-advisors.com/images/og/about.jpg">
+  <meta name="twitter:image:alt" content="Madfarm Advisors: About Madfarm Advisors">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="images/favicon/favicon-192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=20261004b">
+  <link rel="preload" href="fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/libre-baskerville-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css?v=20261007a">
+
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://madfarm-advisors.com/"}, {"@type": "ListItem", "position": 2, "name": "About", "item": "https://madfarm-advisors.com/about.html"}]}
+  </script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header">
     <div class="wrap nav">
       <a class="brand" href="index.html" aria-label="Madfarm Advisors home">
         <img src="images/logos/madfarm-stack-dark.png" alt="Madfarm Advisors">
       </a>
-      <nav class="nav-links" aria-label="Primary">
+      <nav class="nav-links" id="site-nav" aria-label="Primary">
         <a href="process.html">Process</a>
         <a href="case-studies.html">Case Studies</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
         <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0SPZqSb-E2HhHyk3IjZ08Nt1dkyxakiIWX0lumyj8OQpdlR3kehUxgAIQfdVb7jfjI8W2z7oEw" class="btn btn-copper nav-cta" target="_blank" rel="noopener">Schedule a Call <span class="arw">&rarr;</span></a>
       </nav>
-      <button class="mobile-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <button class="mobile-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <!-- PAGE HERO -->
     <section class="page-hero">
       <img class="hero__bg" src="images/treated/software.jpg" alt="" aria-hidden="true">
@@ -104,8 +119,7 @@
           <!-- Spencer -->
           <div class="leader reveal">
             <div class="leader__photo">
-              <img src="images/team/spencer-williams.jpg?v=5" alt="Spencer Williams, Founder and Managing Partner"
-                   onerror="this.style.display='none';this.parentNode.classList.add('ph');this.parentNode.style.aspectRatio='4/5';this.parentNode.insertAdjacentHTML('beforeend','&lt;span&gt;Spencer Williams — photo to add&lt;/span&gt;');">
+              <img loading="lazy" decoding="async" src="images/team/spencer-williams.jpg?v=5" alt="Spencer Williams, Founder and Managing Partner">
             </div>
             <div>
               <span class="leader__role">Founder &amp; Managing Partner</span>
@@ -120,8 +134,7 @@
           <!-- Will -->
           <div class="leader reveal">
             <div class="leader__photo">
-              <img src="images/team/will-davis.jpg?v=5" alt="Will Davis, Managing Director"
-                   onerror="this.style.display='none';this.parentNode.classList.add('ph');this.parentNode.style.aspectRatio='4/5';this.parentNode.insertAdjacentHTML('beforeend','&lt;span&gt;Will Davis — photo to add&lt;/span&gt;');">
+              <img loading="lazy" decoding="async" src="images/team/will-davis.jpg?v=5" alt="Will Davis, Managing Director">
             </div>
             <div>
               <span class="leader__role">Managing Director</span>
@@ -143,17 +156,17 @@
         <div class="exec-grid reveal">
           <div class="exec-card">
             <span class="exec-card__icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="14" cy="14" r="8.5"/><path d="M20.2 20.2 26.5 26.5"/><path d="M11 17v-3.5M14 17v-6.5M17 17v-4.5"/></svg></span>
-            <h4>Analysts</h4>
+            <h3>Analysts</h3>
             <p>Financial modeling, market research, and the analytical work that underwrites a defensible view of value.</p>
           </div>
           <div class="exec-card">
             <span class="exec-card__icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5A2.5 2.5 0 0 1 6.5 7h5.2l2.6 3h11.2A2.5 2.5 0 0 1 28 12.5v10A2.5 2.5 0 0 1 25.5 25h-19A2.5 2.5 0 0 1 4 22.5z"/><path d="M4 15.5h24"/></svg></span>
-            <h4>Deal Support</h4>
+            <h3>Deal Support</h3>
             <p>Marketing materials, data room management, and buyer coordination that keep a process organized and moving.</p>
           </div>
           <div class="exec-card">
             <span class="exec-card__icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4l10 3.8v7.6c0 6.1-4.3 10-10 12.6-5.7-2.6-10-6.5-10-12.6V7.8z"/><path d="m11.6 16.2 3 3 6-6"/></svg></span>
-            <h4>Diligence &amp; Documentation</h4>
+            <h3>Diligence &amp; Documentation</h3>
             <p>Keeping diligence organized and momentum intact from LOI through closing and final documents.</p>
           </div>
         </div>
@@ -166,29 +179,29 @@
         </div>
         <div class="advisors reveal">
           <a class="advisor" href="https://www.linkedin.com/in/bobogdon" target="_blank" rel="noopener">
-            <div class="advisor__photo"><img src="images/team/advisors/bob-ogdon.jpg" alt="Bob Ogdon"></div>
+            <div class="advisor__photo"><img loading="lazy" decoding="async" src="images/team/advisors/bob-ogdon.jpg" alt=""></div>
             <b>Bob Ogdon</b>
-            <span class="adv-li" aria-label="LinkedIn"><svg class="li-ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg></span>
+            <span class="adv-li" aria-hidden="true"><svg class="li-ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg></span>
           </a>
           <a class="advisor" href="https://www.linkedin.com/in/doug-robinson-369ab6/" target="_blank" rel="noopener">
-            <div class="advisor__photo"><img src="images/team/advisors/doug-robinson.jpg" alt="Doug Robinson"></div>
+            <div class="advisor__photo"><img loading="lazy" decoding="async" src="images/team/advisors/doug-robinson.jpg" alt=""></div>
             <b>Doug Robinson</b>
-            <span class="adv-li" aria-label="LinkedIn"><svg class="li-ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg></span>
+            <span class="adv-li" aria-hidden="true"><svg class="li-ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg></span>
           </a>
           <a class="advisor" href="https://www.linkedin.com/in/danogdon/" target="_blank" rel="noopener">
-            <div class="advisor__photo"><img src="images/team/advisors/dan-ogdon.jpg" alt="Dan Ogdon"></div>
+            <div class="advisor__photo"><img loading="lazy" decoding="async" src="images/team/advisors/dan-ogdon.jpg" alt=""></div>
             <b>Dan Ogdon</b>
-            <span class="adv-li" aria-label="LinkedIn"><svg class="li-ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg></span>
+            <span class="adv-li" aria-hidden="true"><svg class="li-ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg></span>
           </a>
           <a class="advisor" href="https://www.linkedin.com/in/mike-ogdon-0986436/" target="_blank" rel="noopener">
-            <div class="advisor__photo"><img src="images/team/advisors/mike-ogdon.jpg" alt="Mike Ogdon"></div>
+            <div class="advisor__photo"><img loading="lazy" decoding="async" src="images/team/advisors/mike-ogdon.jpg" alt=""></div>
             <b>Mike Ogdon</b>
-            <span class="adv-li" aria-label="LinkedIn"><svg class="li-ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg></span>
+            <span class="adv-li" aria-hidden="true"><svg class="li-ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg></span>
           </a>
           <a class="advisor" href="https://www.linkedin.com/in/tim-donohue-b307888/" target="_blank" rel="noopener">
-            <div class="advisor__photo"><img src="images/team/advisors/tim-donohue.jpg?v=5" alt="Tim Donohue"></div>
+            <div class="advisor__photo"><img loading="lazy" decoding="async" src="images/team/advisors/tim-donohue.jpg?v=5" alt=""></div>
             <b>Tim Donohue</b>
-            <span class="adv-li" aria-label="LinkedIn"><svg class="li-ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg></span>
+            <span class="adv-li" aria-hidden="true"><svg class="li-ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg></span>
           </a>
         </div>
       </div>
@@ -196,7 +209,7 @@
 
     <!-- CTA -->
     <section class="section cta-band">
-      <img class="hero__bg" src="images/treated/industrials.jpg" alt="" aria-hidden="true" style="opacity:.28;">
+      <img loading="lazy" decoding="async" class="hero__bg" src="images/treated/industrials.jpg" alt="" aria-hidden="true" style="opacity:.28;">
       <div class="hero__grid"></div>
       <div class="wrap">
         <span class="eyebrow center" style="justify-content:center;">Start a Conversation</span>
@@ -214,24 +227,24 @@
     <div class="wrap">
       <div class="footer-top">
         <div class="footer-brand">
-          <img src="images/logos/madfarm-stack-white.png" alt="Madfarm Advisors">
+          <img loading="lazy" decoding="async" src="images/logos/madfarm-stack-white.png" alt="Madfarm Advisors">
           <p>A lower middle market investment bank selling mission-critical businesses. Senior representation on every deal.</p>
         </div>
         <div class="footer-col">
-          <h5>Firm</h5>
+          <h2>Firm</h2>
           <a href="about.html">About</a>
           <a href="process.html">Process</a>
           <a href="case-studies.html">Case Studies</a>
           <a href="resources.html">Resources</a>
         </div>
         <div class="footer-col">
-          <h5>Contact</h5>
+          <h2>Contact</h2>
           <a href="mailto:info@madfarm-advisors.com">info@madfarm-advisors.com</a>
           <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0SPZqSb-E2HhHyk3IjZ08Nt1dkyxakiIWX0lumyj8OQpdlR3kehUxgAIQfdVb7jfjI8W2z7oEw" target="_blank" rel="noopener">Schedule a Call</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <span>&copy; 2026 Madfarm Advisors. All rights reserved.</span>
+        <span>&copy; 2026 Madfarm Advisors. All rights reserved. &middot; <a href="privacy-policy.html">Privacy Policy</a></span>
         <span>Member, Alliance of Mergers &amp; Acquisitions Advisors</span>
       </div>
     </div>

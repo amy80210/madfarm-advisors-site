@@ -15,24 +15,37 @@ document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.querySelector('.mobile-toggle');
   const navLinks = document.querySelector('.nav-links');
   if (toggle && navLinks) {
-    toggle.addEventListener('click', () => {
-      const open = navLinks.classList.toggle('open');
+    const main = document.querySelector('main');
+    const footer = document.querySelector('.site-footer');
+    const setMenu = (open, { returnFocus = false } = {}) => {
+      navLinks.classList.toggle('open', open);
       toggle.classList.toggle('active', open);
       toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
       document.body.style.overflow = open ? 'hidden' : '';
+      // Page behind the open menu is out of reach for keyboard and screen readers
+      [main, footer].forEach(el => el && (el.inert = open));
+      if (open) navLinks.querySelector('a')?.focus();
+      else if (returnFocus) toggle.focus();
+    };
+    toggle.addEventListener('click', () => setMenu(!navLinks.classList.contains('open')));
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => setMenu(false)));
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navLinks.classList.contains('open')) setMenu(false, { returnFocus: true });
     });
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('open');
-        toggle.classList.remove('active');
-        toggle.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      });
+    // Close if the window grows past the mobile breakpoint
+    window.matchMedia('(min-width: 721px)').addEventListener('change', (e) => {
+      if (e.matches && navLinks.classList.contains('open')) setMenu(false);
     });
   }
 
   /* --- FAQ accordion --- */
-  document.querySelectorAll('.faq-question').forEach(btn => {
+  document.querySelectorAll('.faq-question').forEach((btn, i) => {
+    const panel = btn.closest('.faq-item').querySelector('.faq-answer');
+    panel.id ||= `faq-answer-${i + 1}`;
+    btn.type = 'button';
+    btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-controls', panel.id);
     btn.addEventListener('click', () => {
       const item = btn.closest('.faq-item');
       const answer = item.querySelector('.faq-answer');
@@ -42,9 +55,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (open !== item) {
           open.classList.remove('open');
           open.querySelector('.faq-answer').style.maxHeight = '0';
+          open.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
         }
       });
       item.classList.toggle('open', !isOpen);
+      btn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
       answer.style.maxHeight = isOpen ? '0' : answer.scrollHeight + 'px';
     });
   });
