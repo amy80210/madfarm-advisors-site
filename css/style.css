@@ -1159,3 +1159,10 @@ strong { color: var(--ink); font-weight: 600; }
 .field { min-width: 0; }
 .field input, .field select, .field textarea { width: 100%; min-width: 0; }
 @media (max-width: 720px) { .form-grid { grid-template-columns: minmax(0, 1fr); } }
+
+/* Founder headshot: the photo has little headroom, so anchor it to the top and
+   let any crop come off the jacket; phones get a square frame instead of a strip */
+.founder__photo img { object-position: 50% 0; }
+@media (max-width: 560px) {
+  .founder__photo { aspect-ratio: 1 / 1; max-height: 340px; }
+}
