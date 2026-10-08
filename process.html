@@ -28,7 +28,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
   <link rel="preload" href="fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/libre-baskerville-700-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=20261007b">
+  <link rel="stylesheet" href="css/style.css?v=20261008a">
 
   <script type="application/ld+json">
   {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://madfarm-advisors.com/"}, {"@type": "ListItem", "position": 2, "name": "The Process", "item": "https://madfarm-advisors.com/process.html"}]}
@@ -40,7 +40,7 @@
   <header class="site-header">
     <div class="wrap nav">
       <a class="brand" href="index.html" aria-label="Madfarm Advisors home">
-        <img src="images/logos/madfarm-stack-dark.png" alt="Madfarm Advisors">
+        <img src="images/logos/madfarm-stack-dark.png" alt="Madfarm Advisors" width="500" height="149">
       </a>
       <nav class="nav-links" id="site-nav" aria-label="Primary">
         <a href="process.html" aria-current="page">Process</a>
@@ -56,7 +56,11 @@
   <main id="main">
     <!-- HERO -->
     <section class="page-hero">
-      <img class="hero__bg" src="images/treated/industrials.jpg" alt="" aria-hidden="true">
+      <picture>
+        <source type="image/avif" srcset="images/treated/industrials-360.avif 360w, images/treated/industrials-640.avif 640w, images/treated/industrials-900.avif 900w" sizes="(max-width: 600px) 185vw, 100vw">
+        <source type="image/webp" srcset="images/treated/industrials-360.webp 360w, images/treated/industrials-640.webp 640w, images/treated/industrials-900.webp 900w" sizes="(max-width: 600px) 185vw, 100vw">
+        <img fetchpriority="high" class="hero__bg" src="images/treated/industrials.jpg" alt="" aria-hidden="true" width="900" height="675">
+      </picture>
       <div class="hero__grid"></div>
       <div class="wrap">
         <span class="eyebrow">The Process</span>
@@ -169,7 +173,11 @@
             <a href="downloads/Madfarm-The-Process.pdf" class="btn btn-copper mt-3" download>Download the Process <span class="arw">&darr;</span></a>
           </div>
           <a class="guide__cover" href="downloads/Madfarm-The-Process.pdf" download aria-label="Download The Madfarm Process (PDF)">
-            <img src="images/process-guide-cover.jpg" alt="Cover of The Madfarm Process, an owner&rsquo;s guide" loading="lazy">
+            <picture>
+              <source type="image/avif" srcset="images/process-guide-cover-360.avif 360w, images/process-guide-cover-720.avif 720w" sizes="(max-width: 600px) 70vw, (max-width: 1100px) 40vw, 356px">
+              <source type="image/webp" srcset="images/process-guide-cover-360.webp 360w, images/process-guide-cover-720.webp 720w" sizes="(max-width: 600px) 70vw, (max-width: 1100px) 40vw, 356px">
+              <img src="images/process-guide-cover.jpg" alt="Cover of The Madfarm Process, an owner&rsquo;s guide" loading="lazy" width="720" height="932">
+            </picture>
             <span class="guide__meta">PDF &middot; Owner&rsquo;s Guide</span>
           </a>
         </div>
@@ -178,7 +186,11 @@
 
     <!-- STATEMENT BAND -->
     <section class="section bg-steel" style="position:relative; overflow:hidden;">
-      <img loading="lazy" decoding="async" class="hero__bg" src="images/treated/hero.jpg" alt="" aria-hidden="true" style="opacity:.22;">
+      <picture>
+        <source type="image/avif" srcset="images/treated/hero-360.avif 360w, images/treated/hero-640.avif 640w, images/treated/hero-900.avif 900w, images/treated/hero-1280.avif 1280w, images/treated/hero-1600.avif 1600w" sizes="(max-width: 600px) 195vw, 100vw">
+        <source type="image/webp" srcset="images/treated/hero-360.webp 360w, images/treated/hero-640.webp 640w, images/treated/hero-900.webp 900w, images/treated/hero-1280.webp 1280w, images/treated/hero-1600.webp 1600w" sizes="(max-width: 600px) 195vw, 100vw">
+        <img loading="lazy" decoding="async" class="hero__bg" src="images/treated/hero.jpg" alt="" aria-hidden="true" style="opacity:.22;" width="1600" height="900">
+      </picture>
       <div class="hero__grid"></div>
       <div class="wrap" style="position:relative; z-index:2;">
         <div class="quote-block reveal">
@@ -200,7 +212,11 @@
             <p class="mt-1">Confidentiality is a design decision, not a disclaimer. Every approach is deliberate: made by us, to a named buyer. Nothing that identifies your business goes out until it has to, and who gets read in, and when, stays your call.</p>
           </div>
           <div class="feature-split__aside">
-            <img loading="lazy" decoding="async" class="hero__bg" src="images/treated/software.jpg" alt="" aria-hidden="true" style="opacity:.6;">
+            <picture>
+              <source type="image/avif" srcset="images/treated/software-360.avif 360w, images/treated/software-640.avif 640w, images/treated/software-900.avif 900w" sizes="(max-width: 600px) 115vw, (max-width: 1100px) 95vw, 599px">
+              <source type="image/webp" srcset="images/treated/software-360.webp 360w, images/treated/software-640.webp 640w, images/treated/software-900.webp 900w" sizes="(max-width: 600px) 115vw, (max-width: 1100px) 95vw, 599px">
+              <img loading="lazy" decoding="async" class="hero__bg" src="images/treated/software.jpg" alt="" aria-hidden="true" style="opacity:.6;" width="900" height="675">
+            </picture>
             <div class="hero__grid"></div>
           </div>
         </div>
@@ -209,7 +225,11 @@
 
     <!-- CTA -->
     <section class="section cta-band">
-      <img loading="lazy" decoding="async" class="hero__bg" src="images/treated/professional.jpg" alt="" aria-hidden="true" style="opacity:.28;">
+      <picture>
+        <source type="image/avif" srcset="images/treated/professional-360.avif 360w, images/treated/professional-640.avif 640w, images/treated/professional-900.avif 900w" sizes="(max-width: 600px) 220vw, 100vw">
+        <source type="image/webp" srcset="images/treated/professional-360.webp 360w, images/treated/professional-640.webp 640w, images/treated/professional-900.webp 900w" sizes="(max-width: 600px) 220vw, 100vw">
+        <img loading="lazy" decoding="async" class="hero__bg" src="images/treated/professional.jpg" alt="" aria-hidden="true" style="opacity:.28;" width="900" height="675">
+      </picture>
       <div class="hero__grid"></div>
       <div class="wrap">
         <span class="eyebrow center" style="justify-content:center;">Start With Evaluation</span>
@@ -227,7 +247,7 @@
     <div class="wrap">
       <div class="footer-top">
         <div class="footer-brand">
-          <img loading="lazy" decoding="async" src="images/logos/madfarm-stack-white.png" alt="Madfarm Advisors">
+          <img loading="lazy" decoding="async" src="images/logos/madfarm-stack-white.png" alt="Madfarm Advisors" width="500" height="149">
           <p>A lower middle market investment bank selling mission-critical businesses. Senior representation on every deal.</p>
         </div>
         <div class="footer-col">

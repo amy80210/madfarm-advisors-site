@@ -28,7 +28,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
   <link rel="preload" href="fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/libre-baskerville-700-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=20261007b">
+  <link rel="stylesheet" href="css/style.css?v=20261008a">
 
   <script type="application/ld+json">
   {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://madfarm-advisors.com/"}, {"@type": "ListItem", "position": 2, "name": "Contact", "item": "https://madfarm-advisors.com/contact.html"}]}
@@ -40,7 +40,7 @@
   <header class="site-header">
     <div class="wrap nav">
       <a class="brand" href="index.html" aria-label="Madfarm Advisors home">
-        <img src="images/logos/madfarm-stack-dark.png" alt="Madfarm Advisors">
+        <img src="images/logos/madfarm-stack-dark.png" alt="Madfarm Advisors" width="500" height="149">
       </a>
       <nav class="nav-links" id="site-nav" aria-label="Primary">
         <a href="process.html">Process</a>
@@ -67,7 +67,11 @@
         <div class="contact-layout">
           <!-- Book a call -->
           <div class="contact-call reveal">
-            <img loading="lazy" decoding="async" class="hero__bg" src="images/treated/professional.jpg" alt="" aria-hidden="true">
+            <picture>
+              <source type="image/avif" srcset="images/treated/professional-360.avif 360w, images/treated/professional-640.avif 640w, images/treated/professional-900.avif 900w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 95vw, 967px">
+              <source type="image/webp" srcset="images/treated/professional-360.webp 360w, images/treated/professional-640.webp 640w, images/treated/professional-900.webp 900w" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 95vw, 967px">
+              <img loading="lazy" decoding="async" class="hero__bg" src="images/treated/professional.jpg" alt="" aria-hidden="true" width="900" height="675">
+            </picture>
             <div class="hero__grid"></div>
             <span class="ico ico--dark"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="7" width="22" height="20" rx="2"/><path d="M5 13h22M11 4.5v5M21 4.5v5"/><path d="m12.5 19.5 2.8 2.8 5.2-5.2"/></svg></span>
             <h2>Book a time with the principal.</h2>
@@ -162,7 +166,7 @@
     <div class="wrap">
       <div class="footer-top">
         <div class="footer-brand">
-          <img loading="lazy" decoding="async" src="images/logos/madfarm-stack-white.png" alt="Madfarm Advisors">
+          <img loading="lazy" decoding="async" src="images/logos/madfarm-stack-white.png" alt="Madfarm Advisors" width="500" height="149">
           <p>A lower middle market investment bank selling mission-critical businesses. Senior representation on every deal.</p>
         </div>
         <div class="footer-col">
