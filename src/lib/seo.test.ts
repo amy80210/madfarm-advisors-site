@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import {
 	breadcrumbChain,
@@ -38,6 +39,39 @@ describe('route registry', () => {
 			'Case Studies',
 			'Resources'
 		]);
+	});
+});
+
+describe('vercel.json redirects', () => {
+	const config = JSON.parse(readFileSync('vercel.json', 'utf8')) as {
+		redirects: Array<{ source: string; destination: string; permanent: boolean }>;
+	};
+
+	it.each(pages)('sends $legacyPath to $path with a 301', (page) => {
+		expect(config.redirects).toContainEqual({
+			source: page.legacyPath,
+			destination: page.path,
+			permanent: true
+		});
+	});
+
+	it('never points at an .html URL or at its own source', () => {
+		for (const redirect of config.redirects) {
+			expect(redirect.destination.endsWith('.html')).toBe(false);
+			expect(redirect.destination).not.toBe(redirect.source);
+		}
+		// A destination that is also a source would chain or loop.
+		const sources = new Set(config.redirects.map((redirect) => redirect.source));
+		for (const redirect of config.redirects) {
+			expect(sources.has(redirect.destination)).toBe(false);
+		}
+	});
+
+	it('only redirects to pages that exist', () => {
+		const paths = new Set<string>(pages.map((page) => page.path));
+		for (const redirect of config.redirects) {
+			expect(paths.has(redirect.destination)).toBe(true);
+		}
 	});
 });
 

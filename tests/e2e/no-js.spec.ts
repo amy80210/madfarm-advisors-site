@@ -24,10 +24,20 @@ test('an FAQ answer opens', async ({ page }) => {
 	await expect(first.locator('p')).toBeVisible();
 });
 
-test('content is visible without the scroll reveal', async ({ page }) => {
+test('content is visible when the scroll reveal does not run', async ({ browser }) => {
+	// Reduced motion switches the reveal off, as a browser without scroll-driven
+	// animations does. Every block must then be fully visible with no script.
+	const context = await browser.newContext({ javaScriptEnabled: false, reducedMotion: 'reduce' });
+	const page = await context.newPage();
 	await page.goto('/about');
 	await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
-	await expect(page.locator('.reveal').first()).toHaveCSS('opacity', '1');
+	const reveals = page.locator('.reveal');
+	const count = await reveals.count();
+	expect(count).toBeGreaterThan(3);
+	for (let i = 0; i < count; i++) {
+		await expect(reveals.nth(i)).toHaveCSS('opacity', '1');
+	}
+	await context.close();
 });
 
 test('contact validation errors come from the server', async ({ page }) => {
@@ -36,7 +46,9 @@ test('contact validation errors come from the server', async ({ page }) => {
 	// Passes the browser's type="email" check, fails the server's.
 	await page.getByLabel('Email').fill('owner@localhost');
 	await page.getByLabel('Message').fill('A short note.');
-	await page.getByRole('button', { name: /Send Message/ }).click();
+	// Submit from the keyboard. Playwright cannot run its "element is stable" check
+	// for a click on this button with scripts off; contact.spec.ts covers the click.
+	await page.getByLabel('Email').press('Enter');
 
 	await expect(page).toHaveURL(/#contact-form$/);
 	await expect(page.getByRole('alert')).toContainText('Please enter a valid email address.');

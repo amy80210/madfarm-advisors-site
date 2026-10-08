@@ -7,6 +7,8 @@
 		eyebrow?: string;
 		align?: 'center' | 'start';
 		size?: 'lg' | 'md';
+		/** `soft` is the secondary text color, `strong` the heading color. */
+		tone?: 'soft' | 'strong';
 		/** The quote. The quotation marks are added in CSS. */
 		children: Snippet;
 		/** Who said it: a `<b>` for the name, a `<span>` for the role. */
@@ -17,6 +19,7 @@
 		eyebrow,
 		align = 'center',
 		size = 'lg',
+		tone = 'soft',
 		class: className,
 		children,
 		attribution,
@@ -28,7 +31,7 @@
 	{#if eyebrow}
 		<Eyebrow {align}>{eyebrow}</Eyebrow>
 	{/if}
-	<p class={['q', eyebrow && 'after-eyebrow']}>{@render children()}</p>
+	<p class={['q', tone, eyebrow && 'after-eyebrow']}>{@render children()}</p>
 	{#if attribution}
 		<div class="by">
 			{@render attribution()}
@@ -54,8 +57,11 @@
 		font-family: var(--serif);
 		font-size: clamp(1.5rem, 3vw, 2.3rem);
 		line-height: 1.4;
-		color: var(--heading);
+		color: var(--text-soft);
 		letter-spacing: -0.01em;
+	}
+	.strong {
+		color: var(--heading);
 	}
 	.md .q {
 		font-size: clamp(1.3rem, 2.4vw, 1.9rem);

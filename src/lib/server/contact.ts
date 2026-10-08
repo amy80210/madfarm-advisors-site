@@ -17,7 +17,7 @@ const SUBJECT_ROUTES = {
 	general: { label: 'General Inquiry', recipients: [PRIMARY_INBOX] }
 } satisfies Record<string, Route>;
 
-const CONTACT_LIMITS = {
+export const CONTACT_LIMITS = {
 	name: 200,
 	email: 254,
 	phone: 50,
