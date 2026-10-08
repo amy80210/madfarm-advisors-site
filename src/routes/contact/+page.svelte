@@ -1,4 +1,5 @@
 <script lang="ts">
+	import LineIcon from '#lib/components/LineIcon.svelte';
 	import professional from '#lib/assets/treated/professional.jpg?w=900;640;360&enhanced';
 	import Backdrop from '#lib/components/Backdrop.svelte';
 	import Button from '#lib/components/Button.svelte';
@@ -48,18 +49,7 @@
 				/>
 				<span class="call-icon">
 					<Icon>
-						<svg
-							viewBox="0 0 32 32"
-							fill="none"
-							stroke="currentColor"
-							stroke-width="1.7"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							aria-hidden="true"
-							><rect x="5" y="7" width="22" height="20" rx="2" /><path
-								d="M5 13h22M11 4.5v5M21 4.5v5"
-							/><path d="m12.5 19.5 2.8 2.8 5.2-5.2" /></svg
-						>
+						<LineIcon name="calendar-check" weight={1.7} />
 					</Icon>
 				</span>
 				<h2>Book a time with the principal.</h2>
@@ -190,60 +180,16 @@
 		</span>
 		<div class="before-grid reveal">
 			<BeforeCard href="/process" kicker="The Process" title="How a Madfarm process actually runs">
-				<svg
-					viewBox="0 0 32 32"
-					fill="none"
-					stroke="currentColor"
-					stroke-width="1.7"
-					stroke-linecap="round"
-					stroke-linejoin="round"
-					aria-hidden="true"
-					><path d="M16 5 4 11l12 6 12-6-12-6Z" /><path d="m4 16 12 6 12-6" /><path
-						d="m4 21 12 6 12-6"
-					/></svg
-				>
+				<LineIcon name="stack" weight={1.7} />
 			</BeforeCard>
 			<BeforeCard href="/case-studies" kicker="Case Studies" title="Closed deals, in detail">
-				<svg
-					viewBox="0 0 32 32"
-					fill="none"
-					stroke="currentColor"
-					stroke-width="1.7"
-					stroke-linecap="round"
-					stroke-linejoin="round"
-					aria-hidden="true"
-					><path
-						d="M9 4.5h10l6 6V27a1.5 1.5 0 0 1-1.5 1.5h-14A1.5 1.5 0 0 1 8 27V6a1.5 1.5 0 0 1 1-1.5Z"
-					/><path d="M19 4.5v6h6" /><path d="M12 17h8M12 21h8M12 25h5" /></svg
-				>
+				<LineIcon name="document-lines" weight={1.7} />
 			</BeforeCard>
 			<BeforeCard href="/resources" kicker="Resources" title="For owners considering a sale">
-				<svg
-					viewBox="0 0 32 32"
-					fill="none"
-					stroke="currentColor"
-					stroke-width="1.7"
-					stroke-linecap="round"
-					stroke-linejoin="round"
-					aria-hidden="true"
-					><path d="M6 6.5A1.5 1.5 0 0 1 7.5 5H16v22H7.5A1.5 1.5 0 0 1 6 25.5Z" /><path
-						d="M16 5h8.5A1.5 1.5 0 0 1 26 6.5v19a1.5 1.5 0 0 1-1.5 1.5H16"
-					/><path d="M9.5 10h3M9.5 14h3M19.5 10h3M19.5 14h3M19.5 18h3" /></svg
-				>
+				<LineIcon name="book" weight={1.7} />
 			</BeforeCard>
 			<BeforeCard href="/about" kicker="About" title="Who would run your deal">
-				<svg
-					viewBox="0 0 32 32"
-					fill="none"
-					stroke="currentColor"
-					stroke-width="1.7"
-					stroke-linecap="round"
-					stroke-linejoin="round"
-					aria-hidden="true"
-					><circle cx="12" cy="12" r="3.4" /><path
-						d="M5.5 25c0-3.6 2.9-6.3 6.5-6.3s6.5 2.7 6.5 6.3"
-					/><circle cx="22.5" cy="13.5" r="2.7" /><path d="M20.5 19c3.2.1 5.8 2.6 5.8 6.1" /></svg
-				>
+				<LineIcon name="people" weight={1.7} />
 			</BeforeCard>
 		</div>
 	</div>

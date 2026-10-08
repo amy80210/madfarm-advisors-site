@@ -1,4 +1,5 @@
 <script lang="ts">
+	import LineIcon from '#lib/components/LineIcon.svelte';
 	import guideCover from '#lib/assets/process-guide-cover.jpg?w=720;360&enhanced';
 	import hero from '#lib/assets/treated/hero.jpg?w=1600;1280;900;640;360&enhanced';
 	import industrials from '#lib/assets/treated/industrials.jpg?w=900;640;360&enhanced';
@@ -40,19 +41,7 @@
 		<div class="halves reveal">
 			<Half variant="fixed" eyebrow="Structurally Rigorous">
 				{#snippet icon()}
-					<svg
-						viewBox="0 0 32 32"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.7"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						aria-hidden="true"
-					>
-						<path d="M16 5 4 11l12 6 12-6-12-6Z" />
-						<path d="m4 16 12 6 12-6" />
-						<path d="m4 21 12 6 12-6" />
-					</svg>
+					<LineIcon name="stack" weight={1.7} />
 				{/snippet}
 				<h3>Preparation is fixed</h3>
 				<ul>
@@ -63,18 +52,7 @@
 			</Half>
 			<Half variant="built" eyebrow="Strategically Flexible">
 				{#snippet icon()}
-					<svg
-						viewBox="0 0 32 32"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.7"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						aria-hidden="true"
-					>
-						<circle cx="16" cy="16" r="11" />
-						<path d="m20.5 11.5-2.8 6.2-6.2 2.8 2.8-6.2z" />
-					</svg>
+					<LineIcon name="compass-fine" weight={1.7} />
 				{/snippet}
 				<h3>Market strategy is built</h3>
 				<ul>
@@ -100,101 +78,35 @@
 		<Journey class="reveal">
 			<JourneyStep tone="pre" when="Pre-engagement" title="Evaluation">
 				{#snippet icon()}
-					<svg
-						viewBox="0 0 32 32"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.7"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						aria-hidden="true"
-					>
-						<circle cx="14" cy="14" r="8.5" />
-						<path d="m20.2 20.2 6.3 6.3" />
-						<path d="M10.5 16.5v-2M14 16.5v-5M17.5 16.5v-3.2" />
-					</svg>
+					<LineIcon name="search-bars" weight={1.7} />
 				{/snippet}
 				A discovery session and a preliminary read on value: what the business could command, what a process
 				would look like, and what to address first. No cost, no obligation.
 			</JourneyStep>
 			<JourneyStep when="Kickoff" title="Foundation">
 				{#snippet icon()}
-					<svg
-						viewBox="0 0 32 32"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.7"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						aria-hidden="true"
-					>
-						<rect x="4.5" y="21" width="23" height="5.5" rx="1" />
-						<rect x="7.5" y="13" width="7.5" height="8" rx="1" />
-						<rect x="17" y="13" width="7.5" height="8" rx="1" />
-						<path d="M11 13V8.5h10V13" />
-					</svg>
+					<LineIcon name="blocks" weight={1.7} />
 				{/snippet}
 				Goals, data room build, and financial and operational discovery. Short and dense; it sets everything
 				downstream in motion.
 			</JourneyStep>
 			<JourneyStep when="The core" title="Preparation" gate="Gate 1 · Launch approval">
 				{#snippet icon()}
-					<svg
-						viewBox="0 0 32 32"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.7"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						aria-hidden="true"
-					>
-						<rect x="7" y="6" width="18" height="22" rx="2" />
-						<path d="M12 6V4.5h8V6" />
-						<path d="m11 13.5 1.8 1.8 3.2-3.3M11 21l1.8 1.8 3.2-3.3M19 14h3M19 21.5h3" />
-					</svg>
+					<LineIcon name="checklist" weight={1.7} />
 				{/snippet}
 				Financial preparation, quality of earnings, market analysis and go-to-market design. The heaviest
 				lifting of the engagement, and what a clean process is built on.
 			</JourneyStep>
 			<JourneyStep when="In market" title="Market" gate="Gate 2 · LOI selection">
 				{#snippet icon()}
-					<svg
-						viewBox="0 0 32 32"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.7"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						aria-hidden="true"
-					>
-						<circle cx="16" cy="16" r="3.2" />
-						<circle cx="6.5" cy="7.5" r="2.3" />
-						<circle cx="25.5" cy="7.5" r="2.3" />
-						<circle cx="6.5" cy="24.5" r="2.3" />
-						<circle cx="25.5" cy="24.5" r="2.3" />
-						<path d="m8.3 9.2 5.3 4.6M23.7 9.2l-5.3 4.6M8.3 22.8l5.3-4.6M23.7 22.8l-5.3-4.6" />
-					</svg>
+					<LineIcon name="hub" weight={1.7} />
 				{/snippet}
 				Tiered buyer outreach, NDAs and CIM, management meetings, then indications of interest and LOI
 				selection. We name your buyer list from evidence, not on day one.
 			</JourneyStep>
 			<JourneyStep tone="end" when="The finish" title="Close" gate="Gate 3 · Close">
 				{#snippet icon()}
-					<svg
-						viewBox="0 0 32 32"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.7"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						aria-hidden="true"
-					>
-						<path
-							d="M9 4.5h10l6 6V27a1.5 1.5 0 0 1-1.5 1.5h-14A1.5 1.5 0 0 1 8 27V6a1.5 1.5 0 0 1 1-1.5Z"
-						/>
-						<path d="M19 4.5v6h6" />
-						<path d="M11.5 21.5c1.4-2 2.4-2 3 0s1.8 1.8 3.2-.6M11.5 25h9.5" />
-					</svg>
+					<LineIcon name="document-signature" weight={1.7} />
 				{/snippet}
 				Confirmatory diligence, definitive agreement, working-capital true-up and funds flow. Thorough
 				preparation is why diligence confirms what&rsquo;s known instead of uncovering surprises.

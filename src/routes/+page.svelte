@@ -1,4 +1,5 @@
 <script lang="ts">
+	import LineIcon from '#lib/components/LineIcon.svelte';
 	import spencer from '#lib/assets/team/spencer-williams-home.jpg?w=560;320&enhanced';
 	import commercialServices from '#lib/assets/treated/commercial-services.jpg?w=900;640;360&enhanced';
 	import craft from '#lib/assets/treated/craft.jpg?w=900;640;360&enhanced';
@@ -113,18 +114,7 @@
 		<div class="pillars reveal">
 			<Pillar num="01">
 				{#snippet icon()}
-					<svg
-						viewBox="0 0 32 32"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.8"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						aria-hidden="true"
-					>
-						<circle cx="16" cy="10" r="4.2" />
-						<path d="M4 25h24M9 25v-1.5a7 7 0 0 1 14 0V25" />
-					</svg>
+					<LineIcon name="principal" />
 				{/snippet}
 				<h3>Senior representation, every deal.</h3>
 				<p>
@@ -134,17 +124,7 @@
 			</Pillar>
 			<Pillar num="02">
 				{#snippet icon()}
-					<svg
-						viewBox="0 0 32 32"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.8"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						aria-hidden="true"
-					>
-						<path d="M4 13 16 6l12 7M6 13v11M12 13v11M20 13v11M26 13v11M4 27h24" />
-					</svg>
+					<LineIcon name="institution" />
 				{/snippet}
 				<h3>Boutique attention. Institutional results.</h3>
 				<p>
@@ -154,20 +134,7 @@
 			</Pillar>
 			<Pillar num="03">
 				{#snippet icon()}
-					<svg
-						viewBox="0 0 32 32"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.8"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						aria-hidden="true"
-					>
-						<circle cx="7" cy="9" r="3" />
-						<circle cx="25" cy="9" r="3" />
-						<circle cx="16" cy="24" r="3" />
-						<path d="M9.6 10.6 13.8 21.6M22.4 10.6 18.2 21.6M10 9h12" />
-					</svg>
+					<LineIcon name="network" />
 				{/snippet}
 				<h3>Tech-enabled. Relationally led.</h3>
 				<p>
@@ -178,18 +145,7 @@
 			</Pillar>
 			<Pillar num="04">
 				{#snippet icon()}
-					<svg
-						viewBox="0 0 32 32"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.8"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						aria-hidden="true"
-					>
-						<path d="M16 5 28 11 16 17 4 11 16 5Z" />
-						<path d="M4 16.5 16 22.5 28 16.5M4 21.5 16 27.5 28 21.5" />
-					</svg>
+					<LineIcon name="layers" />
 				{/snippet}
 				<h3>Earned expertise, not borrowed credentials.</h3>
 				<p>

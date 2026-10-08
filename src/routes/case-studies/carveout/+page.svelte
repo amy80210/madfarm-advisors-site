@@ -1,4 +1,5 @@
 <script lang="ts">
+	import LineIcon from '#lib/components/LineIcon.svelte';
 	import renewables from '#lib/assets/treated/renewables.jpg?w=1600;1280;900;640;360&enhanced';
 	import Button from '#lib/components/Button.svelte';
 	import CtaBand from '#lib/components/CtaBand.svelte';
@@ -97,16 +98,7 @@
 		<CsList columns={2} class="reveal">
 			<CsItem>
 				{#snippet icon()}
-					<svg
-						viewBox="0 0 32 32"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.8"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						aria-hidden="true"
-						><rect x="5" y="6" width="22" height="20" rx="1" /><path d="M5 12h22M12 12v14" /></svg
-					>
+					<LineIcon name="table" />
 				{/snippet}
 				<h3>A Clean Structure</h3>
 				<p>
@@ -116,18 +108,7 @@
 			</CsItem>
 			<CsItem>
 				{#snippet icon()}
-					<svg
-						viewBox="0 0 32 32"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.8"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						aria-hidden="true"
-						><path d="M8 4h12l5 5v19H8z" /><path d="M20 4v5h5" /><path
-							d="M12 18l2.2 2.2L19 15"
-						/></svg
-					>
+					<LineIcon name="document-check" />
 				{/snippet}
 				<h3>A TSA That Held Through the Move</h3>
 				<p>
@@ -139,16 +120,7 @@
 			</CsItem>
 			<CsItem>
 				{#snippet icon()}
-					<svg
-						viewBox="0 0 32 32"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.8"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						aria-hidden="true"
-						><circle cx="16" cy="12" r="7" /><path d="M12 18l-2 9 6-3 6 3-2-9" /></svg
-					>
+					<LineIcon name="award" />
 				{/snippet}
 				<h3>Grant &amp; Regulatory Continuity</h3>
 				<p>
@@ -159,18 +131,7 @@
 			</CsItem>
 			<CsItem>
 				{#snippet icon()}
-					<svg
-						viewBox="0 0 32 32"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.8"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						aria-hidden="true"
-						><path d="M16 4l10 4v7c0 7-5 11-10 13-5-2-10-6-10-13V8l10-4Z" /><path
-							d="M12 15l2.6 2.6L20 12"
-						/></svg
-					>
+					<LineIcon name="shield-check" />
 				{/snippet}
 				<h3>Sponsor Governance</h3>
 				<p>
@@ -196,20 +157,7 @@
 		<CsList class="reveal">
 			<CsItem>
 				{#snippet icon()}
-					<svg
-						viewBox="0 0 32 32"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.8"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						aria-hidden="true"
-						><circle cx="7" cy="9" r="3" /><circle cx="25" cy="9" r="3" /><circle
-							cx="16"
-							cy="24"
-							r="3"
-						/><path d="M9.6 10.6 13.8 21.6M22.4 10.6 18.2 21.6M10 9h12" /></svg
-					>
+					<LineIcon name="network" />
 				{/snippet}
 				<h3>Widen the Field</h3>
 				<p>
@@ -219,18 +167,7 @@
 			</CsItem>
 			<CsItem>
 				{#snippet icon()}
-					<svg
-						viewBox="0 0 32 32"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.8"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						aria-hidden="true"
-						><circle cx="16" cy="16" r="11" /><circle cx="16" cy="16" r="3.5" /><path
-							d="M16 16l6.5-6.5"
-						/></svg
-					>
+					<LineIcon name="target" />
 				{/snippet}
 				<h3>A Buyer-Specific Thesis</h3>
 				<p>
@@ -243,18 +180,7 @@
 			</CsItem>
 			<CsItem>
 				{#snippet icon()}
-					<svg
-						viewBox="0 0 32 32"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.8"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						aria-hidden="true"
-						><circle cx="11" cy="11" r="4" /><circle cx="23" cy="12.5" r="3.2" /><path
-							d="M4 25v-1.5a7 7 0 0 1 14 0V25M20.5 25v-1a6 6 0 0 1 8.5-.5"
-						/></svg
-					>
+					<LineIcon name="team" />
 				{/snippet}
 				<h3>Two Audiences to Win</h3>
 				<p>
