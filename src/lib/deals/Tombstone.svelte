@@ -49,7 +49,7 @@
 		border-block-start: 3px solid var(--steel-2);
 		border-radius: var(--radius);
 		padding: 1.75rem 1.5rem 1.4rem;
-		box-shadow: 0 1px 2px rgba(28, 32, 36, 0.04);
+		box-shadow: 0 1px 2px color-mix(in oklch, var(--steel) 4%, transparent);
 	}
 	.logo {
 		block-size: 72px;
@@ -109,7 +109,7 @@
 		font-weight: 700;
 		font-size: 1.45rem;
 		letter-spacing: -0.02em;
-		color: #3a3d40;
+		color: var(--wordmark);
 	}
 	.tag {
 		margin-block-start: 1.4rem;
@@ -123,7 +123,7 @@
 		color: var(--copper);
 	}
 
-	@media (max-width: 720px) {
+	@container (max-width: 720px) {
 		.deal {
 			inline-size: 230px;
 			padding: 1.4rem 1.1rem 1.2rem;
@@ -139,7 +139,7 @@
 	@media (hover: hover) and (pointer: fine) {
 		.deal:hover {
 			translate: 0 -3px;
-			box-shadow: 0 10px 24px rgba(28, 32, 36, 0.08);
+			box-shadow: 0 10px 24px color-mix(in oklch, var(--steel) 8%, transparent);
 		}
 	}
 </style>

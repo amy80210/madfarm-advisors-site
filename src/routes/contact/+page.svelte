@@ -38,7 +38,7 @@
 </PageHero>
 
 <section class="section">
-	<div class="wrap">
+	<div class="wrap cq-wrap">
 		<div class="contact-layout">
 			<!-- Book a call -->
 			<div class="contact-call on-dark reveal">
@@ -174,7 +174,7 @@
 
 <!-- BEFORE YOU CALL -->
 <section class="section--tight bg-chalk-2">
-	<div class="wrap">
+	<div class="wrap cq-wrap">
 		<span class="before-label">
 			<Eyebrow class="reveal">Before You Call</Eyebrow>
 		</span>
@@ -196,6 +196,14 @@
 </section>
 
 <style>
+	/* Each section's wrap is the container its grids query. The form grid asks
+	   the wrap too, not its own panel: the panel is narrower on a desktop (beside
+	   the call panel) than on a tablet (full width), so its own width cannot say
+	   which one it is on. Thresholds are the wrap's width at the viewport named. */
+	.cq-wrap {
+		container-type: inline-size;
+	}
+
 	/* Two panels. `minmax(0, …)` and the `min-inline-size` keep a long word
 	   or the select from pushing the page sideways on a phone. */
 	.contact-layout {
@@ -233,13 +241,13 @@
 	}
 
 	.contact-note {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
 		background: var(--white);
 		border: 1px solid var(--sand);
 		border-radius: var(--radius);
 		padding: clamp(1.75rem, 4vw, 2.75rem);
-	}
-	form {
-		margin-block-start: 2rem;
 	}
 	.form-grid {
 		display: grid;
@@ -250,19 +258,18 @@
 		grid-column: 1 / -1;
 		display: flex;
 		flex-direction: column;
-		gap: 0.45rem;
+		gap: 0.75rem;
 		min-inline-size: 0;
 	}
 	.form-status {
 		font-size: 0.92rem;
-		margin-block-start: 0.3rem;
 		min-block-size: 1.2rem;
 	}
 	.error {
 		color: var(--copper);
 	}
 	.ok {
-		color: #2f6b46;
+		color: var(--success);
 	}
 
 	/* Spam honeypot: off-screen, and out of the accessibility tree and the tab order. */
@@ -285,7 +292,8 @@
 		gap: 1rem;
 	}
 
-	@media (max-width: 900px) {
+	/* 900px viewport: the panels stack and the cards go 4 → 2. */
+	@container (width <= 828.5px) {
 		.contact-layout {
 			grid-template-columns: minmax(0, 1fr);
 		}
@@ -293,12 +301,14 @@
 			grid-template-columns: repeat(2, 1fr);
 		}
 	}
-	@media (max-width: 720px) {
+	/* 720px viewport. */
+	@container (width <= 662.9px) {
 		.form-grid {
 			grid-template-columns: minmax(0, 1fr);
 		}
 	}
-	@media (max-width: 520px) {
+	/* 520px viewport. */
+	@container (width <= 478.9px) {
 		.before-grid {
 			grid-template-columns: 1fr;
 		}

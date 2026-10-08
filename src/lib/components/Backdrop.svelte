@@ -78,32 +78,50 @@
 		background:
 			linear-gradient(
 				90deg,
-				rgba(20, 24, 28, 0.94) 0%,
-				rgba(20, 24, 28, 0.78) 42%,
-				rgba(20, 24, 28, 0.34) 100%
+				color-mix(in oklch, var(--steel-wash) 94%, transparent) 0%,
+				color-mix(in oklch, var(--steel-wash) 78%, transparent) 42%,
+				color-mix(in oklch, var(--steel-wash) 34%, transparent) 100%
 			),
-			radial-gradient(120% 90% at 88% 4%, rgba(168, 80, 31, 0.26), transparent 52%),
-			linear-gradient(180deg, transparent 55%, rgba(14, 20, 32, 0.9) 100%);
+			radial-gradient(
+				120% 90% at 88% 4%,
+				color-mix(in oklch, var(--copper) 26%, transparent),
+				transparent 52%
+			),
+			linear-gradient(
+				180deg,
+				transparent 55%,
+				color-mix(in oklch, var(--steel-2) 90%, transparent) 100%
+			);
 	}
 	.page {
 		background: linear-gradient(
 			90deg,
-			rgba(20, 24, 28, 0.92) 0%,
-			rgba(20, 24, 28, 0.72) 48%,
-			rgba(20, 24, 28, 0.42) 100%
+			color-mix(in oklch, var(--steel-wash) 92%, transparent) 0%,
+			color-mix(in oklch, var(--steel-wash) 72%, transparent) 48%,
+			color-mix(in oklch, var(--steel-wash) 42%, transparent) 100%
 		);
 	}
 	.band {
-		background: linear-gradient(180deg, rgba(20, 24, 28, 0.72), rgba(14, 20, 32, 0.86));
+		background: linear-gradient(
+			180deg,
+			color-mix(in oklch, var(--steel-wash) 72%, transparent),
+			color-mix(in oklch, var(--steel-2) 86%, transparent)
+		);
 	}
 
 	.grid {
 		opacity: var(--backdrop-grid-opacity);
 		background-image:
-			linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-			linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+			linear-gradient(color-mix(in oklch, var(--white) 5%, transparent) 1px, transparent 1px),
+			linear-gradient(90deg, color-mix(in oklch, var(--white) 5%, transparent) 1px, transparent 1px);
 		background-size: 64px 64px;
-		mask-image: linear-gradient(180deg, transparent, #000 30%, #000 70%, transparent);
+		mask-image: linear-gradient(
+			180deg,
+			transparent,
+			oklch(0 0 none) 30%,
+			oklch(0 0 none) 70%,
+			transparent
+		);
 	}
 
 	@keyframes backdrop-drift {

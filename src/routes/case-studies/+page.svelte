@@ -88,12 +88,11 @@
 <style>
 	.case-index {
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
 		gap: 1.5rem;
-	}
-	@media (max-width: 760px) {
-		.case-index {
-			grid-template-columns: 1fr;
-		}
+		/* The max() keeps a column at half the row or more, so there are never 3 columns. */
+		grid-template-columns: repeat(
+			auto-fit,
+			minmax(min(100%, max(21.125rem, (100% - 1.5rem) / 2)), 1fr)
+		);
 	}
 </style>

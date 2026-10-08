@@ -57,7 +57,7 @@
 			box-shadow var(--dur) var(--ease);
 	}
 	.case-card:active {
-		scale: 0.99;
+		scale: 0.98;
 	}
 	.media {
 		position: relative;
@@ -76,7 +76,11 @@
 		content: '';
 		position: absolute;
 		inset: 0;
-		background: linear-gradient(180deg, rgba(14, 20, 32, 0.1), rgba(14, 20, 32, 0.74));
+		background: linear-gradient(
+			180deg,
+			color-mix(in oklch, var(--steel-2) 10%, transparent),
+			color-mix(in oklch, var(--steel-2) 74%, transparent)
+		);
 	}
 	.tag {
 		position: absolute;
@@ -96,7 +100,6 @@
 		flex-direction: column;
 		gap: 0.7rem;
 		flex: 1;
-		color: var(--ink);
 	}
 	.type {
 		font-size: 0.74rem;
@@ -127,7 +130,7 @@
 		.case-card:hover {
 			border-color: var(--copper);
 			translate: 0 -3px;
-			box-shadow: 0 18px 40px rgba(28, 32, 36, 0.08);
+			box-shadow: 0 18px 40px color-mix(in oklch, var(--steel) 8%, transparent);
 		}
 		.case-card:hover .media :global(img) {
 			scale: 1.05;

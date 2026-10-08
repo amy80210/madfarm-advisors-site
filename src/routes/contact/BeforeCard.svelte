@@ -30,7 +30,8 @@
 		display: flex;
 		flex-direction: column;
 		gap: 0.5rem;
-		padding: 1.5rem 1.4rem 1.6rem;
+		padding-block: 1.5rem 1.6rem;
+		padding-inline: 1.4rem;
 		background: var(--chalk);
 		border: 1px solid var(--sand);
 		border-radius: var(--radius);

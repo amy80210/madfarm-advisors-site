@@ -29,25 +29,31 @@
 </script>
 
 <!-- Dark card: portrait on one side, a quote and its attribution on the other. -->
-<div class={['founder', 'on-dark', className]} {...rest}>
-	<div class="photo reveal">
-		<enhanced:img src={image} {alt} {sizes} loading="lazy" decoding="async" />
-	</div>
-	<div class="body reveal">
-		<Eyebrow>{eyebrow}</Eyebrow>
-		<blockquote>
-			<span class="mark">&ldquo;</span>{@render children()}<span class="mark">&rdquo;</span>
-		</blockquote>
-		<div class="attrib">
-			<span class="rule"></span>
-			<div class="who">
-				{@render attribution()}
+<!-- The outer element is the query container: the card lays itself out by the width it is given. -->
+<div class="slot">
+	<div class={['founder', 'on-dark', className]} {...rest}>
+		<div class="photo reveal">
+			<enhanced:img src={image} {alt} {sizes} loading="lazy" decoding="async" />
+		</div>
+		<div class="body reveal">
+			<Eyebrow>{eyebrow}</Eyebrow>
+			<blockquote>
+				<span class="mark">&ldquo;</span>{@render children()}<span class="mark">&rdquo;</span>
+			</blockquote>
+			<div class="attrib">
+				<span class="rule"></span>
+				<div class="who">
+					{@render attribution()}
+				</div>
 			</div>
 		</div>
 	</div>
 </div>
 
 <style>
+	.slot {
+		container-type: inline-size;
+	}
 	.founder {
 		display: grid;
 		grid-template-columns: minmax(280px, 340px) 1fr;
@@ -57,7 +63,7 @@
 		border: 1px solid var(--steel);
 		border-radius: var(--radius);
 		overflow: clip;
-		box-shadow: 0 18px 40px -24px rgba(14, 20, 32, 0.55);
+		box-shadow: 0 18px 40px -24px color-mix(in oklch, var(--steel-2) 55%, transparent);
 	}
 	.photo {
 		position: relative;
@@ -121,7 +127,8 @@
 		font-size: 0.92rem;
 	}
 
-	@media (max-width: 900px) {
+	/* Medium slot: the portrait is inset beside the quote. */
+	@container (width <= 51.75rem) {
 		.founder {
 			grid-template-columns: 40% 1fr;
 		}
@@ -142,8 +149,8 @@
 			display: none;
 		}
 	}
-	/* Small phones: the photo goes on top, as a square. */
-	@media (max-width: 560px) {
+	/* Narrow slot: the photo goes on top, as a square. */
+	@container (width < 32.25rem) {
 		.founder {
 			grid-template-columns: 1fr;
 		}

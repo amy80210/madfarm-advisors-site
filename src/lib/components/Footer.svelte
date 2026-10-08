@@ -37,6 +37,7 @@
 
 <style>
 	.site-footer {
+		container-type: inline-size;
 		background: var(--steel-2);
 		color: var(--text-mute);
 		padding-block: clamp(3rem, 6vw, 4.5rem);
@@ -86,7 +87,7 @@
 	.bottom {
 		margin-block-start: 3rem;
 		padding-block-start: 1.5rem;
-		border-block-start: 1px solid rgba(255, 255, 255, 0.1);
+		border-block-start: 1px solid color-mix(in oklch, var(--white) 10%, transparent);
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
@@ -94,7 +95,7 @@
 		font-size: 0.82rem;
 	}
 
-	@media (max-width: 900px) {
+	@container (max-width: 900px) {
 		.top {
 			grid-template-columns: 1fr 1fr;
 		}
