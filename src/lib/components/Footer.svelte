@@ -86,7 +86,7 @@
 	.bottom {
 		margin-block-start: 3rem;
 		padding-block-start: 1.5rem;
-		border-block-start: 1px solid rgba(255, 255, 255, 0.1);
+		border-block-start: 1px solid color-mix(in oklch, var(--white) 10%, transparent);
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;

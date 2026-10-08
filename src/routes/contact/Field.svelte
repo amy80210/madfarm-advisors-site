@@ -109,6 +109,6 @@
 	}
 	.field > :global(:is(input, select, textarea):focus) {
 		border-color: var(--copper);
-		box-shadow: 0 0 0 3px rgba(168, 80, 31, 0.12);
+		box-shadow: 0 0 0 3px color-mix(in oklch, var(--copper) 12%, transparent);
 	}
 </style>

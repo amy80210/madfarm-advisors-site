@@ -116,7 +116,13 @@
 	.marquee {
 		position: relative;
 		overflow: clip;
-		mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+		mask-image: linear-gradient(
+			90deg,
+			transparent,
+			oklch(0 0 none) 5%,
+			oklch(0 0 none) 95%,
+			transparent
+		);
 	}
 	.track {
 		display: flex;

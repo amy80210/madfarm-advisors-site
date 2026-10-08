@@ -34,7 +34,7 @@
 		position: sticky;
 		inset-block-start: 0;
 		z-index: 100;
-		background: color-mix(in srgb, var(--chalk) 85%, transparent);
+		background: color-mix(in oklch, var(--chalk) 85%, transparent);
 		backdrop-filter: saturate(140%) blur(10px);
 		border-block-end: 1px solid transparent;
 	}
@@ -44,7 +44,7 @@
 		to {
 			background: var(--chalk);
 			border-block-end-color: var(--sand);
-			box-shadow: 0 1px 20px rgba(28, 32, 36, 0.05);
+			box-shadow: 0 1px 20px color-mix(in oklch, var(--steel) 5%, transparent);
 		}
 	}
 	@supports (animation-timeline: scroll()) {

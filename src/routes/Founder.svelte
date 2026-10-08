@@ -57,7 +57,7 @@
 		border: 1px solid var(--steel);
 		border-radius: var(--radius);
 		overflow: clip;
-		box-shadow: 0 18px 40px -24px rgba(14, 20, 32, 0.55);
+		box-shadow: 0 18px 40px -24px color-mix(in oklch, var(--steel-2) 55%, transparent);
 	}
 	.photo {
 		position: relative;

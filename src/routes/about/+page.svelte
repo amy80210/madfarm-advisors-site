@@ -369,9 +369,9 @@
 		margin-block-start: 1.9rem;
 		padding-block: 0.5rem;
 		padding-inline: 0.5rem 1.1rem;
-		border: 1px solid rgba(255, 255, 255, 0.2);
+		border: 1px solid color-mix(in oklch, var(--white) 20%, transparent);
 		border-radius: 999px;
-		background: rgba(255, 255, 255, 0.06);
+		background: color-mix(in oklch, var(--white) 6%, transparent);
 		color: var(--heading);
 		transition:
 			background-color var(--dur) var(--ease),
@@ -379,12 +379,12 @@
 	}
 	@media (hover: hover) and (pointer: fine) {
 		.team-chip:hover {
-			background: rgba(255, 255, 255, 0.08);
+			background: color-mix(in oklch, var(--white) 8%, transparent);
 			border-color: var(--accent);
 		}
 	}
 	.team-chip:active {
-		background: rgba(255, 255, 255, 0.12);
+		background: color-mix(in oklch, var(--white) 12%, transparent);
 		border-color: var(--accent);
 	}
 	.team-chip__faces {
@@ -457,7 +457,7 @@
 		border-radius: var(--radius);
 		padding: clamp(1.5rem, 3vw, 2.1rem);
 		border-block-start: 3px solid var(--copper);
-		box-shadow: 0 18px 40px -24px rgba(14, 20, 32, 0.55);
+		box-shadow: 0 18px 40px -24px color-mix(in oklch, var(--steel-2) 55%, transparent);
 	}
 	.glance__stats {
 		display: grid;

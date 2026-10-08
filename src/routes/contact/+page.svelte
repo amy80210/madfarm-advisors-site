@@ -316,7 +316,7 @@
 		color: var(--copper);
 	}
 	.ok {
-		color: #2f6b46;
+		color: var(--success);
 	}
 
 	/* Spam honeypot: off-screen, and out of the accessibility tree and the tab order. */

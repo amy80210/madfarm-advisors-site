@@ -53,7 +53,7 @@
 		inset-block-start: 32px;
 		inset-inline: 80px calc(-1.75rem + 8px);
 		block-size: 1px;
-		background: rgba(255, 255, 255, 0.2);
+		background: color-mix(in oklch, var(--white) 20%, transparent);
 	}
 	.jstep:last-child::after {
 		display: none;
@@ -67,11 +67,11 @@
 		border-radius: 50%;
 		margin-block-end: 1.25rem;
 		background: var(--steel-soft);
-		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.26);
+		box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--white) 26%, transparent);
 		color: var(--accent);
 	}
 	.pre .dot {
-		background: #5a6672;
+		background: var(--slate);
 		box-shadow: none;
 		color: var(--white);
 	}
@@ -113,7 +113,7 @@
 		gap: 0.5rem;
 		margin-block-start: auto;
 		padding: 0.35rem 0.75rem;
-		border: 1px solid rgba(232, 133, 63, 0.45);
+		border: 1px solid color-mix(in oklch, var(--copper-on-dark) 45%, transparent);
 		border-radius: 999px;
 		font-size: 0.72rem;
 		font-weight: 600;

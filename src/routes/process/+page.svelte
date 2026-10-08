@@ -372,8 +372,8 @@
 		block-size: auto;
 		border-radius: 3px;
 		box-shadow:
-			0 30px 50px -24px rgba(14, 20, 32, 0.6),
-			0 2px 6px rgba(14, 20, 32, 0.18);
+			0 30px 50px -24px color-mix(in oklch, var(--steel-2) 60%, transparent),
+			0 2px 6px color-mix(in oklch, var(--steel-2) 18%, transparent);
 	}
 	.guide-cover:active {
 		transform: rotate(0) scale(0.98);
