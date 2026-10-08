@@ -277,7 +277,9 @@ strong {
 		.reveal {
 			animation: reveal linear both;
 			animation-timeline: view();
-			animation-range: entry 0% entry 45%;
+			/* Done once 64px of the block is in view, so a block that rests at the
+			   bottom edge of the screen is not left half transparent. */
+			animation-range: entry 0px entry 64px;
 		}
 	}
 }
