@@ -1,4 +1,5 @@
 <script lang="ts">
+	import LineIcon from '#lib/components/LineIcon.svelte';
 	import software from '#lib/assets/treated/software.jpg?w=900;640;360&enhanced';
 	import Button from '#lib/components/Button.svelte';
 	import CtaBand from '#lib/components/CtaBand.svelte';
@@ -96,18 +97,7 @@
 		<CsList columns={2} class="reveal">
 			<CsItem>
 				{#snippet icon()}
-					<svg
-						viewBox="0 0 32 32"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.8"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						aria-hidden="true"
-						><circle cx="16" cy="16" r="11" /><circle cx="16" cy="16" r="3.5" /><path
-							d="M16 16l6.5-6.5"
-						/></svg
-					>
+					<LineIcon name="target" />
 				{/snippet}
 				<h3>The Expectation</h3>
 				<p>
@@ -117,15 +107,7 @@
 			</CsItem>
 			<CsItem>
 				{#snippet icon()}
-					<svg
-						viewBox="0 0 32 32"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.8"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						aria-hidden="true"><path d="M16 5 3 27h26L16 5Z" /><path d="M16 13v6M16 23h.02" /></svg
-					>
+					<LineIcon name="warning" />
 				{/snippet}
 				<h3>The Hidden Discount</h3>
 				<p>
@@ -136,15 +118,7 @@
 			</CsItem>
 			<CsItem>
 				{#snippet icon()}
-					<svg
-						viewBox="0 0 32 32"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.8"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						aria-hidden="true"><path d="M6 26V6M6 26h20M11 22v-6M17 22v-11M23 22v-9" /></svg
-					>
+					<LineIcon name="bar-chart" />
 				{/snippet}
 				<h3>Rebuilding the Revenue Picture</h3>
 				<p>
@@ -157,16 +131,7 @@
 			</CsItem>
 			<CsItem>
 				{#snippet icon()}
-					<svg
-						viewBox="0 0 32 32"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.8"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						aria-hidden="true"
-						><rect x="4" y="8" width="24" height="16" rx="2" /><path d="M4 13h24M8 19h6" /></svg
-					>
+					<LineIcon name="card" />
 				{/snippet}
 				<h3>The Payments Offset</h3>
 				<p>
@@ -190,20 +155,7 @@
 		<CsList class="reveal">
 			<CsItem>
 				{#snippet icon()}
-					<svg
-						viewBox="0 0 32 32"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.8"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						aria-hidden="true"
-						><circle cx="7" cy="9" r="3" /><circle cx="25" cy="9" r="3" /><circle
-							cx="16"
-							cy="24"
-							r="3"
-						/><path d="M9.6 10.6 13.8 21.6M22.4 10.6 18.2 21.6M10 9h12" /></svg
-					>
+					<LineIcon name="network" />
 				{/snippet}
 				<h3>A Broad, Disciplined Process</h3>
 				<p>
@@ -213,18 +165,7 @@
 			</CsItem>
 			<CsItem>
 				{#snippet icon()}
-					<svg
-						viewBox="0 0 32 32"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.8"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						aria-hidden="true"
-						><circle cx="11" cy="11" r="4" /><circle cx="23" cy="12.5" r="3.2" /><path
-							d="M4 25v-1.5a7 7 0 0 1 14 0V25M20.5 25v-1a6 6 0 0 1 8.5-.5"
-						/></svg
-					>
+					<LineIcon name="team" />
 				{/snippet}
 				<h3>The Right Owner, Not Just the Top Bid</h3>
 				<p>
@@ -235,18 +176,7 @@
 			</CsItem>
 			<CsItem>
 				{#snippet icon()}
-					<svg
-						viewBox="0 0 32 32"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.8"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						aria-hidden="true"
-						><path d="M16 4l10 4v7c0 7-5 11-10 13-5-2-10-6-10-13V8l10-4Z" /><path
-							d="M12 15l2.6 2.6L20 12"
-						/></svg
-					>
+					<LineIcon name="shield-check" />
 				{/snippet}
 				<h3>Certainty of Close</h3>
 				<p>

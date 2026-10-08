@@ -1,4 +1,5 @@
 <script lang="ts">
+	import LineIcon from '#lib/components/LineIcon.svelte';
 	import bobOgdon from '#lib/assets/team/advisors/bob-ogdon.jpg?w=320;160&enhanced';
 	import danOgdon from '#lib/assets/team/advisors/dan-ogdon.jpg?w=320;160&enhanced';
 	import dougRobinson from '#lib/assets/team/advisors/doug-robinson.jpg?w=320;160&enhanced';
@@ -58,18 +59,7 @@
 				<div class="principles">
 					<div class="principle">
 						<Icon>
-							<svg
-								viewBox="0 0 32 32"
-								fill="none"
-								stroke="currentColor"
-								stroke-width="1.7"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								aria-hidden="true"
-							>
-								<circle cx="16" cy="11" r="5" />
-								<path d="M6.5 27c0-5.2 4.3-9 9.5-9s9.5 3.8 9.5 9" />
-							</svg>
+							<LineIcon name="person" weight={1.7} />
 						</Icon>
 						<div>
 							<h3>Principal-led</h3>
@@ -81,19 +71,7 @@
 					</div>
 					<div class="principle">
 						<Icon>
-							<svg
-								viewBox="0 0 32 32"
-								fill="none"
-								stroke="currentColor"
-								stroke-width="1.7"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								aria-hidden="true"
-							>
-								<rect x="7" y="6" width="18" height="22" rx="2" />
-								<path d="M12 6V4.5h8V6" />
-								<path d="m11 13.5 1.8 1.8 3.2-3.3M11 21l1.8 1.8 3.2-3.3M19 14h3M19 21.5h3" />
-							</svg>
+							<LineIcon name="checklist" weight={1.7} />
 						</Icon>
 						<div>
 							<h3>A sharper process</h3>
@@ -105,20 +83,7 @@
 					</div>
 					<div class="principle">
 						<Icon>
-							<svg
-								viewBox="0 0 32 32"
-								fill="none"
-								stroke="currentColor"
-								stroke-width="1.7"
-								stroke-linecap="round"
-								stroke-linejoin="round"
-								aria-hidden="true"
-							>
-								<circle cx="12" cy="12" r="3.4" />
-								<path d="M5.5 25c0-3.6 2.9-6.3 6.5-6.3s6.5 2.7 6.5 6.3" />
-								<circle cx="22.5" cy="13.5" r="2.7" />
-								<path d="M20.5 19c3.2.1 5.8 2.6 5.8 6.1" />
-							</svg>
+							<LineIcon name="people" weight={1.7} />
 						</Icon>
 						<div>
 							<h3>Judgment beyond the numbers</h3>
@@ -257,19 +222,7 @@
 		<div class="exec-grid reveal">
 			<ExecCard title="Analysts">
 				{#snippet icon()}
-					<svg
-						viewBox="0 0 32 32"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.8"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						aria-hidden="true"
-					>
-						<circle cx="14" cy="14" r="8.5" />
-						<path d="M20.2 20.2 26.5 26.5" />
-						<path d="M11 17v-3.5M14 17v-6.5M17 17v-4.5" />
-					</svg>
+					<LineIcon name="search-chart" />
 				{/snippet}
 				<p>
 					Financial modeling, market research, and the analytical work that underwrites a defensible
@@ -278,20 +231,7 @@
 			</ExecCard>
 			<ExecCard title="Deal Support">
 				{#snippet icon()}
-					<svg
-						viewBox="0 0 32 32"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.8"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						aria-hidden="true"
-					>
-						<path
-							d="M4 9.5A2.5 2.5 0 0 1 6.5 7h5.2l2.6 3h11.2A2.5 2.5 0 0 1 28 12.5v10A2.5 2.5 0 0 1 25.5 25h-19A2.5 2.5 0 0 1 4 22.5z"
-						/>
-						<path d="M4 15.5h24" />
-					</svg>
+					<LineIcon name="folder" />
 				{/snippet}
 				<p>
 					Marketing materials, data room management, and buyer coordination that keep a process
@@ -300,18 +240,7 @@
 			</ExecCard>
 			<ExecCard title="Diligence &amp; Documentation">
 				{#snippet icon()}
-					<svg
-						viewBox="0 0 32 32"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.8"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						aria-hidden="true"
-					>
-						<path d="M16 4l10 3.8v7.6c0 6.1-4.3 10-10 12.6-5.7-2.6-10-6.5-10-12.6V7.8z" />
-						<path d="m11.6 16.2 3 3 6-6" />
-					</svg>
+					<LineIcon name="shield-check-round" />
 				{/snippet}
 				<p>
 					Keeping diligence organized and momentum intact from LOI through closing and final

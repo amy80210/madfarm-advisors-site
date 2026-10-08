@@ -1,4 +1,5 @@
 <script lang="ts">
+	import LineIcon from '#lib/components/LineIcon.svelte';
 	import professional from '#lib/assets/treated/professional.jpg?w=900;640;360&enhanced';
 	import Button from '#lib/components/Button.svelte';
 	import CtaBand from '#lib/components/CtaBand.svelte';
@@ -85,15 +86,7 @@
 		<CsList class="reveal">
 			<CsItem>
 				{#snippet icon()}
-					<svg
-						viewBox="0 0 32 32"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.8"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						aria-hidden="true"><path d="M6 26V6M6 26h20M11 22v-6M17 22v-11M23 22v-9" /></svg
-					>
+					<LineIcon name="bar-chart" />
 				{/snippet}
 				<h3>Financial Reconstruction</h3>
 				<p>
@@ -104,15 +97,7 @@
 			</CsItem>
 			<CsItem>
 				{#snippet icon()}
-					<svg
-						viewBox="0 0 32 32"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.8"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						aria-hidden="true"><path d="M16 5 3 27h26L16 5Z" /><path d="M16 13v6M16 23h.02" /></svg
-					>
+					<LineIcon name="warning" />
 				{/snippet}
 				<h3>A Mid-Diligence &ldquo;Black Swan&rdquo;</h3>
 				<p>
@@ -123,15 +108,7 @@
 			</CsItem>
 			<CsItem>
 				{#snippet icon()}
-					<svg
-						viewBox="0 0 32 32"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.8"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						aria-hidden="true"><path d="M16 4l10 4v7c0 7-5 11-10 13-5-2-10-6-10-13V8l10-4Z" /></svg
-					>
+					<LineIcon name="shield" />
 				{/snippet}
 				<h3>Internal Friction</h3>
 				<p>
@@ -157,20 +134,7 @@
 		<CsList class="reveal">
 			<CsItem>
 				{#snippet icon()}
-					<svg
-						viewBox="0 0 32 32"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.8"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						aria-hidden="true"
-						><circle cx="7" cy="9" r="3" /><circle cx="25" cy="9" r="3" /><circle
-							cx="16"
-							cy="24"
-							r="3"
-						/><path d="M9.6 10.6 13.8 21.6M22.4 10.6 18.2 21.6M10 9h12" /></svg
-					>
+					<LineIcon name="network" />
 				{/snippet}
 				<h3>Broad-Auction Execution</h3>
 				<p>
@@ -180,15 +144,7 @@
 			</CsItem>
 			<CsItem>
 				{#snippet icon()}
-					<svg
-						viewBox="0 0 32 32"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.8"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						aria-hidden="true"><circle cx="14" cy="14" r="8" /><path d="M20 20l6.5 6.5" /></svg
-					>
+					<LineIcon name="search" />
 				{/snippet}
 				<h3>Technical Value Positioning</h3>
 				<p>
@@ -199,16 +155,7 @@
 			</CsItem>
 			<CsItem>
 				{#snippet icon()}
-					<svg
-						viewBox="0 0 32 32"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.8"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						aria-hidden="true"
-						><circle cx="16" cy="16" r="11" /><path d="M21 11l-3.2 7.8L10 22l3.2-7.8L21 11Z" /></svg
-					>
+					<LineIcon name="compass" />
 				{/snippet}
 				<h3>Hands-On Coaching</h3>
 				<p>

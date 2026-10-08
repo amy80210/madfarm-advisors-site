@@ -1,4 +1,5 @@
 <script lang="ts">
+	import LineIcon from '#lib/components/LineIcon.svelte';
 	import industrials from '#lib/assets/treated/industrials.jpg?w=900;640;360&enhanced';
 	import Button from '#lib/components/Button.svelte';
 	import CtaBand from '#lib/components/CtaBand.svelte';
@@ -90,15 +91,7 @@
 		<CsList columns={2} class="reveal">
 			<CsItem>
 				{#snippet icon()}
-					<svg
-						viewBox="0 0 32 32"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.8"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						aria-hidden="true"><path d="M5 9l8 8 5-5 9 9" /><path d="M27 15v6h-6" /></svg
-					>
+					<LineIcon name="trend" />
 				{/snippet}
 				<h3>The Market Gap</h3>
 				<p>
@@ -109,18 +102,7 @@
 			</CsItem>
 			<CsItem>
 				{#snippet icon()}
-					<svg
-						viewBox="0 0 32 32"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.8"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						aria-hidden="true"
-						><path d="M16 5 28 11 16 17 4 11 16 5Z" /><path
-							d="M4 16.5 16 22.5 28 16.5M4 21.5 16 27.5 28 21.5"
-						/></svg
-					>
+					<LineIcon name="layers" />
 				{/snippet}
 				<h3>The Complexity of &ldquo;Staying In&rdquo;</h3>
 				<p>
@@ -146,16 +128,7 @@
 		<CsList class="reveal">
 			<CsItem>
 				{#snippet icon()}
-					<svg
-						viewBox="0 0 32 32"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.8"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						aria-hidden="true"
-						><rect x="5" y="6" width="22" height="20" rx="1" /><path d="M5 12h22M12 12v14" /></svg
-					>
+					<LineIcon name="table" />
 				{/snippet}
 				<h3>Strategic Architect</h3>
 				<p>
@@ -166,20 +139,7 @@
 			</CsItem>
 			<CsItem>
 				{#snippet icon()}
-					<svg
-						viewBox="0 0 32 32"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.8"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						aria-hidden="true"
-						><circle cx="7" cy="9" r="3" /><circle cx="25" cy="9" r="3" /><circle
-							cx="16"
-							cy="24"
-							r="3"
-						/><path d="M9.6 10.6 13.8 21.6M22.4 10.6 18.2 21.6M10 9h12" /></svg
-					>
+					<LineIcon name="network" />
 				{/snippet}
 				<h3>Leveraging the Advisor Network</h3>
 				<p>
@@ -190,18 +150,7 @@
 			</CsItem>
 			<CsItem>
 				{#snippet icon()}
-					<svg
-						viewBox="0 0 32 32"
-						fill="none"
-						stroke="currentColor"
-						stroke-width="1.8"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						aria-hidden="true"
-						><path d="M8 4h12l5 5v19H8z" /><path d="M20 4v5h5" /><path
-							d="M12 18l2.2 2.2L19 15"
-						/></svg
-					>
+					<LineIcon name="document-check" />
 				{/snippet}
 				<h3>Professionalism as Currency</h3>
 				<p>
