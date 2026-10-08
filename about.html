@@ -28,7 +28,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
   <link rel="preload" href="fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/libre-baskerville-700-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=20261007b">
+  <link rel="stylesheet" href="css/style.css?v=20261008a">
 
   <script type="application/ld+json">
   {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://madfarm-advisors.com/"}, {"@type": "ListItem", "position": 2, "name": "About", "item": "https://madfarm-advisors.com/about.html"}]}
@@ -40,7 +40,7 @@
   <header class="site-header">
     <div class="wrap nav">
       <a class="brand" href="index.html" aria-label="Madfarm Advisors home">
-        <img src="images/logos/madfarm-stack-dark.png" alt="Madfarm Advisors">
+        <img src="images/logos/madfarm-stack-dark.png" alt="Madfarm Advisors" width="500" height="149">
       </a>
       <nav class="nav-links" id="site-nav" aria-label="Primary">
         <a href="process.html">Process</a>
@@ -56,7 +56,11 @@
   <main id="main">
     <!-- PAGE HERO -->
     <section class="page-hero">
-      <img class="hero__bg" src="images/treated/software.jpg" alt="" aria-hidden="true">
+      <picture>
+        <source type="image/avif" srcset="images/treated/software-360.avif 360w, images/treated/software-640.avif 640w, images/treated/software-900.avif 900w" sizes="(max-width: 600px) 185vw, 100vw">
+        <source type="image/webp" srcset="images/treated/software-360.webp 360w, images/treated/software-640.webp 640w, images/treated/software-900.webp 900w" sizes="(max-width: 600px) 185vw, 100vw">
+        <img fetchpriority="high" class="hero__bg" src="images/treated/software.jpg" alt="" aria-hidden="true" width="900" height="675">
+      </picture>
       <div class="hero__grid"></div>
       <div class="wrap">
         <span class="eyebrow">About Madfarm</span>
@@ -64,8 +68,8 @@
         <p class="lead">We are not a broker. We are not a generalist boutique. We are a senior-led sell-side practice for owners who take their business seriously and expect the same of the people who represent it.</p>
         <a class="team-chip" href="#leadership">
           <span class="team-chip__faces">
-            <img src="images/team/spencer-williams-thumb.jpg" alt="">
-            <img src="images/team/will-davis-thumb.jpg" alt="">
+            <img src="images/team/spencer-williams-thumb.jpg" alt="" width="160" height="160">
+            <img src="images/team/will-davis-thumb.jpg" alt="" width="160" height="160">
           </span>
           <span class="team-chip__text"><b>Meet the team</b><span>Spencer Williams &amp; Will Davis</span></span>
           <span class="arw" aria-hidden="true">&darr;</span>
@@ -119,7 +123,11 @@
           <!-- Spencer -->
           <div class="leader reveal">
             <div class="leader__photo">
-              <img loading="lazy" decoding="async" src="images/team/spencer-williams.jpg?v=5" alt="Spencer Williams, Founder and Managing Partner">
+              <picture>
+                <source type="image/avif" srcset="images/team/spencer-williams-320.avif 320w, images/team/spencer-williams-560.avif 560w" sizes="(max-width: 600px) 75vw, (max-width: 1100px) 40vw, 300px">
+                <source type="image/webp" srcset="images/team/spencer-williams-320.webp 320w, images/team/spencer-williams-560.webp 560w" sizes="(max-width: 600px) 75vw, (max-width: 1100px) 40vw, 300px">
+                <img loading="lazy" decoding="async" src="images/team/spencer-williams.jpg?v=5" alt="Spencer Williams, Founder and Managing Partner" width="560" height="700">
+              </picture>
             </div>
             <div>
               <span class="leader__role">Founder &amp; Managing Partner</span>
@@ -134,7 +142,11 @@
           <!-- Will -->
           <div class="leader reveal">
             <div class="leader__photo">
-              <img loading="lazy" decoding="async" src="images/team/will-davis.jpg?v=5" alt="Will Davis, Managing Director">
+              <picture>
+                <source type="image/avif" srcset="images/team/will-davis-320.avif 320w, images/team/will-davis-560.avif 560w" sizes="(max-width: 600px) 75vw, (max-width: 1100px) 40vw, 300px">
+                <source type="image/webp" srcset="images/team/will-davis-320.webp 320w, images/team/will-davis-560.webp 560w" sizes="(max-width: 600px) 75vw, (max-width: 1100px) 40vw, 300px">
+                <img loading="lazy" decoding="async" src="images/team/will-davis.jpg?v=5" alt="Will Davis, Managing Director" width="560" height="700">
+              </picture>
             </div>
             <div>
               <span class="leader__role">Managing Director</span>
@@ -179,27 +191,27 @@
         </div>
         <div class="advisors reveal">
           <a class="advisor" href="https://www.linkedin.com/in/bobogdon" target="_blank" rel="noopener">
-            <div class="advisor__photo"><img loading="lazy" decoding="async" src="images/team/advisors/bob-ogdon.jpg" alt=""></div>
+            <div class="advisor__photo"><picture><source type="image/avif" srcset="images/team/advisors/bob-ogdon-160.avif 160w, images/team/advisors/bob-ogdon-320.avif 320w" sizes="80px"><source type="image/webp" srcset="images/team/advisors/bob-ogdon-160.webp 160w, images/team/advisors/bob-ogdon-320.webp 320w" sizes="80px"><img loading="lazy" decoding="async" src="images/team/advisors/bob-ogdon.jpg" alt="" width="320" height="320"></picture></div>
             <b>Bob Ogdon</b>
             <span class="adv-li" aria-hidden="true"><svg class="li-ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg></span>
           </a>
           <a class="advisor" href="https://www.linkedin.com/in/doug-robinson-369ab6/" target="_blank" rel="noopener">
-            <div class="advisor__photo"><img loading="lazy" decoding="async" src="images/team/advisors/doug-robinson.jpg" alt=""></div>
+            <div class="advisor__photo"><picture><source type="image/avif" srcset="images/team/advisors/doug-robinson-160.avif 160w, images/team/advisors/doug-robinson-320.avif 320w" sizes="80px"><source type="image/webp" srcset="images/team/advisors/doug-robinson-160.webp 160w, images/team/advisors/doug-robinson-320.webp 320w" sizes="80px"><img loading="lazy" decoding="async" src="images/team/advisors/doug-robinson.jpg" alt="" width="320" height="320"></picture></div>
             <b>Doug Robinson</b>
             <span class="adv-li" aria-hidden="true"><svg class="li-ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg></span>
           </a>
           <a class="advisor" href="https://www.linkedin.com/in/danogdon/" target="_blank" rel="noopener">
-            <div class="advisor__photo"><img loading="lazy" decoding="async" src="images/team/advisors/dan-ogdon.jpg" alt=""></div>
+            <div class="advisor__photo"><picture><source type="image/avif" srcset="images/team/advisors/dan-ogdon-160.avif 160w, images/team/advisors/dan-ogdon-320.avif 320w" sizes="80px"><source type="image/webp" srcset="images/team/advisors/dan-ogdon-160.webp 160w, images/team/advisors/dan-ogdon-320.webp 320w" sizes="80px"><img loading="lazy" decoding="async" src="images/team/advisors/dan-ogdon.jpg" alt="" width="320" height="320"></picture></div>
             <b>Dan Ogdon</b>
             <span class="adv-li" aria-hidden="true"><svg class="li-ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg></span>
           </a>
           <a class="advisor" href="https://www.linkedin.com/in/mike-ogdon-0986436/" target="_blank" rel="noopener">
-            <div class="advisor__photo"><img loading="lazy" decoding="async" src="images/team/advisors/mike-ogdon.jpg" alt=""></div>
+            <div class="advisor__photo"><picture><source type="image/avif" srcset="images/team/advisors/mike-ogdon-160.avif 160w, images/team/advisors/mike-ogdon-320.avif 320w" sizes="80px"><source type="image/webp" srcset="images/team/advisors/mike-ogdon-160.webp 160w, images/team/advisors/mike-ogdon-320.webp 320w" sizes="80px"><img loading="lazy" decoding="async" src="images/team/advisors/mike-ogdon.jpg" alt="" width="320" height="320"></picture></div>
             <b>Mike Ogdon</b>
             <span class="adv-li" aria-hidden="true"><svg class="li-ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg></span>
           </a>
           <a class="advisor" href="https://www.linkedin.com/in/tim-donohue-b307888/" target="_blank" rel="noopener">
-            <div class="advisor__photo"><img loading="lazy" decoding="async" src="images/team/advisors/tim-donohue.jpg?v=5" alt=""></div>
+            <div class="advisor__photo"><picture><source type="image/avif" srcset="images/team/advisors/tim-donohue-160.avif 160w, images/team/advisors/tim-donohue-320.avif 320w" sizes="80px"><source type="image/webp" srcset="images/team/advisors/tim-donohue-160.webp 160w, images/team/advisors/tim-donohue-320.webp 320w" sizes="80px"><img loading="lazy" decoding="async" src="images/team/advisors/tim-donohue.jpg?v=5" alt="" width="320" height="320"></picture></div>
             <b>Tim Donohue</b>
             <span class="adv-li" aria-hidden="true"><svg class="li-ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg></span>
           </a>
@@ -209,7 +221,11 @@
 
     <!-- CTA -->
     <section class="section cta-band">
-      <img loading="lazy" decoding="async" class="hero__bg" src="images/treated/industrials.jpg" alt="" aria-hidden="true" style="opacity:.28;">
+      <picture>
+        <source type="image/avif" srcset="images/treated/industrials-360.avif 360w, images/treated/industrials-640.avif 640w, images/treated/industrials-900.avif 900w" sizes="(max-width: 600px) 200vw, 100vw">
+        <source type="image/webp" srcset="images/treated/industrials-360.webp 360w, images/treated/industrials-640.webp 640w, images/treated/industrials-900.webp 900w" sizes="(max-width: 600px) 200vw, 100vw">
+        <img loading="lazy" decoding="async" class="hero__bg" src="images/treated/industrials.jpg" alt="" aria-hidden="true" style="opacity:.28;" width="900" height="675">
+      </picture>
       <div class="hero__grid"></div>
       <div class="wrap">
         <span class="eyebrow center" style="justify-content:center;">Start a Conversation</span>
@@ -227,7 +243,7 @@
     <div class="wrap">
       <div class="footer-top">
         <div class="footer-brand">
-          <img loading="lazy" decoding="async" src="images/logos/madfarm-stack-white.png" alt="Madfarm Advisors">
+          <img loading="lazy" decoding="async" src="images/logos/madfarm-stack-white.png" alt="Madfarm Advisors" width="500" height="149">
           <p>A lower middle market investment bank selling mission-critical businesses. Senior representation on every deal.</p>
         </div>
         <div class="footer-col">

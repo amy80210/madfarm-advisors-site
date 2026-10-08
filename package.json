@@ -4,7 +4,13 @@
   "private": true,
   "type": "module",
   "description": "Madfarm Advisors website",
+  "scripts": {
+    "images": "node scripts/optimize-images.mjs"
+  },
   "dependencies": {
     "mailersend": "^2.3.0"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.5"
   }
 }

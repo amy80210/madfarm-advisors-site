@@ -28,7 +28,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
   <link rel="preload" href="fonts/inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/libre-baskerville-700-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=20261007b">
+  <link rel="stylesheet" href="css/style.css?v=20261008a">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -58,7 +58,7 @@
   <header class="site-header">
     <div class="wrap nav">
       <a class="brand" href="index.html" aria-label="Madfarm Advisors home">
-        <img src="images/logos/madfarm-stack-dark.png" alt="Madfarm Advisors">
+        <img src="images/logos/madfarm-stack-dark.png" alt="Madfarm Advisors" width="500" height="149">
       </a>
       <nav class="nav-links" id="site-nav" aria-label="Primary">
         <a href="process.html">Process</a>
@@ -74,7 +74,11 @@
   <main id="main">
     <!-- ================= HERO ================= -->
     <section class="hero">
-      <img class="hero__bg hero__bg--drift" fetchpriority="high" src="images/treated/hero.jpg?v=4" alt="" aria-hidden="true">
+      <picture>
+        <source type="image/avif" srcset="images/treated/hero-360.avif 360w, images/treated/hero-640.avif 640w, images/treated/hero-900.avif 900w, images/treated/hero-1280.avif 1280w, images/treated/hero-1600.avif 1600w" sizes="(max-width: 600px) 300vw, (max-width: 1100px) 120vw, 100vw">
+        <source type="image/webp" srcset="images/treated/hero-360.webp 360w, images/treated/hero-640.webp 640w, images/treated/hero-900.webp 900w, images/treated/hero-1280.webp 1280w, images/treated/hero-1600.webp 1600w" sizes="(max-width: 600px) 300vw, (max-width: 1100px) 120vw, 100vw">
+        <img class="hero__bg hero__bg--drift" fetchpriority="high" src="images/treated/hero.jpg?v=4" alt="" aria-hidden="true" width="1600" height="900">
+      </picture>
       <div class="hero__grid"></div>
       <div class="wrap">
         <div class="hero__eyebrow">
@@ -100,73 +104,73 @@
       <div class="deals-marquee reveal">
         <ul class="deals-track">
             <li class="deal">
-              <div class="deal__logo"><img src="images/deals/innovae.png" alt="Innovae"></div>
+              <div class="deal__logo"><picture><source type="image/avif" srcset="images/deals/innovae-200.avif 200w, images/deals/innovae-360.avif 360w" sizes="136px"><source type="image/webp" srcset="images/deals/innovae-200.webp 200w, images/deals/innovae-360.webp 360w" sizes="136px"><img src="images/deals/innovae.png" alt="Innovae" width="360" height="117"></picture></div>
               <span class="deal__rel">acquired by</span>
-              <div class="deal__logo"><img src="images/deals/imeg.png" alt="IMEG"></div>
+              <div class="deal__logo"><img src="images/deals/imeg.png" alt="IMEG" width="289" height="75"></div>
               <span class="deal__tag">Exclusive Sell-Side Advisor</span>
             </li>
             <li class="deal">
-              <div class="deal__logo"><img src="images/deals/wmi.png" alt="Western Mechanical &amp; Industrial (WMI)" class="tall"></div>
+              <div class="deal__logo"><picture><source type="image/avif" srcset="images/deals/wmi-200.avif 200w, images/deals/wmi-400.avif 400w" sizes="170px"><source type="image/webp" srcset="images/deals/wmi-200.webp 200w, images/deals/wmi-400.webp 400w" sizes="170px"><img src="images/deals/wmi.png" alt="Western Mechanical &amp; Industrial (WMI)" class="tall" width="442" height="98"></picture></div>
               <span class="deal__rel">acquired by</span>
-              <div class="deal__logo"><img src="images/deals/snake-river.png" alt="Snake River Industrial Partners"></div>
+              <div class="deal__logo"><picture><source type="image/avif" srcset="images/deals/snake-river-200.avif 200w, images/deals/snake-river-330.avif 330w" sizes="190px"><source type="image/webp" srcset="images/deals/snake-river-200.webp 200w, images/deals/snake-river-330.webp 330w" sizes="190px"><img src="images/deals/snake-river.png" alt="Snake River Industrial Partners" width="330" height="57"></picture></div>
               <span class="deal__tag">Exclusive Sell-Side Advisor</span>
             </li>
             <li class="deal">
-              <div class="deal__logo"><img src="images/deals/primus-windpower.png" alt="Primus Windpower"></div>
+              <div class="deal__logo"><img src="images/deals/primus-windpower.png" alt="Primus Windpower" width="590" height="65"></div>
               <span class="deal__rel">acquired by</span>
-              <div class="deal__logo"><img src="images/deals/ryse-energy.png" alt="Ryse Energy" class="tall"></div>
+              <div class="deal__logo"><picture><source type="image/avif" srcset="images/deals/ryse-energy-200.avif 200w, images/deals/ryse-energy-206.avif 206w" sizes="113px"><source type="image/webp" srcset="images/deals/ryse-energy-200.webp 200w, images/deals/ryse-energy-206.webp 206w" sizes="113px"><img src="images/deals/ryse-energy.png" alt="Ryse Energy" class="tall" width="206" height="125"></picture></div>
               <span class="deal__tag">Exclusive Sell-Side Advisor</span>
             </li>
             <li class="deal">
               <div class="deal__logo"><span class="deal__conf">Confidential<small>Vertical SaaS Company</small></span></div>
               <span class="deal__rel">acquired by</span>
-              <div class="deal__logo"><img src="images/deals/kirra-capital.png" alt="Kirra Capital"></div>
+              <div class="deal__logo"><picture><source type="image/avif" srcset="images/deals/kirra-capital-200.avif 200w, images/deals/kirra-capital-400.avif 400w" sizes="159px"><source type="image/webp" srcset="images/deals/kirra-capital-200.webp 200w, images/deals/kirra-capital-400.webp 400w" sizes="159px"><img src="images/deals/kirra-capital.png" alt="Kirra Capital" width="408" height="113"></picture></div>
               <span class="deal__tag">Exclusive Sell-Side Advisor</span>
             </li>
             <li class="deal">
-              <div class="deal__logo"><img src="images/deals/aable-hvac.png" alt="AAble HVAC" class="tall"></div>
+              <div class="deal__logo"><picture><source type="image/avif" srcset="images/deals/aable-hvac-200.avif 200w, images/deals/aable-hvac-400.avif 400w" sizes="136px"><source type="image/webp" srcset="images/deals/aable-hvac-200.webp 200w, images/deals/aable-hvac-400.webp 400w" sizes="136px"><img src="images/deals/aable-hvac.png" alt="AAble HVAC" class="tall" width="486" height="243"></picture></div>
               <span class="deal__rel">acquired by</span>
-              <div class="deal__logo"><img src="images/deals/riva-ridge.png" alt="Riva Ridge"></div>
+              <div class="deal__logo"><picture><source type="image/avif" srcset="images/deals/riva-ridge-200.avif 200w, images/deals/riva-ridge-400.avif 400w" sizes="190px"><source type="image/webp" srcset="images/deals/riva-ridge-200.webp 200w, images/deals/riva-ridge-400.webp 400w" sizes="190px"><img src="images/deals/riva-ridge.png" alt="Riva Ridge" width="1323" height="218"></picture></div>
               <span class="deal__tag">Exclusive Sell-Side Advisor</span>
             </li>
             <li class="deal">
-              <div class="deal__logo"><img src="images/deals/source-communications.png" alt="Source Communications" class="tall"></div>
+              <div class="deal__logo"><picture><source type="image/avif" srcset="images/deals/source-communications-200.avif 200w, images/deals/source-communications-400.avif 400w" sizes="170px"><source type="image/webp" srcset="images/deals/source-communications-200.webp 200w, images/deals/source-communications-400.webp 400w" sizes="170px"><img src="images/deals/source-communications.png" alt="Source Communications" class="tall" width="565" height="197"></picture></div>
               <span class="deal__rel">acquired by</span>
               <div class="deal__logo"><span class="deal__word">tKW Capital</span></div>
               <span class="deal__tag">Exclusive Sell-Side Advisor</span>
             </li>
             <li class="deal" aria-hidden="true">
-              <div class="deal__logo"><img src="images/deals/innovae.png" alt="Innovae"></div>
+              <div class="deal__logo"><picture><source type="image/avif" srcset="images/deals/innovae-200.avif 200w, images/deals/innovae-360.avif 360w" sizes="136px"><source type="image/webp" srcset="images/deals/innovae-200.webp 200w, images/deals/innovae-360.webp 360w" sizes="136px"><img src="images/deals/innovae.png" alt="Innovae" width="360" height="117"></picture></div>
               <span class="deal__rel">acquired by</span>
-              <div class="deal__logo"><img src="images/deals/imeg.png" alt="IMEG"></div>
+              <div class="deal__logo"><img src="images/deals/imeg.png" alt="IMEG" width="289" height="75"></div>
               <span class="deal__tag">Exclusive Sell-Side Advisor</span>
             </li>
             <li class="deal" aria-hidden="true">
-              <div class="deal__logo"><img src="images/deals/wmi.png" alt="Western Mechanical &amp; Industrial (WMI)" class="tall"></div>
+              <div class="deal__logo"><picture><source type="image/avif" srcset="images/deals/wmi-200.avif 200w, images/deals/wmi-400.avif 400w" sizes="170px"><source type="image/webp" srcset="images/deals/wmi-200.webp 200w, images/deals/wmi-400.webp 400w" sizes="170px"><img src="images/deals/wmi.png" alt="Western Mechanical &amp; Industrial (WMI)" class="tall" width="442" height="98"></picture></div>
               <span class="deal__rel">acquired by</span>
-              <div class="deal__logo"><img src="images/deals/snake-river.png" alt="Snake River Industrial Partners"></div>
+              <div class="deal__logo"><picture><source type="image/avif" srcset="images/deals/snake-river-200.avif 200w, images/deals/snake-river-330.avif 330w" sizes="190px"><source type="image/webp" srcset="images/deals/snake-river-200.webp 200w, images/deals/snake-river-330.webp 330w" sizes="190px"><img src="images/deals/snake-river.png" alt="Snake River Industrial Partners" width="330" height="57"></picture></div>
               <span class="deal__tag">Exclusive Sell-Side Advisor</span>
             </li>
             <li class="deal" aria-hidden="true">
-              <div class="deal__logo"><img src="images/deals/primus-windpower.png" alt="Primus Windpower"></div>
+              <div class="deal__logo"><img src="images/deals/primus-windpower.png" alt="Primus Windpower" width="590" height="65"></div>
               <span class="deal__rel">acquired by</span>
-              <div class="deal__logo"><img src="images/deals/ryse-energy.png" alt="Ryse Energy" class="tall"></div>
+              <div class="deal__logo"><picture><source type="image/avif" srcset="images/deals/ryse-energy-200.avif 200w, images/deals/ryse-energy-206.avif 206w" sizes="113px"><source type="image/webp" srcset="images/deals/ryse-energy-200.webp 200w, images/deals/ryse-energy-206.webp 206w" sizes="113px"><img src="images/deals/ryse-energy.png" alt="Ryse Energy" class="tall" width="206" height="125"></picture></div>
               <span class="deal__tag">Exclusive Sell-Side Advisor</span>
             </li>
             <li class="deal" aria-hidden="true">
               <div class="deal__logo"><span class="deal__conf">Confidential<small>Vertical SaaS Company</small></span></div>
               <span class="deal__rel">acquired by</span>
-              <div class="deal__logo"><img src="images/deals/kirra-capital.png" alt="Kirra Capital"></div>
+              <div class="deal__logo"><picture><source type="image/avif" srcset="images/deals/kirra-capital-200.avif 200w, images/deals/kirra-capital-400.avif 400w" sizes="159px"><source type="image/webp" srcset="images/deals/kirra-capital-200.webp 200w, images/deals/kirra-capital-400.webp 400w" sizes="159px"><img src="images/deals/kirra-capital.png" alt="Kirra Capital" width="408" height="113"></picture></div>
               <span class="deal__tag">Exclusive Sell-Side Advisor</span>
             </li>
             <li class="deal" aria-hidden="true">
-              <div class="deal__logo"><img src="images/deals/aable-hvac.png" alt="AAble HVAC" class="tall"></div>
+              <div class="deal__logo"><picture><source type="image/avif" srcset="images/deals/aable-hvac-200.avif 200w, images/deals/aable-hvac-400.avif 400w" sizes="136px"><source type="image/webp" srcset="images/deals/aable-hvac-200.webp 200w, images/deals/aable-hvac-400.webp 400w" sizes="136px"><img src="images/deals/aable-hvac.png" alt="AAble HVAC" class="tall" width="486" height="243"></picture></div>
               <span class="deal__rel">acquired by</span>
-              <div class="deal__logo"><img src="images/deals/riva-ridge.png" alt="Riva Ridge"></div>
+              <div class="deal__logo"><picture><source type="image/avif" srcset="images/deals/riva-ridge-200.avif 200w, images/deals/riva-ridge-400.avif 400w" sizes="190px"><source type="image/webp" srcset="images/deals/riva-ridge-200.webp 200w, images/deals/riva-ridge-400.webp 400w" sizes="190px"><img src="images/deals/riva-ridge.png" alt="Riva Ridge" width="1323" height="218"></picture></div>
               <span class="deal__tag">Exclusive Sell-Side Advisor</span>
             </li>
             <li class="deal" aria-hidden="true">
-              <div class="deal__logo"><img src="images/deals/source-communications.png" alt="Source Communications" class="tall"></div>
+              <div class="deal__logo"><picture><source type="image/avif" srcset="images/deals/source-communications-200.avif 200w, images/deals/source-communications-400.avif 400w" sizes="170px"><source type="image/webp" srcset="images/deals/source-communications-200.webp 200w, images/deals/source-communications-400.webp 400w" sizes="170px"><img src="images/deals/source-communications.png" alt="Source Communications" class="tall" width="565" height="197"></picture></div>
               <span class="deal__rel">acquired by</span>
               <div class="deal__logo"><span class="deal__word">tKW Capital</span></div>
               <span class="deal__tag">Exclusive Sell-Side Advisor</span>
@@ -180,7 +184,11 @@
       <div class="wrap">
         <div class="founder__inner">
           <div class="founder__photo reveal">
-            <img loading="lazy" decoding="async" src="images/team/spencer-williams-home.jpg?v=2" alt="Spencer Williams, Founding Principal of Madfarm Advisors">
+            <picture>
+              <source type="image/avif" srcset="images/team/spencer-williams-home-320.avif 320w, images/team/spencer-williams-home-560.avif 560w" sizes="(max-width: 600px) 90vw, (max-width: 1100px) 35vw, 340px">
+              <source type="image/webp" srcset="images/team/spencer-williams-home-320.webp 320w, images/team/spencer-williams-home-560.webp 560w" sizes="(max-width: 600px) 90vw, (max-width: 1100px) 35vw, 340px">
+              <img loading="lazy" decoding="async" src="images/team/spencer-williams-home.jpg?v=2" alt="Spencer Williams, Founding Principal of Madfarm Advisors" width="560" height="745">
+            </picture>
           </div>
           <div class="founder__quote-wrap reveal">
             <span class="eyebrow">Senior Representation</span>
@@ -209,19 +217,35 @@
         </div>
         <div class="sectors reveal">
           <a class="sector-card" href="contact.html">
-            <img loading="lazy" decoding="async" src="images/treated/craft.jpg" alt="Industrial plant and processing infrastructure">
+            <picture>
+              <source type="image/avif" srcset="images/treated/craft-360.avif 360w, images/treated/craft-640.avif 640w, images/treated/craft-900.avif 900w" sizes="(max-width: 1100px) 80vw, 470px">
+              <source type="image/webp" srcset="images/treated/craft-360.webp 360w, images/treated/craft-640.webp 640w, images/treated/craft-900.webp 900w" sizes="(max-width: 1100px) 80vw, 470px">
+              <img loading="lazy" decoding="async" src="images/treated/craft.jpg" alt="Industrial plant and processing infrastructure" width="900" height="675">
+            </picture>
             <div class="sector-card__label"><span class="sector-card__num">01</span><h3>Industrials</h3></div>
           </a>
           <a class="sector-card" href="contact.html">
-            <img loading="lazy" decoding="async" src="images/treated/commercial-services.jpg?v=3" alt="Commercial building mechanical systems and pipework service">
+            <picture>
+              <source type="image/avif" srcset="images/treated/commercial-services-360.avif 360w, images/treated/commercial-services-640.avif 640w, images/treated/commercial-services-900.avif 900w" sizes="(max-width: 1100px) 80vw, 470px">
+              <source type="image/webp" srcset="images/treated/commercial-services-360.webp 360w, images/treated/commercial-services-640.webp 640w, images/treated/commercial-services-900.webp 900w" sizes="(max-width: 1100px) 80vw, 470px">
+              <img loading="lazy" decoding="async" src="images/treated/commercial-services.jpg?v=3" alt="Commercial building mechanical systems and pipework service" width="900" height="675">
+            </picture>
             <div class="sector-card__label"><span class="sector-card__num">02</span><h3>Commercial Services</h3></div>
           </a>
           <a class="sector-card" href="contact.html">
-            <img loading="lazy" decoding="async" src="images/treated/software.jpg" alt="Data center and software infrastructure">
+            <picture>
+              <source type="image/avif" srcset="images/treated/software-360.avif 360w, images/treated/software-640.avif 640w, images/treated/software-900.avif 900w" sizes="(max-width: 1100px) 80vw, 470px">
+              <source type="image/webp" srcset="images/treated/software-360.webp 360w, images/treated/software-640.webp 640w, images/treated/software-900.webp 900w" sizes="(max-width: 1100px) 80vw, 470px">
+              <img loading="lazy" decoding="async" src="images/treated/software.jpg" alt="Data center and software infrastructure" width="900" height="675">
+            </picture>
             <div class="sector-card__label"><span class="sector-card__num">03</span><h3>Software</h3></div>
           </a>
           <a class="sector-card" href="contact.html">
-            <img loading="lazy" decoding="async" src="images/treated/professional.jpg" alt="Professional services and architecture">
+            <picture>
+              <source type="image/avif" srcset="images/treated/professional-360.avif 360w, images/treated/professional-640.avif 640w, images/treated/professional-900.avif 900w" sizes="(max-width: 1100px) 80vw, 470px">
+              <source type="image/webp" srcset="images/treated/professional-360.webp 360w, images/treated/professional-640.webp 640w, images/treated/professional-900.webp 900w" sizes="(max-width: 1100px) 80vw, 470px">
+              <img loading="lazy" decoding="async" src="images/treated/professional.jpg" alt="Professional services and architecture" width="900" height="675">
+            </picture>
             <div class="sector-card__label"><span class="sector-card__num">04</span><h3>Professional Services</h3></div>
           </a>
         </div>
@@ -311,7 +335,11 @@
             </div>
           </div>
           <div class="feature-split__aside">
-            <img loading="lazy" decoding="async" class="hero__bg" src="images/treated/industrials.jpg" alt="" aria-hidden="true" style="opacity:.6;">
+            <picture>
+              <source type="image/avif" srcset="images/treated/industrials-360.avif 360w, images/treated/industrials-640.avif 640w, images/treated/industrials-900.avif 900w" sizes="(max-width: 600px) 115vw, (max-width: 1100px) 95vw, 622px">
+              <source type="image/webp" srcset="images/treated/industrials-360.webp 360w, images/treated/industrials-640.webp 640w, images/treated/industrials-900.webp 900w" sizes="(max-width: 600px) 115vw, (max-width: 1100px) 95vw, 622px">
+              <img loading="lazy" decoding="async" class="hero__bg" src="images/treated/industrials.jpg" alt="" aria-hidden="true" style="opacity:.6;" width="900" height="675">
+            </picture>
             <div class="hero__grid"></div>
           </div>
         </div>
@@ -366,7 +394,11 @@
 
     <!-- ================= CTA BAND ================= -->
     <section class="section cta-band">
-      <img loading="lazy" decoding="async" class="hero__bg" src="images/treated/professional.jpg" alt="" aria-hidden="true" style="opacity:.28;">
+      <picture>
+        <source type="image/avif" srcset="images/treated/professional-360.avif 360w, images/treated/professional-640.avif 640w, images/treated/professional-900.avif 900w" sizes="(max-width: 600px) 220vw, 100vw">
+        <source type="image/webp" srcset="images/treated/professional-360.webp 360w, images/treated/professional-640.webp 640w, images/treated/professional-900.webp 900w" sizes="(max-width: 600px) 220vw, 100vw">
+        <img loading="lazy" decoding="async" class="hero__bg" src="images/treated/professional.jpg" alt="" aria-hidden="true" style="opacity:.28;" width="900" height="675">
+      </picture>
       <div class="hero__grid"></div>
       <div class="wrap">
         <span class="eyebrow center" style="justify-content:center;">Talk to a Senior Banker</span>
@@ -385,7 +417,7 @@
     <div class="wrap">
       <div class="footer-top">
         <div class="footer-brand">
-          <img loading="lazy" decoding="async" src="images/logos/madfarm-stack-white.png" alt="Madfarm Advisors">
+          <img loading="lazy" decoding="async" src="images/logos/madfarm-stack-white.png" alt="Madfarm Advisors" width="500" height="149">
           <p>A lower middle market investment bank selling mission-critical businesses. Senior representation on every deal.</p>
         </div>
         <div class="footer-col">
