@@ -57,7 +57,7 @@
 			box-shadow var(--dur) var(--ease);
 	}
 	.case-card:active {
-		scale: 0.99;
+		scale: 0.98;
 	}
 	.media {
 		position: relative;
@@ -100,7 +100,6 @@
 		flex-direction: column;
 		gap: 0.7rem;
 		flex: 1;
-		color: var(--ink);
 	}
 	.type {
 		font-size: 0.74rem;

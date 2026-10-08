@@ -65,7 +65,7 @@
 	}
 	.body > :global(h2) {
 		margin-block-start: 2rem;
-		font-size: clamp(1.7rem, 3vw, 2.4rem);
+		font-size: var(--step-3);
 	}
 	.body > :global(p) {
 		margin-block-start: 1rem;

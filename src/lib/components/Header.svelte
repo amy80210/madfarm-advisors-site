@@ -174,6 +174,9 @@
 		}
 	}
 
+	/* A viewport query on purpose: below it the menu is a top-layer popover fixed to
+	   the viewport, and the page behind it is locked. That is about the screen, not
+	   about the space the header gets. */
 	@media (max-width: 720px) {
 		.mobile-toggle {
 			display: block;

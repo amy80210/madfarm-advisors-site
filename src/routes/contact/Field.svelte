@@ -90,9 +90,13 @@
 			border-color var(--dur-fast) var(--ease),
 			box-shadow var(--dur-fast) var(--ease);
 	}
+	/* Grows with the text where `field-sizing` exists; elsewhere it stays at the
+	   minimum and scrolls. The handle stays for a visitor who wants more room. */
 	.field > :global(textarea) {
+		field-sizing: content;
 		resize: vertical;
 		min-block-size: 140px;
+		max-block-size: 24lh;
 	}
 
 	/* Rejected by the browser after the visitor touched it, or by the server.

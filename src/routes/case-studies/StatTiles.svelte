@@ -28,12 +28,21 @@
 <style>
 	/* Exposed variables:
 	   --stat-note-maxw  measure of the note (default 64ch) */
+	.stat-tiles {
+		container-type: inline-size;
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
 	.tiles {
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		gap: 1.5rem;
 	}
 	.tile {
+		display: flex;
+		flex-direction: column;
+		gap: 0.6rem;
 		border-block-start: 2px solid var(--copper);
 		padding-block-start: 1.1rem;
 	}
@@ -46,21 +55,19 @@
 		letter-spacing: -0.015em;
 	}
 	.l {
-		margin-block-start: 0.6rem;
 		font-size: 0.9rem;
 		color: var(--text-soft);
 	}
 	.note {
-		margin-block-start: 2rem;
 		max-inline-size: var(--stat-note-maxw, 64ch);
 	}
-	@media (max-width: 980px) {
+	@container (width < 902px) {
 		.tiles {
 			grid-template-columns: repeat(2, 1fr);
 			gap: 1.75rem 1.25rem;
 		}
 	}
-	@media (max-width: 440px) {
+	@container (width <= 400px) {
 		.tiles {
 			grid-template-columns: 1fr;
 		}

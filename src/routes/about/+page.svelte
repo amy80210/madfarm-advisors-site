@@ -420,11 +420,21 @@
 	}
 
 	/* ---------- Thesis ---------- */
+	/* Both .wrap boxes on this page are containers. The layouts inside ask them for their width:
+	   a 1.35 : 1 pair, a 3 -> 1 grid and a 5 -> 3 -> 1 grid, which auto-fit cannot give. */
+	.wrap {
+		container-type: inline-size;
+	}
 	.thesis__grid {
 		display: grid;
 		grid-template-columns: 1.35fr 1fr;
 		gap: clamp(2rem, 5vw, 4rem);
 		align-items: start;
+	}
+	@container (width <= 828px) {
+		.thesis__grid {
+			grid-template-columns: 1fr;
+		}
 	}
 	.thesis__main h2 {
 		margin-block-start: 0.9rem;
@@ -453,6 +463,7 @@
 
 	/* ---------- At a Glance card ---------- */
 	.glance {
+		container-type: inline-size;
 		background: var(--surface);
 		border-radius: var(--radius);
 		padding: clamp(1.5rem, 3vw, 2.1rem);
@@ -490,6 +501,17 @@
 	.glance dl div {
 		padding-block: 0.8rem;
 		border-block-start: 1px solid var(--hairline-soft);
+	}
+	/* A wide card (it has the full row) puts the three short facts side by side. */
+	@container (width >= 468px) {
+		.glance dl {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			column-gap: 1.5rem;
+		}
+		.glance dl div:nth-child(n + 4) {
+			grid-column: 1 / -1;
+		}
 	}
 	.glance dt {
 		font-size: 0.68rem;
@@ -544,29 +566,12 @@
 		grid-template-columns: repeat(5, 1fr);
 		gap: 1rem;
 	}
-
-	/* ---------- Responsive ---------- */
-	@media (max-width: 980px) {
+	@container (width < 902px) {
 		.advisors {
 			grid-template-columns: repeat(3, 1fr);
 		}
 	}
-	@media (max-width: 900px) {
-		.thesis__grid {
-			grid-template-columns: 1fr;
-		}
-	}
-	@media (min-width: 561px) and (max-width: 900px) {
-		.glance dl {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			column-gap: 1.5rem;
-		}
-		.glance dl div:nth-child(n + 4) {
-			grid-column: 1 / -1;
-		}
-	}
-	@media (max-width: 720px) {
+	@container (width < 663px) {
 		.advisors {
 			grid-template-columns: 1fr;
 		}

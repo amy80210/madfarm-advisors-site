@@ -127,14 +127,11 @@
 </CtaBand>
 
 <style>
+	/* Two columns once each can be 20rem wide, one below that. The 34% floor
+	   stops a third column on a wide screen. */
 	.res-grid {
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, max(20rem, 34%)), 1fr));
 		gap: 1.25rem;
-	}
-	@media (max-width: 720px) {
-		.res-grid {
-			grid-template-columns: 1fr;
-		}
 	}
 </style>

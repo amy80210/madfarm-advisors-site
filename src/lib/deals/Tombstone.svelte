@@ -123,7 +123,7 @@
 		color: var(--copper);
 	}
 
-	@media (max-width: 720px) {
+	@container (max-width: 720px) {
 		.deal {
 			inline-size: 230px;
 			padding: 1.4rem 1.1rem 1.2rem;
