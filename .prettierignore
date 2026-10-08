@@ -1,0 +1,11 @@
+# Package Managers
+package-lock.json
+
+# Not part of the app
+/static/
+/.agents/
+/og/
+/print/
+/tasks/
+skills-lock.json
+SEO-CHECKLIST.md
