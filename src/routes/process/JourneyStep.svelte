@@ -46,6 +46,7 @@
 		position: relative;
 		display: flex;
 		flex-direction: column;
+		gap: 1.25rem;
 	}
 	.jstep::after {
 		content: '';
@@ -53,7 +54,7 @@
 		inset-block-start: 32px;
 		inset-inline: 80px calc(-1.75rem + 8px);
 		block-size: 1px;
-		background: rgba(255, 255, 255, 0.2);
+		background: color-mix(in oklch, var(--white) 20%, transparent);
 	}
 	.jstep:last-child::after {
 		display: none;
@@ -65,13 +66,12 @@
 		inline-size: 64px;
 		block-size: 64px;
 		border-radius: 50%;
-		margin-block-end: 1.25rem;
 		background: var(--steel-soft);
-		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.26);
+		box-shadow: inset 0 0 0 1px color-mix(in oklch, var(--white) 26%, transparent);
 		color: var(--accent);
 	}
 	.pre .dot {
-		background: #5a6672;
+		background: var(--slate);
 		box-shadow: none;
 		color: var(--white);
 	}
@@ -113,7 +113,7 @@
 		gap: 0.5rem;
 		margin-block-start: auto;
 		padding: 0.35rem 0.75rem;
-		border: 1px solid rgba(232, 133, 63, 0.45);
+		border: 1px solid color-mix(in oklch, var(--copper-on-dark) 45%, transparent);
 		border-radius: 999px;
 		font-size: 0.72rem;
 		font-weight: 600;
@@ -129,11 +129,11 @@
 		rotate: 45deg;
 	}
 
-	@media (max-width: 980px) {
+	/* The `journey` container is set in `Journey`. Keep this threshold equal to the one there. */
+	@container journey (width < 56.375rem) {
 		.jstep {
 			display: grid;
 			grid-template-columns: 64px 1fr;
-			gap: 1.25rem;
 			padding-block-end: 2rem;
 		}
 		.jstep::after {
@@ -144,9 +144,6 @@
 		}
 		.jstep:last-child {
 			padding-block-end: 0;
-		}
-		.dot {
-			margin-block-end: 0;
 		}
 		.body {
 			display: block;

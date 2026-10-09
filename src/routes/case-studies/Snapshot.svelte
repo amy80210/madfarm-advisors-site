@@ -9,16 +9,21 @@
 	let { items, class: className, ...rest }: Props = $props();
 </script>
 
-<dl class={['snapshot', className]} {...rest}>
-	{#each items as item (item.label)}
-		<div class="cell">
-			<dt>{item.label}</dt>
-			<dd>{item.value}</dd>
-		</div>
-	{/each}
-</dl>
+<div class="slot">
+	<dl class={['snapshot', className]} {...rest}>
+		{#each items as item (item.label)}
+			<div class="cell">
+				<dt>{item.label}</dt>
+				<dd>{item.value}</dd>
+			</div>
+		{/each}
+	</dl>
+</div>
 
 <style>
+	.slot {
+		container-type: inline-size;
+	}
 	.snapshot {
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
@@ -29,6 +34,9 @@
 		overflow: clip;
 	}
 	.cell {
+		display: flex;
+		flex-direction: column;
+		gap: 0.35rem;
 		background: var(--surface);
 		padding: 1.25rem 1.4rem;
 	}
@@ -43,10 +51,9 @@
 		font-family: var(--serif);
 		color: var(--heading);
 		font-size: 1.05rem;
-		margin-block-start: 0.35rem;
 		line-height: 1.2;
 	}
-	@media (max-width: 980px) {
+	@container (width < 902px) {
 		.snapshot {
 			grid-template-columns: repeat(2, 1fr);
 		}

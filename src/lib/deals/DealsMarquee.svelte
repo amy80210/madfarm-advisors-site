@@ -114,9 +114,17 @@
 	}
 
 	.marquee {
+		/* The track and the cards size themselves from the strip, not from the page. */
+		container-type: inline-size;
 		position: relative;
 		overflow: clip;
-		mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+		mask-image: linear-gradient(
+			90deg,
+			transparent,
+			oklch(0 0 none) 5%,
+			oklch(0 0 none) 95%,
+			transparent
+		);
 	}
 	.track {
 		display: flex;
@@ -141,7 +149,7 @@
 		.deals-strip:has(.pause :checked) .track {
 			animation-play-state: paused;
 		}
-		@media (max-width: 720px) {
+		@container (max-width: 720px) {
 			.track {
 				animation-duration: 45s;
 			}

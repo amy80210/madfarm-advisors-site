@@ -41,22 +41,27 @@
 /* ---------- Tokens ---------- */
 :root {
 	/* Tier 1, primitives. Raw values. Only tier 2 and the dark scope read them. */
-	--steel: #1c2024; /* anchor / near-black */
-	--steel-2: #0e1420; /* deepest navy-black */
-	--steel-soft: #2a2f35; /* raised surface on dark */
-	--copper: #a8451a; /* accent ONLY — saturated burnt copper, never soft */
-	--copper-2: #c85a22; /* brighter copper; 3.9:1 on steel, so large text only */
-	--copper-on-dark: #e8853f; /* 6.1:1 on --steel; --copper is 2.8:1 there */
-	--chalk: #f7f4ed; /* warm paper background */
-	--chalk-2: #efeae0; /* slightly deeper chalk */
-	--sand: #d5d0c4; /* hairlines / secondary */
-	--sand-2: #e8e2d5;
-	--ink: #1c2024; /* body text on light */
-	--ink-soft: #4a4f55; /* secondary text on light */
-	--ink-mute: #63666a; /* muted / captions (4.5:1+ on chalk-2) */
-	--paper-on-dark: #f2efe8; /* text on dark */
-	--mute-on-dark: #a8adb2; /* secondary text on dark */
-	--white: #ffffff;
+	--steel: oklch(0.2411 0.0097 248.23); /* anchor / near-black */
+	--steel-2: oklch(0.1915 0.0262 263.66); /* deepest navy-black */
+	--steel-soft: oklch(0.3028 0.0129 253.01); /* raised surface on dark */
+	--copper: oklch(0.5166 0.1412 41.3); /* accent ONLY — saturated burnt copper, never soft */
+	--copper-2: oklch(0.5973 0.1552 44.05); /* brighter copper; 3.9:1 on steel, so large text only */
+	--copper-on-dark: oklch(0.712 0.1471 52.96); /* 6.1:1 on --steel; --copper is 2.8:1 there */
+	--chalk: oklch(0.9675 0.0098 87.47); /* warm paper background */
+	--chalk-2: oklch(0.9382 0.0144 84.58); /* slightly deeper chalk */
+	--sand: oklch(0.8583 0.0172 88.01); /* hairlines / secondary */
+	--sand-2: oklch(0.914 0.0186 86.15);
+	--ink: oklch(0.2411 0.0097 248.23); /* body text on light */
+	--ink-soft: oklch(0.4252 0.0119 252.93); /* secondary text on light */
+	--ink-mute: oklch(0.509 0.0073 255.51); /* muted / captions (4.5:1+ on chalk-2) */
+	--paper-on-dark: oklch(0.9525 0.0099 87.47); /* text on dark */
+	--mute-on-dark: oklch(0.7451 0.0091 247.95); /* secondary text on dark */
+	--white: oklch(1 0 none);
+	--steel-wash: oklch(0.2066 0.0101 248.31); /* gradient that holds copy over photography */
+	--shadow-ink: oklch(0.1625 0.0143 258.36); /* shadow under small labels on dark */
+	--slate: oklch(0.5044 0.0242 248.31); /* the "before the process" step */
+	--wordmark: oklch(0.3583 0.0066 248.01); /* text stand-in for a missing buyer logo */
+	--success: oklch(0.4771 0.087 154.26);
 
 	/* Tier 2, semantic. Components read only these. `.on-dark` redeclares them. */
 	--surface: var(--chalk);
@@ -84,7 +89,13 @@
 	--serif: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
 	--sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 
-	/* Tier 3, scale */
+	/* Tier 3, scale. One ramp for type; components use the steps and never repeat the math. */
+	--step-0: 1.0625rem; /* body */
+	--step-1: clamp(1.1rem, 1.7vw, 1.35rem); /* lead */
+	--step-2: clamp(1.25rem, 2vw, 1.6rem); /* h3 */
+	--step-3: clamp(1.7rem, 3vw, 2.4rem); /* title inside a card or split */
+	--step-4: clamp(1.9rem, 3.6vw, 2.85rem); /* h2 */
+	--step-5: clamp(2.4rem, 6vw, 4.25rem); /* display */
 	--maxw: 1200px;
 	--maxw-narrow: 760px;
 	--gutter: clamp(1.25rem, 4vw, 3rem);
@@ -106,17 +117,17 @@
 .bg-steel {
 	--surface: var(--steel);
 	--surface-2: var(--steel-2);
-	--surface-raised: rgba(255, 255, 255, 0.06);
+	--surface-raised: color-mix(in oklch, var(--white) 6%, transparent);
 	--text: var(--paper-on-dark);
 	--text-soft: var(--mute-on-dark);
 	--text-mute: var(--mute-on-dark);
 	--heading: var(--white);
 	--accent: var(--copper-on-dark);
-	--hairline: rgba(255, 255, 255, 0.16);
-	--hairline-soft: rgba(255, 255, 255, 0.12);
-	--label-shadow: 0 1px 3px rgba(10, 14, 20, 0.6);
+	--hairline: color-mix(in oklch, var(--white) 16%, transparent);
+	--hairline-soft: color-mix(in oklch, var(--white) 12%, transparent);
+	--label-shadow: 0 1px 3px color-mix(in oklch, var(--shadow-ink) 60%, transparent);
 	--btn-outline-text: var(--white);
-	--btn-outline-border: rgba(255, 255, 255, 0.28);
+	--btn-outline-border: color-mix(in oklch, var(--white) 28%, transparent);
 	--btn-outline-hover-bg: var(--white);
 	--btn-outline-hover-text: var(--steel);
 	--btn-copper-hover-bg: var(--white);
@@ -138,7 +149,9 @@
 }
 html {
 	-webkit-text-size-adjust: 100%;
-	scroll-padding-top: calc(var(--header-h) + 22px);
+	/* Lets `height: auto` animate (the FAQ). Chrome only; others open at once. */
+	interpolate-size: allow-keywords;
+	scroll-padding-block-start: calc(var(--header-h) + 22px);
 }
 @media (prefers-reduced-motion: no-preference) {
 	html {
@@ -150,7 +163,7 @@ body {
 	background: var(--surface);
 	color: var(--text);
 	line-height: 1.6;
-	font-size: 17px;
+	font-size: var(--step-0);
 	-webkit-font-smoothing: antialiased;
 }
 img,
@@ -194,15 +207,15 @@ h4 {
 	color: var(--heading);
 }
 .display {
-	font-size: clamp(2.4rem, 6vw, 4.25rem);
+	font-size: var(--step-5);
 	line-height: 1.05;
 	letter-spacing: -0.02em;
 }
 h2 {
-	font-size: clamp(1.9rem, 3.6vw, 2.85rem);
+	font-size: var(--step-4);
 }
 h3 {
-	font-size: clamp(1.25rem, 2vw, 1.6rem);
+	font-size: var(--step-2);
 }
 h4 {
 	font-size: 1.1rem;
@@ -215,7 +228,7 @@ strong {
 	font-weight: 600;
 }
 .lead {
-	font-size: clamp(1.1rem, 1.7vw, 1.35rem);
+	font-size: var(--step-1);
 	line-height: 1.55;
 	color: var(--text-soft);
 }
@@ -223,12 +236,12 @@ strong {
 /* ---------- Layout utilities ---------- */
 .wrap {
 	width: 100%;
-	max-width: var(--maxw);
-	margin: 0 auto;
+	max-inline-size: var(--maxw);
+	margin-inline: auto;
 	padding-inline: var(--gutter);
 }
 .narrow {
-	max-width: var(--maxw-narrow);
+	max-inline-size: var(--maxw-narrow);
 }
 .section {
 	padding-block: var(--section-y);

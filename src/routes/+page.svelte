@@ -327,25 +327,48 @@
 		padding-block: clamp(2.5rem, 5vw, 4rem);
 	}
 
+	/* Each grid answers to the width of its `.wrap`, not to the page. */
+	.wrap {
+		container-type: inline-size;
+	}
+
+	/* 4, then 2. `auto-fit` would pass through 3, so the container decides. */
 	.sectors {
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		gap: 1rem;
 	}
+	@container (width < 56.375rem) {
+		.sectors {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
 
+	/* Intrinsic grid. The 34% floor stops a third column. */
 	.pillars {
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, max(20.625rem, 34%)), 1fr));
 		gap: 1px;
 		background: var(--sand);
 		border: 1px solid var(--sand);
 	}
 
+	/* 4, then 2, then 1, with no 3. */
 	.process {
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
-		gap: 1.5rem;
+		gap: 2rem 1.5rem;
 		counter-reset: step;
+	}
+	@container (width <= 51.75rem) {
+		.process {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+	@container (width <= 41.4rem) {
+		.process {
+			grid-template-columns: 1fr;
+		}
 	}
 	.step {
 		position: relative;
@@ -386,23 +409,5 @@
 	}
 	.inline-link:active {
 		color: var(--steel);
-	}
-
-	@media (max-width: 980px) {
-		.sectors {
-			grid-template-columns: repeat(2, 1fr);
-		}
-	}
-	@media (max-width: 900px) {
-		.process {
-			grid-template-columns: repeat(2, 1fr);
-			gap: 2rem 1.5rem;
-		}
-	}
-	@media (max-width: 720px) {
-		.pillars,
-		.process {
-			grid-template-columns: 1fr;
-		}
 	}
 </style>

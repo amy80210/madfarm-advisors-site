@@ -20,25 +20,31 @@
 </script>
 
 <div class={['leader', className]} {...rest}>
-	<div class="photo">
-		<enhanced:img
-			src={image}
-			{alt}
-			sizes="(max-width: 600px) 75vw, (max-width: 1100px) 40vw, 300px"
-			loading="lazy"
-			decoding="async"
-		/>
-	</div>
-	<div class="body">
-		<span class="role">{role}</span>
-		<h3>{name}</h3>
-		{@render children()}
-		<a class="li" href={linkedin} target="_blank" rel="noopener"><LinkedInIcon />LinkedIn</a>
+	<div class="grid">
+		<div class="photo">
+			<enhanced:img
+				src={image}
+				{alt}
+				sizes="(max-width: 600px) 75vw, (max-width: 1100px) 40vw, 300px"
+				loading="lazy"
+				decoding="async"
+			/>
+		</div>
+		<div class="body">
+			<span class="role">{role}</span>
+			<h3>{name}</h3>
+			{@render children()}
+			<a class="li" href={linkedin} target="_blank" rel="noopener"><LinkedInIcon />LinkedIn</a>
+		</div>
 	</div>
 </div>
 
 <style>
+	/* The component asks its own box for its width, so it works in a slot of any width. */
 	.leader {
+		container-type: inline-size;
+	}
+	.grid {
 		display: grid;
 		grid-template-columns: 300px 1fr;
 		gap: clamp(1.5rem, 4vw, 3rem);
@@ -86,8 +92,8 @@
 		color: var(--link-hover);
 	}
 
-	@media (max-width: 900px) {
-		.leader {
+	@container (width <= 828px) {
+		.grid {
 			grid-template-columns: 1fr;
 		}
 		.photo {

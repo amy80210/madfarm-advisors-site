@@ -12,11 +12,16 @@
 	let { columns = 3, class: className, children, ...rest }: Props = $props();
 </script>
 
-<div class={['cs-list', columns === 3 ? 'three' : 'two', className]} {...rest}>
-	{@render children()}
+<div class="slot">
+	<div class={['cs-list', columns === 3 ? 'three' : 'two', className]} {...rest}>
+		{@render children()}
+	</div>
 </div>
 
 <style>
+	.slot {
+		container-type: inline-size;
+	}
 	.cs-list {
 		display: grid;
 		gap: 1.4rem;
@@ -27,7 +32,7 @@
 	.three {
 		grid-template-columns: repeat(3, 1fr);
 	}
-	@media (max-width: 760px) {
+	@container (width < 700px) {
 		.three {
 			grid-template-columns: 1fr;
 		}

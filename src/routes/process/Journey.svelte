@@ -10,12 +10,18 @@
 	let { class: className, children, ...rest }: Props = $props();
 </script>
 
-<!-- The arc: the phases in one row, or one column on narrow screens. For a dark surface. -->
-<ol class={['journey', className]} {...rest}>
-	{@render children()}
-</ol>
+<!-- The arc: the phases in one row, or one column in a narrow slot. For a dark surface. -->
+<div class="slot">
+	<ol class={['journey', className]} {...rest}>
+		{@render children()}
+	</ol>
+</div>
 
 <style>
+	/* `JourneyStep` queries this container by name. Keep its threshold equal to the one below. */
+	.slot {
+		container: journey / inline-size;
+	}
 	.journey {
 		display: grid;
 		grid-template-columns: repeat(5, 1fr);
@@ -23,7 +29,7 @@
 		/* The old site never reset the browser's `<ol>` indent. Kept for the faithful port. */
 		padding-inline-start: 40px;
 	}
-	@media (max-width: 980px) {
+	@container journey (width < 56.375rem) {
 		.journey {
 			grid-template-columns: 1fr;
 			gap: 0;

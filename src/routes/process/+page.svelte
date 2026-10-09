@@ -117,7 +117,7 @@
 
 <!-- THE GUIDE: tease gates + deliverables, the PDF does the heavy lifting -->
 <section class="section" id="guide">
-	<div class="wrap">
+	<div class="wrap guide-slot">
 		<div class="guide reveal">
 			<div class="guide-body">
 				<Eyebrow>The Full Process</Eyebrow>
@@ -206,16 +206,15 @@
 	/* Two halves */
 	.halves {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		/* Two columns while each card gets 27.5rem, one column below that. */
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, 27.5rem), 1fr));
 		gap: 1.25rem;
 	}
-	@media (max-width: 980px) {
-		.halves {
-			grid-template-columns: 1fr;
-		}
-	}
 
-	/* Owner's guide teaser */
+	/* Owner's guide teaser. The guide answers to the width of its slot, not the page. */
+	.guide-slot {
+		container-type: inline-size;
+	}
 	.guide {
 		display: grid;
 		grid-template-columns: 1.25fr 0.75fr;
@@ -223,7 +222,7 @@
 		align-items: center;
 	}
 	.guide-body > h2 {
-		font-size: clamp(1.7rem, 3vw, 2.4rem);
+		font-size: var(--step-3);
 		max-inline-size: 20ch;
 		margin-block-start: 2rem;
 	}
@@ -284,8 +283,8 @@
 		block-size: auto;
 		border-radius: 3px;
 		box-shadow:
-			0 30px 50px -24px rgba(14, 20, 32, 0.6),
-			0 2px 6px rgba(14, 20, 32, 0.18);
+			0 30px 50px -24px color-mix(in oklch, var(--steel-2) 60%, transparent),
+			0 2px 6px color-mix(in oklch, var(--steel-2) 18%, transparent);
 	}
 	.guide-cover:active {
 		transform: rotate(0) scale(0.98);
@@ -313,7 +312,7 @@
 			transition: transform 0.35s var(--ease);
 		}
 	}
-	@media (max-width: 860px) {
+	@container (width < 49.5rem) {
 		.guide {
 			grid-template-columns: 1fr;
 		}
