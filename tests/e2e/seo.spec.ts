@@ -32,7 +32,7 @@ for (const entry of pages) {
 	});
 }
 
-test('sitemap lists the 11 clean URLs', async ({ request }) => {
+test('sitemap lists every clean URL', async ({ request }) => {
 	const response = await request.get('/sitemap.xml');
 	expect(response.ok()).toBe(true);
 	const xml = await response.text();

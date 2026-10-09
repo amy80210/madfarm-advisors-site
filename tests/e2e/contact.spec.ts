@@ -70,7 +70,11 @@ test('a real submission without an API key reports the failure', async ({ page }
 	await page.getByLabel('Message', { exact: true }).fill('A short note.');
 	await page.getByRole('button', { name: /Send Message/ }).click();
 
-	await expect(page.getByRole('alert')).toContainText('info@madfarm-advisors.com');
+	// "Something went wrong" is the not-configured message. Any other result means the test
+	// server has a key and tried to send real mail: see `webServer.env` in playwright.config.ts.
+	await expect(page.getByRole('alert')).toContainText(
+		'Something went wrong. Please email info@madfarm-advisors.com directly.'
+	);
 });
 
 test('the honeypot is hidden from screen readers and the tab order', async ({ page }) => {

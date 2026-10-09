@@ -1,6 +1,6 @@
 <script lang="ts">
 	import logo from '#lib/assets/logos/madfarm-stack-white.png?enhanced';
-	import { CONTACT_EMAIL, footerNav, SCHEDULE_URL } from '#lib/site.ts';
+	import { CONTACT_EMAIL, footerNav, SCHEDULE_PATH } from '#lib/site.ts';
 </script>
 
 <footer class="site-footer on-dark">
@@ -22,7 +22,7 @@
 			<div class="col">
 				<h2>Contact</h2>
 				<a href="mailto:{CONTACT_EMAIL}">{CONTACT_EMAIL}</a>
-				<a href={SCHEDULE_URL} target="_blank" rel="noopener">Schedule a Call</a>
+				<a href={SCHEDULE_PATH}>Schedule a Call</a>
 			</div>
 		</div>
 		<div class="bottom">
@@ -93,6 +93,11 @@
 		justify-content: space-between;
 		gap: 1rem;
 		font-size: 0.82rem;
+	}
+	/* A link inside a sentence needs more than color to stand out (WCAG 1.4.1). */
+	.bottom a {
+		text-decoration: underline;
+		text-underline-offset: 3px;
 	}
 
 	@container (max-width: 900px) {

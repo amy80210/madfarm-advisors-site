@@ -13,7 +13,7 @@
 	import QuoteBlock from '#lib/components/QuoteBlock.svelte';
 	import SectionHead from '#lib/components/SectionHead.svelte';
 	import DealsMarquee from '#lib/deals/DealsMarquee.svelte';
-	import { SCHEDULE_URL } from '#lib/site.ts';
+	import { SCHEDULE_PATH } from '#lib/site.ts';
 	import Faq from './Faq.svelte';
 	import Founder from './Founder.svelte';
 	import Hero from './Hero.svelte';
@@ -32,7 +32,7 @@
 	Senior representation for owners of mission-critical businesses: industrials, commercial services, software,
 	and professional services in the $5M–$50M revenue range.
 	{#snippet actions()}
-		<Button variant="copper" href={SCHEDULE_URL} external arrow="right">Schedule a Call</Button>
+		<Button variant="copper" href={SCHEDULE_PATH} arrow="right">Schedule a Call</Button>
 		<a href="/case-studies" class="link-underline">Explore Case Studies</a>
 	{/snippet}
 </Hero>
@@ -294,7 +294,7 @@
 		gatekeepers.
 	</p>
 	{#snippet actions()}
-		<Button variant="copper" href={SCHEDULE_URL} external arrow="right">Schedule a Call</Button>
+		<Button variant="copper" href={SCHEDULE_PATH} arrow="right">Schedule a Call</Button>
 		<Button variant="outline" href="/about">Meet the Firm</Button>
 	{/snippet}
 </CtaBand>

@@ -11,7 +11,8 @@ const WCAG_TAGS = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa'];
 for (const entry of pages) {
 	test(`axe finds no violations on ${entry.path}`, async ({ page }) => {
 		await page.goto(entry.path);
-		const results = await new AxeBuilder({ page }).withTags(WCAG_TAGS).analyze();
+		// The Google calendar inside the /schedule iframe is not our markup.
+		const results = await new AxeBuilder({ page }).withTags(WCAG_TAGS).exclude('iframe').analyze();
 		expect(
 			results.violations.map((violation) => ({
 				id: violation.id,
