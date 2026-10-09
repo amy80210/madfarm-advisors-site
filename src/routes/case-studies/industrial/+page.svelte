@@ -5,7 +5,7 @@
 	import CtaBand from '#lib/components/CtaBand.svelte';
 	import QuoteBlock from '#lib/components/QuoteBlock.svelte';
 	import SectionHead from '#lib/components/SectionHead.svelte';
-	import { SCHEDULE_URL } from '#lib/site.ts';
+	import { SCHEDULE_PATH } from '#lib/site.ts';
 	import CaseHero from '../CaseHero.svelte';
 	import CsItem from '../CsItem.svelte';
 	import CsList from '../CsList.svelte';
@@ -42,7 +42,6 @@
 	sizes="(max-width: 600px) 215vw, 100vw"
 	type="Bio-Pharma Engineering"
 	{pdf}
-	scheduleHref={SCHEDULE_URL}
 >
 	<h1>Defending Value in Bio-Pharma Engineering</h1>
 	<p class="lead">
@@ -209,7 +208,7 @@
 	<h2>The hard part isn&rsquo;t the spreadsheet. It&rsquo;s everything around it.</h2>
 	<p>Talk to the principal who would run your process.</p>
 	{#snippet actions()}
-		<Button variant="copper" href={SCHEDULE_URL} external arrow="right">Schedule a Call</Button>
+		<Button variant="copper" href={SCHEDULE_PATH} arrow="right">Schedule a Call</Button>
 		<Button variant="outline" href={pdf} download>Download PDF</Button>
 	{/snippet}
 </CtaBand>

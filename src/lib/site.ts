@@ -7,6 +7,9 @@ export const CONTACT_EMAIL = 'info@madfarm-advisors.com';
 export const SCHEDULE_URL =
 	'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0SPZqSb-E2HhHyk3IjZ08Nt1dkyxakiIWX0lumyj8OQpdlR3kehUxgAIQfdVb7jfjI8W2z7oEw';
 
+/** The page that embeds `SCHEDULE_URL`. Every "Schedule a Call" link goes here. */
+export const SCHEDULE_PATH = '/schedule';
+
 export type SitePath =
 	| '/'
 	| '/process'
@@ -18,6 +21,7 @@ export type SitePath =
 	| '/case-studies/saas'
 	| '/resources'
 	| '/contact'
+	| '/schedule'
 	| '/privacy-policy';
 
 export type SitePage = {
@@ -32,8 +36,8 @@ export type SitePage = {
 	navLabel?: string;
 	ogImage: string;
 	ogType: 'website' | 'article';
-	/** The `.html` URL this page had before the rebuild. It returns a 301. */
-	legacyPath: string;
+	/** The `.html` URL this page had before the rebuild. It returns a 301. Newer pages have none. */
+	legacyPath?: string;
 	sitemap: { changefreq: 'monthly' | 'yearly'; priority: string };
 };
 
@@ -161,6 +165,17 @@ export const pages: SitePage[] = [
 		ogImage: '/images/og/contact.jpg',
 		ogType: 'website',
 		legacyPath: '/contact.html',
+		sitemap: { changefreq: 'yearly', priority: '0.7' }
+	},
+	{
+		path: '/schedule',
+		title: 'Schedule a Call | Madfarm Advisors',
+		description:
+			'Book a call with a senior banker at Madfarm Advisors. Pick a time that works for you to talk about selling your business.',
+		breadcrumb: 'Schedule a Call',
+		parent: '/',
+		ogImage: '/images/og/contact.jpg',
+		ogType: 'website',
 		sitemap: { changefreq: 'yearly', priority: '0.7' }
 	},
 	{

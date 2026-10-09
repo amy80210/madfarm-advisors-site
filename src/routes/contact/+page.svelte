@@ -6,7 +6,7 @@
 	import Eyebrow from '#lib/components/Eyebrow.svelte';
 	import Icon from '#lib/components/Icon.svelte';
 	import PageHero from '#lib/components/PageHero.svelte';
-	import { SCHEDULE_URL } from '#lib/site.ts';
+	import { SCHEDULE_PATH } from '#lib/site.ts';
 	import BeforeCard from './BeforeCard.svelte';
 	import Field from './Field.svelte';
 	import type { PageProps } from './$types';
@@ -53,7 +53,7 @@
 					</Icon>
 				</span>
 				<h2>Book a time with the principal.</h2>
-				<Button variant="copper" href={SCHEDULE_URL} external arrow="right">Schedule a Call</Button>
+				<Button variant="copper" href={SCHEDULE_PATH} arrow="right">Schedule a Call</Button>
 			</div>
 
 			<!-- Send a note -->

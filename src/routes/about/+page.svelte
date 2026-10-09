@@ -17,7 +17,7 @@
 	import Icon from '#lib/components/Icon.svelte';
 	import PageHero from '#lib/components/PageHero.svelte';
 	import SectionHead from '#lib/components/SectionHead.svelte';
-	import { SCHEDULE_URL } from '#lib/site.ts';
+	import { SCHEDULE_PATH } from '#lib/site.ts';
 	import Advisor from './Advisor.svelte';
 	import ExecCard from './ExecCard.svelte';
 	import Leader from './Leader.svelte';
@@ -284,7 +284,7 @@
 	<h2>Talk to the person who would run your deal.</h2>
 	<p>Direct access to the principal, not a junior gatekeeper.</p>
 	{#snippet actions()}
-		<Button variant="copper" href={SCHEDULE_URL} external arrow="right">Schedule a Call</Button>
+		<Button variant="copper" href={SCHEDULE_PATH} arrow="right">Schedule a Call</Button>
 		<Button variant="outline" href="/process">See How We Work</Button>
 	{/snippet}
 </CtaBand>

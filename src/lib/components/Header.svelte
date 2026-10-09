@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import logo from '#lib/assets/logos/madfarm-stack-dark.png?enhanced';
-	import { headerNav, SCHEDULE_URL } from '#lib/site.ts';
+	import { headerNav, SCHEDULE_PATH } from '#lib/site.ts';
 	import Button from './Button.svelte';
 </script>
 
@@ -21,7 +21,7 @@
 				</a>
 			{/each}
 			<span class="cta">
-				<Button variant="copper" size="sm" href={SCHEDULE_URL} external arrow="right">
+				<Button variant="copper" size="sm" href={SCHEDULE_PATH} arrow="right">
 					Schedule a Call
 				</Button>
 			</span>

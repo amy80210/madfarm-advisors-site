@@ -20,7 +20,10 @@ export default defineConfig({
 	webServer: {
 		command: `npm run build && npx vite preview --port ${port} --strictPort`,
 		url: baseURL,
-		reuseExistingServer: !process.env.CI,
+		// An empty key beats the one in `.env.local`, so a test run can never send real mail.
+		// The tests never reuse a running server, because that server could hold the real key.
+		reuseExistingServer: false,
+		env: { MAILERSEND_API_KEY: '' },
 		timeout: 180_000
 	}
 });

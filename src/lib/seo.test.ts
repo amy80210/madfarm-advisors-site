@@ -7,12 +7,16 @@ import {
 	resolveSeo,
 	serializeJsonLd
 } from './seo.ts';
-import { footerNav, headerNav, pages, SITE_URL } from './site.ts';
+import { footerNav, headerNav, pages, SCHEDULE_URL, SITE_URL } from './site.ts';
+
+// The 11 pages that existed as `.html` files before the rebuild.
+const legacyPages = pages.filter((page) => page.legacyPath);
 
 describe('route registry', () => {
-	it('lists 11 pages with unique paths', () => {
-		expect(pages).toHaveLength(11);
-		expect(new Set(pages.map((page) => page.path)).size).toBe(11);
+	it('lists 12 pages with unique paths, 11 of them with an old .html URL', () => {
+		expect(pages).toHaveLength(12);
+		expect(new Set(pages.map((page) => page.path)).size).toBe(12);
+		expect(legacyPages).toHaveLength(11);
 	});
 
 	it.each(pages)('$path has an absolute canonical and a clean path', (page) => {
@@ -22,7 +26,7 @@ describe('route registry', () => {
 		if (page.path !== '/') expect(page.path.endsWith('/')).toBe(false);
 	});
 
-	it.each(pages)('$path keeps its old .html URL for the 301', (page) => {
+	it.each(legacyPages)('$path keeps its old .html URL for the 301', (page) => {
 		expect(page.legacyPath).toMatch(/^\/[a-z-]+\.html$/);
 	});
 
@@ -47,7 +51,7 @@ describe('vercel.json redirects', () => {
 		redirects: Array<{ source: string; destination: string; permanent: boolean }>;
 	};
 
-	it.each(pages)('sends $legacyPath to $path with a 301', (page) => {
+	it.each(legacyPages)('sends $legacyPath to $path with a 301', (page) => {
 		expect(config.redirects).toContainEqual({
 			source: page.legacyPath,
 			destination: page.path,
@@ -65,6 +69,16 @@ describe('vercel.json redirects', () => {
 		for (const redirect of config.redirects) {
 			expect(sources.has(redirect.destination)).toBe(false);
 		}
+	});
+
+	it('lets the page frame the Google calendar and nothing else', () => {
+		const { headers } = JSON.parse(readFileSync('vercel.json', 'utf8')) as {
+			headers: Array<{ headers: Array<{ key: string; value: string }> }>;
+		};
+		const csp = headers
+			.flatMap((rule) => rule.headers)
+			.find((header) => header.key === 'Content-Security-Policy');
+		expect(csp?.value).toContain(`frame-src ${new URL(SCHEDULE_URL).origin};`);
 	});
 
 	it('only redirects to pages that exist', () => {

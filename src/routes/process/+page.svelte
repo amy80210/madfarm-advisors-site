@@ -13,7 +13,7 @@
 	import PageHero from '#lib/components/PageHero.svelte';
 	import QuoteBlock from '#lib/components/QuoteBlock.svelte';
 	import SectionHead from '#lib/components/SectionHead.svelte';
-	import { SCHEDULE_URL } from '#lib/site.ts';
+	import { SCHEDULE_PATH } from '#lib/site.ts';
 	import Half from './Half.svelte';
 	import Journey from './Journey.svelte';
 	import JourneyStep from './JourneyStep.svelte';
@@ -197,7 +197,7 @@
 		any paid work. No cost, no obligation.
 	</p>
 	{#snippet actions()}
-		<Button variant="copper" href={SCHEDULE_URL} external arrow="right">Schedule a Call</Button>
+		<Button variant="copper" href={SCHEDULE_PATH} arrow="right">Schedule a Call</Button>
 		<Button variant="outline" href={GUIDE_PDF} download arrow="right">Download the Process</Button>
 	{/snippet}
 </CtaBand>

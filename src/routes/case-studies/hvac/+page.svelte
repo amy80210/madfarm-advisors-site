@@ -5,7 +5,7 @@
 	import CtaBand from '#lib/components/CtaBand.svelte';
 	import QuoteBlock from '#lib/components/QuoteBlock.svelte';
 	import SectionHead from '#lib/components/SectionHead.svelte';
-	import { SCHEDULE_URL } from '#lib/site.ts';
+	import { SCHEDULE_PATH } from '#lib/site.ts';
 	import CaseHero from '../CaseHero.svelte';
 	import CsItem from '../CsItem.svelte';
 	import CsList from '../CsList.svelte';
@@ -40,13 +40,7 @@
 </script>
 
 <!-- HERO -->
-<CaseHero
-	image={industrials}
-	sizes="(max-width: 600px) 215vw, 100vw"
-	type="Commercial HVAC"
-	{pdf}
-	scheduleHref={SCHEDULE_URL}
->
+<CaseHero image={industrials} sizes="(max-width: 600px) 215vw, 100vw" type="Commercial HVAC" {pdf}>
 	<h1>Orchestrating a Sophisticated Founder Transition</h1>
 	<p class="lead">
 		A majority recapitalization for a commercial HVAC enterprise: a dual-path exit that let one
@@ -204,7 +198,7 @@
 	<h2>There&rsquo;s often a structure you don&rsquo;t know is possible yet.</h2>
 	<p>Talk to the principal who would run your process.</p>
 	{#snippet actions()}
-		<Button variant="copper" href={SCHEDULE_URL} external arrow="right">Schedule a Call</Button>
+		<Button variant="copper" href={SCHEDULE_PATH} arrow="right">Schedule a Call</Button>
 		<Button variant="outline" href={pdf} download>Download PDF</Button>
 	{/snippet}
 </CtaBand>

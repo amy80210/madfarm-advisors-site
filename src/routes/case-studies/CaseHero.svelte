@@ -4,6 +4,7 @@
 	import Button from '#lib/components/Button.svelte';
 	import Eyebrow from '#lib/components/Eyebrow.svelte';
 	import PageHero from '#lib/components/PageHero.svelte';
+	import { SCHEDULE_PATH } from '#lib/site.ts';
 
 	type Props = {
 		image: Picture;
@@ -12,15 +13,11 @@
 		type: string;
 		/** Path of the PDF under `/downloads/`. */
 		pdf: string;
-		/** Target of "Schedule a Call". An `http` address opens in a new tab. */
-		scheduleHref: string;
 		/** The `<h1>` and the lead paragraph. */
 		children: Snippet;
 	};
 
-	let { image, sizes, type, pdf, scheduleHref, children }: Props = $props();
-
-	const external = $derived(scheduleHref.startsWith('http'));
+	let { image, sizes, type, pdf, children }: Props = $props();
 </script>
 
 <PageHero
@@ -38,12 +35,7 @@
 	{@render children()}
 	<div class="actions">
 		<Button variant="copper" href={pdf} arrow="down" download>Download PDF</Button>
-		<a
-			href={scheduleHref}
-			class="underline"
-			target={external ? '_blank' : undefined}
-			rel={external ? 'noopener' : undefined}>Schedule a Call</a
-		>
+		<a href={SCHEDULE_PATH} class="underline">Schedule a Call</a>
 	</div>
 </PageHero>
 

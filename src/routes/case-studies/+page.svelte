@@ -7,7 +7,7 @@
 	import CtaBand from '#lib/components/CtaBand.svelte';
 	import Eyebrow from '#lib/components/Eyebrow.svelte';
 	import PageHero from '#lib/components/PageHero.svelte';
-	import { SCHEDULE_URL } from '#lib/site.ts';
+	import { SCHEDULE_PATH } from '#lib/site.ts';
 	import CaseCard from './CaseCard.svelte';
 </script>
 
@@ -81,7 +81,7 @@
 	<h2>Every case study started with a conversation.</h2>
 	<p>Talk to the principal who would run your process.</p>
 	{#snippet actions()}
-		<Button variant="copper" href={SCHEDULE_URL} external arrow="right">Schedule a Call</Button>
+		<Button variant="copper" href={SCHEDULE_PATH} arrow="right">Schedule a Call</Button>
 	{/snippet}
 </CtaBand>
 

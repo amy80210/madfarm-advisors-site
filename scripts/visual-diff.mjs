@@ -68,7 +68,7 @@ const rows = [];
 for (const entry of pages) {
 	if (only && !only.includes(entry.path)) continue;
 	for (const width of widths) {
-		const oldPath = legacy ? entry.legacyPath : entry.path;
+		const oldPath = legacy ? (entry.legacyPath ?? entry.path) : entry.path;
 		const [before, after] = await Promise.all([
 			capture(browser, OLD_URL + oldPath, width),
 			capture(browser, NEW_URL + entry.path, width)

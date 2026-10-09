@@ -5,6 +5,7 @@
 	import CtaBand from '#lib/components/CtaBand.svelte';
 	import QuoteBlock from '#lib/components/QuoteBlock.svelte';
 	import SectionHead from '#lib/components/SectionHead.svelte';
+	import { SCHEDULE_PATH } from '#lib/site.ts';
 	import CaseHero from '../CaseHero.svelte';
 	import CsItem from '../CsItem.svelte';
 	import CsList from '../CsList.svelte';
@@ -48,7 +49,6 @@
 	sizes="(max-width: 600px) 225vw, 100vw"
 	type="Vertical SaaS &amp; Embedded Payments"
 	{pdf}
-	scheduleHref="/contact"
 >
 	<h1>Turning a retention discount into a premium outcome.</h1>
 	<p class="lead">
@@ -234,7 +234,7 @@
 	<h2>Your multiple depends on retention, and the story around it.</h2>
 	<p>Talk to the principal who would run your process.</p>
 	{#snippet actions()}
-		<Button variant="copper" href="/contact" arrow="right">Schedule a Call</Button>
+		<Button variant="copper" href={SCHEDULE_PATH} arrow="right">Schedule a Call</Button>
 		<Button variant="outline" href={pdf} download>Download PDF</Button>
 	{/snippet}
 </CtaBand>
