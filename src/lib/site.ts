@@ -5,7 +5,7 @@ export const SITE_URL = 'https://madfarm-advisors.com';
 export const SITE_NAME = 'Madfarm Advisors';
 export const CONTACT_EMAIL = 'info@madfarm-advisors.com';
 export const SCHEDULE_URL =
-	'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0SPZqSb-E2HhHyk3IjZ08Nt1dkyxakiIWX0lumyj8OQpdlR3kehUxgAIQfdVb7jfjI8W2z7oEw';
+	'https://calendar.google.com/appointments/schedules/AcZssZ2_nfPMBwBL1pLO8fKMePxNn6mbGyhxXuDAYNTdKg3QixZcSUblrcw7j7Fhm9X5aK6ZBE_bdu5L';
 
 /** The page that embeds `SCHEDULE_URL`. Every "Schedule a Call" link goes here. */
 export const SCHEDULE_PATH = '/schedule';
